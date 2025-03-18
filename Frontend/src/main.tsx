@@ -1,12 +1,22 @@
+import { createRoot } from 'react-dom/client';
+import './index.css';
+import { RouterProvider, createBrowserRouter, createRoutesFromElements, Route } from 'react-router';
+import Root from './Root';
+import Fitness from './Component/Ayufit/Fitness'
+import Home from './Component/Aurleaf/Home'
 
-import { createRoot } from 'react-dom/client'
-import './index.css'
+// Corrected router setup
+const router = createBrowserRouter(
+  createRoutesFromElements(
+    <Route path="/" element={<Root />}>
+      <Route path="" element={<Home />} /> 
 
-import { BrowserRouter } from "react-router"
-import App from './App.tsx'
+      <Route path="fitness" element={<Fitness />} /> 
+    </Route>
+  )
+);
 
+// Rendering the app
 createRoot(document.getElementById('root')!).render(
-  <BrowserRouter>
-    <App />
-  </BrowserRouter>,
-)
+  <RouterProvider router={router} />
+);
