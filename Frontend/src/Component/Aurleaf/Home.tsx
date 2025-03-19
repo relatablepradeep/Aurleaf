@@ -1,108 +1,90 @@
-import Appointment from '../Animation/Appointment'
-import Infinite from '../Animation/Infinte'
-import MiniShop from '../Animation/MiniShop'
-import Customer from '../Animation/Rating'
-import StepProcess from '../Animation/StepProcess'
-import Button from '../Animation/Button'
+import Appointment from '../Animation/Appointment';
+import Infinite from '../Animation/Infinte';
+import MiniShop from '../Animation/MiniShop';
+import Customer from '../Animation/Rating';
+import StepProcess from '../Animation/StepProcess';
+import Button from '../Animation/Button';
 
+export default function Home() {
+    return (
+        // Parent container with a smooth gradient transition at top and bottom
+        <div className="min-h-screen bg-gradient-to-b from-black via-gray-950 to-gray-900 text-gray-100 overflow-hidden">
+            
+            {/* Section 1: Personalized Care (Top gradient effect) */}
+             <section className="w-full flex flex-col justify-center items-center pt-12 pb-20    bg-gradient-to-t from-gray-950 via-gray-800 to-transparent "> 
+                <h2 className="text-6xl text-center font-extrabold tracking-wide text-green-400">
+                    Personalized Care for a Healthier Tomorrow
+                </h2>
 
+                <h4 className="text-3xl text-center font-semibold text-gray-300 max-w-3xl mt-6">
+                    Your one-stop platform for Ayurvedic wellness, medical guidance, and smart health solutions.
+                </h4>
 
+                <div className="flex justify-center mt-6">
+                    <Button text="Nearby Hospitals" onClick={() => console.log("button is clicked")} />
+                </div>
 
+                <h3 className="text-2xl text-center font-semibold text-green-300 tracking-wide m-10">
+                    Rooted in Ayurveda, Trusted by Many
+                </h3>
 
-export default function Home(){
+                <Infinite />
+            </section>
 
-    return(
-      <>
+            {/* Section 2: Ayufit (Slightly lighter background) */}
+            <section className="w-full flex flex-col justify-center items-center pt-12 pb-20   bg-gradient-to-b from-gray-950 via-gray-950 to-transparent">
+                <h1 className="text-5xl text-center font-extrabold tracking-wide text-green-400">
+                    Ayufit: AI-Powered Diet & Fitness for Better Health
+                </h1>
 
-<main className="min-h-screen flex flex-col justify-center items-center bg-gradient-to-b from-gray-900 via-gray-950 to-black text-gray-100 overflow-hidden">
-  <h2 className="text-6xl text-center m-10 font-extrabold tracking-wide text-green-400">
-    Personalized Care for a Healthier Tomorrow
-  </h2>
+                <h3 className="text-3xl text-center font-semibold text-gray-300 max-w-3xl mt-6">
+                    Struggling with diabetes, BP, or asthma? Get AI-powered diet & workout plans backed by Ayurveda!
+                </h3>
 
-  <h4 className="text-3xl text-center m-10 font-semibold text-gray-300">
-    Your one-stop platform for Ayurvedic wellness, medical guidance, and smart health solutions
-  </h4>
+                <h1 className="text-6xl font-extrabold text-green-400 tracking-wide mt-10">
+                    How It Works?
+                </h1>
 
-  <div className="flex justify-center">
-    <Button 
-      text="Nearby Hospitals"
-      onClick={() => console.log("button is clicked")}
-    />
-   
-  </div>
+                <div className="w-full flex justify-center mt-6">
+                    <StepProcess />
+                </div>
+            </section>
 
-  <h4 className="text-2xl text-center m-10 text-red-400 font-bold">
-    ❗Your health is our priority, get help now
-  </h4>
+            {/* Section 3: Ayumed (Same light gray background) */}
+            <section className="w-full flex flex-col justify-center items-center pt-12 pb-10    bg-gradient-to-t from-gray-950 via-gray-950 to-transparent ">
+                <h1 className="text-6xl text-center font-extrabold tracking-wide text-green-400">
+                    Ayumed: Your One-Stop Shop for Health & Wellness
+                </h1>
 
-  <Infinite />
+                <h3 className="text-3xl text-center font-semibold text-gray-300 max-w-3xl mt-6">
+                    Shop medical essentials and Ayurvedic solutions for a healthier life—trusted, safe, and effective.
+                </h3>
+                
+                <div className="w-full flex justify-center mt-6">
+                    <MiniShop />
+                </div>
+            </section>
 
-  <h3 className="text-2xl text-center m-5 font-semibold text-green-300 tracking-wide">
-    Healing, Preferred by Many
-  </h3>
-</main>
+            {/* Section 4: AyuDoctor (Slightly darker gray) */}
+            <section className="w-full flex flex-col justify-center items-center pt-6 pb-20   bg-gradient-to-t from-black via-gray-950">
+                <h1 className="text-6xl text-center font-extrabold tracking-wide m-5 text-green-400">
+                    AyuDoctor: Find & Book Ayurvedic Doctors Near You
+                </h1>
 
+                <h3 className="text-3xl text-center font-semibold text-gray-300 max-w-5xl mt-10">
+                    Connect with expert Ayurvedic doctors and book hassle-free appointments for natural healing and wellness.
+                </h3>
 
+                <div className="w-full flex justify-center mt-6">
+                    <Appointment />
+                </div>
+            </section>
 
+          
+            
 
-
-
-
-      
-
-<main>
-
-<h1>Ayufit: AI-Powered Diet & Fitness for Better Health</h1>
-<h3>Struggling with diabetes, blood pressure, or asthma? Get personalized diet and workout plans tailored to your health needs—powered by AI and backed by Ayurveda.</h3>
-
-
-</main>
-<div>
-<h1>How It Works?</h1>
-<StepProcess/>
-
-</div>
-
-
-<main>
-<h1>Ayumed: Your One-Stop Shop for Health & Wellness</h1>
-<h3>Shop medical essentials and Ayurvedic solutions for a healthier life—trusted, safe, and effective.</h3>
-</main>
-
-<div>
-<MiniShop/>
-</div>
-
-
-
-
-
-
-
-      <main>
-        <h1>AyuDoctor: Find & Book Ayurvedic Doctors Near You</h1>
-        <h3>Connect with expert Ayurvedic doctors and book hassle-free appointments for natural healing and wellness.</h3>
-      </main>
-
-      <div>
-        <Appointment/>
-      </div>
-
-
-      <main>
-        <h2>Your Health, Your Story</h2>
-      </main>
-
-      <div>
-        <Customer/>
-      </div>
-
-
-
-
-
-      
-      
-      </>
-    )
+                <Customer />
+          
+        </div>
+    );
 }

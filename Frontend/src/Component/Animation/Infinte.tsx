@@ -54,7 +54,7 @@ const Infinite = () => {
   };
 
   return (
-    <div className="relative w-full h-72 bg-gray-950 overflow-hidden flex items-center">
+    <div className="relative w-full h-72 bg-gradient-to-t from-gray-950 via-gray-800 to-transparent overflow-hidden flex items-center">
       {positions.map((box, index) => (
         <div
           key={index}

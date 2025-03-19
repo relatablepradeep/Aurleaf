@@ -1,42 +1,44 @@
 import { Link, NavLink } from "react-router";
 import logo from "../../Assets/logo.png";
 import { useState } from "react";
+import MyButton from '../Animation/MyButton'
 
 function Nav() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="bg-white dark:bg-gray-900 shadow sticky  w-full z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600">
+    <nav className="bg-white     bg-gradient-to-b from-black via-gray-800 to-black  transition-all     dark:bg-gray-900 shadow sticky  w-full z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600">
       <div className="max-w-screen-xl flex items-center justify-between mx-auto p-4">
         {/* Left: Logo & Aurleaf */}
         <div className="flex items-center">
           <Link to="/" className="flex items-center space-x-3">
             <img src={logo} className="h-28 w-auto" alt="Logo" />
-            <span className="text-4xl font-semibold dark:text-white">Aurleaf</span>
+            <span className="text-4xl font-semibold  text-gray-900  hover:text-green-500 dark:text-white">Aurleaf</span>
           </Link>
         </div>
 
         {/* Center: Navigation Links */}
         <div className="hidden md:flex md:space-x-8 absolute left-1/2 transform -translate-x-1/2">
-          <NavLink to="/fitness" className={(isActive)=>`${isActive?"text-gray-500":"text-gray-400"}`} className="text-2xl font-medium text-gray-900 hover:text-blue-700 dark:text-white">
+          <NavLink to="/fitness" className={(isActive)=>`${isActive?"text-gray-900":" hover:text-green-500"}`} className="text-2xl font-medium text-gray-900  hover:text-green-500 dark:text-white">
           AyuFit
           </NavLink>
-          <NavLink to="/products" className="   text-2xl font-medium text-gray-900 hover:text-blue-700 dark:text-white">
+          <NavLink to="/products" className="   text-2xl font-medium text-gray-900   hover:text-green-500 dark:text-white">
           AyuMed
           </NavLink>
-          <NavLink to="/doctors" className="text-2xl font-medium text-gray-900 hover:text-blue-700 dark:text-white">
+          <NavLink to="/doctors" className="text-2xl font-medium text-gray-900  hover:text-green-500 dark:text-white">
           AyuDoctor
           </NavLink>
-          <NavLink to="/hospitals" className="text-2xl font-medium text-gray-900 hover:text-blue-700 dark:text-white">
+          <NavLink to="/hospitals" className="text-2xl font-medium text-gray-900 hover:text-green-500 dark:text-white">
           AyuHospitals
           </NavLink>
         </div>
 
         {/* Right: Get Started Button */}
-        <div className="hidden md:flex">
-          <button className="text-white bg-gray-400 hover:bg-gray-500 font-medium rounded-lg text-3xl px-6 py-3 dark:bg-gray-400 dark:hove:bg-gray-500">
-          Get Instant Help
-          </button>
+        <div className="hidden md:flex  ">
+        
+
+
+          <MyButton/>
         </div>
 
         {/* Mobile Menu Button */}
