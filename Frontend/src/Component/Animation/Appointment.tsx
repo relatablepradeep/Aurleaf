@@ -1,4 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
+import image1 from '../../Assets/image (1).jpg'
+import image2 from '../../Assets/image (2).jpg'
+import image3 from '../../Assets/image.jpg'
 
 const Appointment = () => {
   const [currentDoctorIndex, setCurrentDoctorIndex] = useState(0);
@@ -7,7 +10,7 @@ const Appointment = () => {
     {
       id: 1,
       name: "Dr. Arjun Sharma",
-      image: "/api/placeholder/200/240",
+      image: image3,
       description: "Certified Ayurvedic practitioner with 20+ years of experience in holistic healing and natural therapies.",
       specialist: "Ayurvedic Specialist",
       rating: 4.9,
@@ -16,7 +19,7 @@ const Appointment = () => {
     {
       id: 2,
       name: "Dr. Meera Kapoor",
-      image: "/api/placeholder/200/240",
+      image: image1,
       description: "Expert in Panchakarma therapy and Ayurvedic diet planning for chronic diseases.",
       specialist: "Panchakarma Specialist",
       rating: 4.8,
@@ -25,7 +28,7 @@ const Appointment = () => {
     {
       id: 3,
       name: "Dr. Rajesh Verma",
-      image: "/api/placeholder/200/240",
+      image: image2,
       description: "Specialist in Ayurvedic treatments for skin disorders and natural wellness therapies.",
       specialist: "Ayurvedic Dermatologist",
       rating: 4.7,
@@ -65,7 +68,7 @@ const Appointment = () => {
     <div className="w-full flex justify-center items-center py-16   bg-gradient-to-t from-black via-gray-800 to-transparent">
       <div className="w-full max-w-4xl p-6 bg-gray-900 rounded-lg shadow-lg text-gray-100">
         <div className="flex flex-col md:flex-row w-full">
-          {/* Doctor Image (Left side) */}
+         
           <div className="w-full md:w-1/2 p-4 flex items-center justify-center">
             <div className="relative">
               <img 
@@ -77,7 +80,7 @@ const Appointment = () => {
             </div>
           </div>
           
-          {/* Doctor Details (Right side) */}
+        
           <div className="w-full md:w-1/2 p-4 flex flex-col justify-between">
             <div>
               <h2 className="text-2xl font-bold text-green-400 mb-2">{doctor.name}</h2>
@@ -106,7 +109,7 @@ const Appointment = () => {
           </div>
         </div>
         
-        {/* Doctor Slider Indicators */}
+    
         <div className="mt-6 flex justify-center">
           {doctors.map((_, index) => (
             <button

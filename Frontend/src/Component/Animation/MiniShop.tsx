@@ -1,4 +1,7 @@
 import { useState, useEffect } from 'react';
+import inhaler from '../../Assets/inhaler.jpg'
+import blood from '../../Assets/download.jpeg'
+import face from '../../Assets/face.jpg'
 
 const MiniShop = () => {
   const [currentProductIndex, setCurrentProductIndex] = useState(0);
@@ -7,7 +10,7 @@ const MiniShop = () => {
     {
       id: 1,
       name: "Asthma Relief Inhaler",
-      image: "/api/placeholder/200/240", 
+      image: inhaler, 
       description: "Fast-acting relief for asthma symptoms. Provides immediate breathing support for asthma patients.",
       rating: 4.8,
       price: 24.99,
@@ -15,7 +18,7 @@ const MiniShop = () => {
     {
       id: 2,
       name: "Clear Skin Facewash",
-      image: "/api/placeholder/200/240",
+      image: face,
       description: "Advanced formula that helps remove pimples and prevents breakouts. Contains salicylic acid.",
       rating: 4.5,
       price: 16.99,
@@ -23,7 +26,7 @@ const MiniShop = () => {
     {
       id: 3,
       name: "Digital Blood Pressure Monitor",
-      image: "/api/placeholder/200/240",
+      image: blood,
       description: "Accurate and easy-to-use blood pressure monitor for home use. Stores up to 60 readings.",
       rating: 4.7,
       price: 39.99,
@@ -62,7 +65,7 @@ const MiniShop = () => {
     <div className="w-full flex justify-center items-center py-16  bg-gradient-to-t from-gray-950 via-gray-800 to-transparent">
       <div className="w-full max-w-4xl p-6 bg-gray-900 rounded-lg shadow-lg text-gray-100">
         <div className="flex flex-col md:flex-row w-full">
-          {/* Product Image (Left side) */}
+         
           <div className="w-full md:w-1/2 p-4 flex items-center justify-center">
             <img 
               src={product.image} 
@@ -71,7 +74,7 @@ const MiniShop = () => {
             />
           </div>
           
-          {/* Product Details (Right side) */}
+         
           <div className="w-full md:w-1/2 p-4 flex flex-col justify-between">
             <div>
               <h2 className="text-2xl font-bold text-green-400 mb-2">{product.name}</h2>
@@ -93,7 +96,7 @@ const MiniShop = () => {
           </div>
         </div>
         
-        {/* Product Slider Indicators */}
+     
         <div className="mt-6 flex justify-center">
           {products.map((_, index) => (
             <button

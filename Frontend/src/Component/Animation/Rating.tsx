@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import  { useState, useEffect } from "react";
 
 const Customer = () => {
   const [activeIndex, setActiveIndex] = useState(2);
@@ -80,15 +80,13 @@ const Customer = () => {
     <div className="w-full h-auto flex flex-col justify-center items-center 
     bg-gradient-to-b from-black via-gray-800 to-transparent text-gray-100 py-12">
       
-      {/* Heading */}
       <h2 className="text-5xl text-center font-extrabold tracking-wide text-green-400">
         Your Health, Your Story
       </h2>
       
-      {/* Testimonial Cards */}
+   
       <div className="relative w-full max-w-4xl flex items-center justify-center mt-10">
-        
-        {/* Previous Button */}
+       
         <button
           onClick={goToPrev}
           className="absolute left-0 sm:left-4 bg-green-500 hover:bg-green-600 text-white w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center shadow-lg z-20"
@@ -96,7 +94,7 @@ const Customer = () => {
           ←
         </button>
 
-        {/* Active Testimonial */}
+      
         <div className="w-full max-w-lg p-6 bg-gray-900 rounded-lg shadow-lg text-gray-100 text-center">
           <div className="flex justify-center -mt-12 mb-4">
             <img
@@ -110,7 +108,7 @@ const Customer = () => {
           {renderStars(testimonials[activeIndex].rating)}
         </div>
 
-        {/* Next Button */}
+       
         <button
           onClick={goToNext}
           className="absolute right-0 sm:right-4 bg-green-500 hover:bg-green-600 text-white w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center shadow-lg z-20"
@@ -119,7 +117,7 @@ const Customer = () => {
         </button>
       </div>
 
-      {/* Dots Indicator */}
+   
       <div className="flex justify-center gap-2 mt-6">
         {testimonials.map((_, index) => (
           <button
@@ -130,7 +128,7 @@ const Customer = () => {
         ))}
       </div>
 
-      {/* Feedback Section */}
+      
       <div className="mt-10 bg-gray-900 p-6 rounded-lg text-center shadow-lg w-full max-w-lg">
         <p className="text-sm sm:text-base text-gray-300 mb-3">
           Want to share your experience? Leave a review!
@@ -143,7 +141,7 @@ const Customer = () => {
         </button>
       </div>
 
-      {/* Feedback Form */}
+   
       {showFeedbackForm && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
           <form

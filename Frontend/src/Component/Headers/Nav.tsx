@@ -9,7 +9,8 @@ function Nav() {
   return (
     <nav className="bg-white     bg-gradient-to-b from-black via-gray-800 to-black  transition-all     dark:bg-gray-900 shadow sticky  w-full z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600">
       <div className="max-w-screen-xl flex items-center justify-between mx-auto p-4">
-        {/* Left: Logo & Aurleaf */}
+       
+
         <div className="flex items-center">
           <Link to="/" className="flex items-center space-x-3">
             <img src={logo} className="h-28 w-auto" alt="Logo" />
@@ -17,7 +18,6 @@ function Nav() {
           </Link>
         </div>
 
-        {/* Center: Navigation Links */}
         <div className="hidden md:flex md:space-x-8 absolute left-1/2 transform -translate-x-1/2">
           <NavLink to="/fitness" className={(isActive)=>`${isActive?"text-gray-900":" hover:text-green-500"}`} className="text-2xl font-medium text-gray-900  hover:text-green-500 dark:text-white">
           AyuFit
@@ -33,7 +33,7 @@ function Nav() {
           </NavLink>
         </div>
 
-        {/* Right: Get Started Button */}
+      
         <div className="hidden md:flex  ">
         
 
@@ -41,7 +41,7 @@ function Nav() {
           <MyButton/>
         </div>
 
-        {/* Mobile Menu Button */}
+       
         <button
           className="md:hidden text-gray-500 dark:text-white p-2 rounded-md focus:outline-none"
           onClick={() => setIsOpen(!isOpen)}
@@ -52,7 +52,7 @@ function Nav() {
         </button>
       </div>
 
-      {/* Mobile Menu */}
+     
       {isOpen && (
         <div className="md:hidden bg-gray-100 dark:bg-gray-800 p-4">
           <NavLink to="/fitness" className="block py-2 text-2xl text-gray-900 dark:text-white">AyuFit

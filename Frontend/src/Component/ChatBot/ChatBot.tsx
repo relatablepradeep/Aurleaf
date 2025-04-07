@@ -72,7 +72,7 @@ const Chatbot = () => {
       const botMessage = getBotResponse(userMessage);
       addMessage(botMessage, "bot");
 
-      // Always show suggestions after bot reply
+      //suggestion
       setSuggestions([
         "Ayurvedic herbs for immunity",
         "Diet for healthy skin",
@@ -91,7 +91,7 @@ const Chatbot = () => {
 
   return (
     <div className="z-[9999]">
-      {/* Chatbot Avatar */}
+     
       <div
         className="fixed bottom-8 right-8 cursor-pointer transition-transform duration-300 hover:scale-110 z-[9999]"
         onClick={toggleChat}
@@ -101,10 +101,10 @@ const Chatbot = () => {
         </div>
       </div>
 
-      {/* Chatbox Container */}
+    
       {chatExpanded && (
         <div className="fixed bottom-8 right-8 w-96 h-1/2 bg-white rounded-2xl shadow-2xl flex flex-col overflow-hidden z-[9999]">
-          {/* Chat Header */}
+         
           <div className="bg-green-500 text-white p-4 flex justify-between items-center">
             <h2 className="text-lg font-semibold">Ayuleaf</h2>
             <button onClick={closeChat} className="text-white text-lg">
@@ -112,7 +112,7 @@ const Chatbot = () => {
             </button>
           </div>
 
-          {/* Chat Messages */}
+         
           <div className="flex-1 p-4 overflow-y-auto space-y-3 bg-gray-100">
             {messages.map((message, index) => (
               <div
@@ -134,7 +134,7 @@ const Chatbot = () => {
             ))}
           </div>
 
-          {/* Suggestions (Always Show After User Input) */}
+         
           {suggestions.length > 0 && (
             <div className="p-3 bg-gray-200 flex flex-wrap gap-2">
               {suggestions.map((suggestion, index) => (
@@ -149,7 +149,7 @@ const Chatbot = () => {
             </div>
           )}
 
-          {/* Chat Input */}
+       
           <div className="p-3 flex items-center bg-white border-t">
             <input
               type="text"

@@ -4,19 +4,35 @@ import { RouterProvider, createBrowserRouter, createRoutesFromElements, Route } 
 import Root from './Root';
 import Fitness from './Component/Ayufit/Fitness'
 import Home from './Component/Aurleaf/Home'
+import Pincode from './Component/Pincode/Pincode'
 
-// Corrected router setup
+
+
+
+
+
+
+
+
 const router = createBrowserRouter(
   createRoutesFromElements(
+
+    
+ 
     <Route path="/" element={<Root />}>
       <Route path="" element={<Home />} /> 
 
       <Route path="fitness" element={<Fitness />} /> 
+      <Route path="/Pincode" element={<Pincode/>} /> 
+
     </Route>
+
+
   )
 );
 
-// Rendering the app
+
 createRoot(document.getElementById('root')!).render(
   <RouterProvider router={router} />
+
 );

@@ -9,20 +9,20 @@ declare global {
 
 const Translate = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [currentLanguage, setCurrentLanguage] = useState("hi");
+  const [currentLanguage, setCurrentLanguage] = useState("en");
   const [isTranslateLoaded, setIsTranslateLoaded] = useState(false);
 
   useEffect(() => {
     let scriptAdded = false;
     
-    // Only add the script once
+ 
     if (!document.querySelector('script[src*="translate_a/element.js"]')) {
-      // Create a safety timeout in case the script fails to load
+      
       const safetyTimeout = setTimeout(() => {
-        setIsTranslateLoaded(true); // Allow UI to work even if Google fails
+        setIsTranslateLoaded(true); 
       }, 5000);
       
-      // Setup translate initialization function before adding script
+      
       window.googleTranslateElementInit = function() {
         try {
           if (window.google?.translate) {
@@ -36,18 +36,18 @@ const Translate = () => {
               "google_translate_element"
             );
             
-            // Mark as loaded
+            
             setIsTranslateLoaded(true);
             clearTimeout(safetyTimeout);
           }
         } catch (error) {
           console.error("Error initializing Google Translate:", error);
-          setIsTranslateLoaded(true); // Allow UI to work anyway
+          setIsTranslateLoaded(true);
           clearTimeout(safetyTimeout);
         }
       };
       
-      // Add the script
+      // google script
       const addScript = document.createElement("script");
       addScript.src = "//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
       addScript.async = true;
@@ -60,7 +60,7 @@ const Translate = () => {
       scriptAdded = true;
     }
 
-    // Function to close dropdown when clicking outside
+  
     const handleClickOutside = (event: any) => {
       const target = event.target as HTMLElement;
       if (isOpen && !target.closest('.language-selector-container')) {
@@ -84,14 +84,14 @@ const Translate = () => {
     setCurrentLanguage(langCode);
     setIsOpen(false);
     
-    // Try to find Google Translate dropdown and update it
+    
     try {
       const selectElement = document.querySelector(".goog-te-combo") as HTMLSelectElement;
       if (selectElement) {
         selectElement.value = langCode;
         selectElement.dispatchEvent(new Event("change", { bubbles: true }));
       } else {
-        // If Google Translate hasn't loaded, just update our UI
+        
         console.log("Google Translate not found, updating UI only");
       }
     } catch (error) {
@@ -117,12 +117,13 @@ const Translate = () => {
 
   return (
     <>
-      {/* Google Translate element - hidden but accessible */}
+     
       <div id="google_translate_element" style={{ position: 'absolute', top: '-9999px', left: '-9999px', width: '1px', height: '1px' }}></div>
       
-      {/* Custom language selector UI */}
+    
       <div className="fixed bottom-10 left-6 z-50 language-selector-container">
-        {/* Language drawer */}
+        
+
         {isOpen && (
           <div className="bg-white rounded-lg shadow-lg mb-4">
             <div className="max-h-64 overflow-y-auto">
@@ -139,7 +140,7 @@ const Translate = () => {
           </div>
         )}
         
-        {/* Language button */}
+       
         <button
           onClick={toggleDrawer}
           className="bg-gradient-to-b text-2xl from-black via-gray-800 to-black   text-white w-28 h-28 rounded-full flex items-center justify-center shadow-lg focus:outline-none hover:bg-green-600 transition-colors"
