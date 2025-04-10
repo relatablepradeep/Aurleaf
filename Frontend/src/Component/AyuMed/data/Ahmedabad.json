@@ -1,0 +1,452 @@
+[
+  {
+    "name": "Dr Sameer Dani",
+    "specialization_experience": "Cardiology| 25 years exp",
+    "location": "Apollo Hospitals International Limited Ahmedabad",
+    "languages": "English, ગુજરાતી, हिंदी",
+    "qualification": "MBBS; MD(MED); DM(CARDIOLOGY)",
+    "timing": "MON- FRI, MON- FRI | MON- FRI, MON- FRI\n(10:00 AM-01:00 PM | 03:00 PM-04:00 PM)\nREQUEST APPOINTMENT",
+    "photo_url": "N/A"
+  },
+  {
+    "name": "Dr Jayesh Prajapati",
+    "specialization_experience": "Cardiology| 19 years exp",
+    "location": "Apollo Hospitals International Limited Ahmedabad",
+    "languages": "English, ગુજરાતી, हिंदी",
+    "qualification": "MBBS, MD(MED), DM(CARDIOLOGY)",
+    "timing": "MON | TUE | WED | THU- SAT\n(02:00 PM-04:00 PM | 10:00 AM-12:00 PM, 02:00 PM-04:00 PM | 02:00 PM-04:00 PM | 10:00 AM-12:00 PM, 02:00 PM-04:00 PM)\nBOOK APPOINTMENT",
+    "photo_url": "N/A"
+  },
+  {
+    "name": "Dr Sharad Jain",
+    "specialization_experience": "Cardiology| 21 years exp",
+    "location": "Apollo Hospitals International Limited Ahmedabad",
+    "languages": "English, ગુજરાતી, हिंदी",
+    "qualification": "MBBS; MD(MED); DM(CARDIOLOGY)",
+    "timing": "SAT, SAT | MON- FRI, MON- FRI | THU, THU\n(01:00 PM-03:00 PM | 01:00 PM-05:00 PM | 09:00 AM-10:30 AM)\nBOOK APPOINTMENT",
+    "photo_url": "N/A"
+  },
+  {
+    "name": "Dr Lakshman Khiria",
+    "specialization_experience": "Surgical Gastroenterology, Transplant Surgery| 14 years exp",
+    "location": "Apollo Hospitals International Limited Ahmedabad",
+    "languages": "English",
+    "qualification": "MBBS; MS; MCh (GI Surgery)",
+    "timing": "MON- SAT, MON- SAT\n(10:00 AM-04:00 PM)\nBOOK APPOINTMENT",
+    "photo_url": "N/A"
+  },
+  {
+    "name": "Dr Anshul Warman",
+    "specialization_experience": "Dermatology| 10 years exp",
+    "location": "Apollo Hospitals International Limited Ahmedabad",
+    "languages": "English, ગુજરાતી, हिंदी",
+    "qualification": "MBBS, MD(DERMATOLOGY), DNB(Dermatology & Venereology)",
+    "timing": "MON- SAT, MON- SAT\n(02:00 PM-03:30 PM)\nBOOK APPOINTMENT",
+    "photo_url": "N/A"
+  },
+  {
+    "name": "Dr Ramesh Goyal",
+    "specialization_experience": "Endocrinology| 19 years exp",
+    "location": "Apollo Hospitals International Limited Ahmedabad",
+    "languages": "English, ગુજરાતી, हिंदी",
+    "qualification": "MBBS, MD (General Medicine & Therapeutics),DM (Endocrinology) AIIMS – New Delhi",
+    "timing": "MON- SAT, MON- SAT\n(10:30 AM-03:00 PM)\nBOOK APPOINTMENT",
+    "photo_url": "N/A"
+  },
+  {
+    "name": "Dr Rajesh Vishwarkama",
+    "specialization_experience": "Ent| 26 years exp",
+    "location": "Apollo Hospitals International Limited Ahmedabad",
+    "languages": "English, ગુજરાતી, हिंदी",
+    "qualification": "MBBS, MS(ENT), DLO",
+    "timing": "MON- SAT, MON- SAT\n(09:00 AM-05:00 PM)\nBOOK APPOINTMENT",
+    "photo_url": "N/A"
+  },
+  {
+    "name": "Dr Shravan Bohra",
+    "specialization_experience": "Gastroenterology, Transplant Surgery| 25 years exp",
+    "location": "Apollo Hospitals International Limited Ahmedabad",
+    "languages": "English",
+    "qualification": "MBBS, MD(MED), MRCP, FEBG",
+    "timing": "MON- SAT, MON- SAT\n(11:00 AM-05:00 PM)\nBOOK APPOINTMENT",
+    "photo_url": "N/A"
+  },
+  {
+    "name": "Dr Apurva Shah",
+    "specialization_experience": "Gastroenterology, Transplant Surgery| 7 years exp",
+    "location": "Apollo Hospitals International Limited Ahmedabad",
+    "languages": "English, ગુજરાતી, हिंदी",
+    "qualification": "M.B.B.S. M.D. Internal Medicine DNB Gastroenterology",
+    "timing": "MON- SAT, MON- SAT\n(11:00 AM-05:00 PM)\nBOOK APPOINTMENT",
+    "photo_url": "N/A"
+  },
+  {
+    "name": "Dr Maharshi Desai",
+    "specialization_experience": "Critical Care| 12 years exp",
+    "location": "Apollo Hospitals International Limited Ahmedabad",
+    "languages": "English, ગુજરાતી, हिंदी",
+    "qualification": "MD (Medicine); FNB",
+    "timing": "MON- SAT, MON- SAT\n(02:00 PM-03:30 PM)\nBOOK APPOINTMENT",
+    "photo_url": "N/A"
+  },
+  {
+    "name": "Dr Manjulata Anchalia",
+    "specialization_experience": "General Surgery| 37 years exp",
+    "location": "Apollo Hospitals International Limited Ahmedabad",
+    "languages": "English",
+    "qualification": "MBBS, MS General Surgery, FIAGES (Honorary), IAGES",
+    "timing": "MON- SAT, MON- SAT\n(11:30 AM-04:00 PM)\nBOOK APPOINTMENT",
+    "photo_url": "N/A"
+  },
+  {
+    "name": "Dr Kirty Nahar",
+    "specialization_experience": "Obstetrics & Gynecology| 21 years exp",
+    "location": "Apollo Hospitals International Limited Ahmedabad",
+    "languages": "English",
+    "qualification": "MBBS, M.S. Obstetrics & Gynaecology Fellowship in Ultrasound ISUOG Certified Sonologist",
+    "timing": "MON- SAT, MON- SAT\n(11:00 AM-05:00 PM)\nBOOK APPOINTMENT",
+    "photo_url": "N/A"
+  },
+  {
+    "name": "Dr Kavita Parihar",
+    "specialization_experience": "Nephrology, Transplant Surgery| 26 years exp",
+    "location": "Apollo Hospitals International Limited Ahmedabad",
+    "languages": "English, ગુજરાતી, हिंदी",
+    "qualification": "MBBS, MD(MED), DNB(NEPHRO)",
+    "timing": "MON- SAT, MON- SAT\n(10:00 AM-05:00 PM)\nBOOK APPOINTMENT",
+    "photo_url": "N/A"
+  },
+  {
+    "name": "Dr Haresh Patel",
+    "specialization_experience": "Nephrology, Transplant Surgery| 16 years exp",
+    "location": "Apollo Hospitals International Limited Ahmedabad",
+    "languages": "English, ગુજરાતી, हिंदी",
+    "qualification": "MBBS, MD (Medicine), DM (Nephrology)",
+    "timing": "MON- WED, FRI, MON- WED, FRI\n(01:30 PM-04:00 PM)\nBOOK APPOINTMENT",
+    "photo_url": "N/A"
+  },
+  {
+    "name": "Dr Manoj Gumber",
+    "specialization_experience": "Nephrology, Transplant Surgery| 17 years exp",
+    "location": "Apollo Hospitals International Limited Ahmedabad",
+    "languages": "English",
+    "qualification": "MD, DM (Nephrology)",
+    "timing": "MON- SAT, MON- SAT\n(11:00 AM-01:00 PM)\nBOOK APPOINTMENT",
+    "photo_url": "N/A"
+  },
+  {
+    "name": "Dr Sucheta Mudgerikar",
+    "specialization_experience": "Neurology| 30 years exp",
+    "location": "Apollo Hospitals International Limited Ahmedabad",
+    "languages": "English, ગુજરાતી, हिंदी",
+    "qualification": "MBBS; MD (Med);DM(Neurology)",
+    "timing": "MON, WED, FRI | MON, WED, FRI\n(11:00 AM-04:30 PM | 11:00 AM-03:00 PM)\nBOOK APPOINTMENT",
+    "photo_url": "N/A"
+  },
+  {
+    "name": "Dr Somesh Desai",
+    "specialization_experience": "Neurosurgery| 15 years exp",
+    "location": "Apollo Hospitals International Limited Ahmedabad",
+    "languages": "English, ગુજરાતી, हिंदी",
+    "qualification": "MBBS; MS(Gen Sur); M.Ch (Neurosurgery)",
+    "timing": "MON- SAT, MON- SAT\n(10:30 AM-02:00 PM)\nBOOK APPOINTMENT",
+    "photo_url": "N/A"
+  },
+  {
+    "name": "Dr Deepak Malhotra",
+    "specialization_experience": "Neurosurgery| 14 years exp",
+    "location": "Apollo Hospitals International Limited Ahmedabad",
+    "languages": "English",
+    "qualification": "MBBS, MS, MCH(Neurosurgery)",
+    "timing": "MON- SAT, MON- SAT\n(11:30 AM-04:00 PM)\nBOOK APPOINTMENT",
+    "photo_url": "N/A"
+  },
+  {
+    "name": "Dr Chirag A Shah",
+    "specialization_experience": "Haemato Oncology & Bmt| 25 years exp",
+    "location": "Apollo Hospitals International Limited Ahmedabad",
+    "languages": "English, ગુજરાતી, हिंदी",
+    "qualification": "MBBS, Diplomate American Board of Oncology, Dip of American Board of Hematology, Dip of American Board of Internal Medicine",
+    "timing": "MON- FRI | MON- FRI\n(10:00 AM-11:30 AM | 11:30 AM-01:00 PM)\nBOOK APPOINTMENT",
+    "photo_url": "N/A"
+  },
+  {
+    "name": "Dr Akash Shah",
+    "specialization_experience": "Oncology| 5 years exp",
+    "location": "Apollo Hospitals International Limited Ahmedabad",
+    "languages": "English, ગુજરાતી, हिंदी",
+    "qualification": "MBBS; MD(GenMed); DM(MedicalOncology)",
+    "timing": "MON- SAT, MON- SAT\n(02:30 PM-04:30 PM)\nBOOK APPOINTMENT",
+    "photo_url": "N/A"
+  },
+  {
+    "name": "Dr Jay Prakash Neema",
+    "specialization_experience": "Radiation Oncology| 30 years exp",
+    "location": "Apollo Hospitals International Limited Ahmedabad",
+    "languages": "English, ગુજરાતી, हिंदी",
+    "qualification": "M D(Radiotherapy)",
+    "timing": "SAT, SAT | MON- FRI, MON- FRI\n(10:00 AM-01:00 PM | 10:00 AM-02:00 PM)\nBOOK APPOINTMENT",
+    "photo_url": "N/A"
+  },
+  {
+    "name": "Dr Chirag Amin",
+    "specialization_experience": "Radiation Oncology| 10 years exp",
+    "location": "Apollo Hospitals International Limited Ahmedabad",
+    "languages": "English, ગુજરાતી, हिंदी",
+    "qualification": "MBBS; MD (Radiotheraphy)",
+    "timing": "MON- FRI, MON- FRI | SAT, SAT\n(10:00 AM-04:00 PM | 11:30 AM-02:00 PM)\nBOOK APPOINTMENT",
+    "photo_url": "N/A"
+  },
+  {
+    "name": "Dr Kashmira Jhala",
+    "specialization_experience": "Pulmonology| 14 years exp",
+    "location": "Apollo Hospitals International Limited Ahmedabad",
+    "languages": "English, ગુજરાતી, हिंदी",
+    "qualification": "MBBS, DTDC, MD(Chest Medicine)",
+    "timing": "MON, WED, MON, WED | TUE, THU, FRI, TUE, THU, FRI | FRI, FRI\n(11:30 AM-03:00 PM | 12:00 PM-02:00 PM | 02:00 PM-03:30 PM)\nBOOK APPOINTMENT",
+    "photo_url": "N/A"
+  },
+  {
+    "name": "Dr Kunal Aterkar",
+    "specialization_experience": "Urology| 5 years exp",
+    "location": "Apollo Hospitals International Limited Ahmedabad",
+    "languages": "English",
+    "qualification": "MBBS, MS (Gen Surgery); M.Ch(urology)",
+    "timing": "MON- SAT, MON- SAT | MON- SAT, MON- SAT | MON- SAT, MON- SAT\n(09:00 AM-12:00 PM | 12:00 PM-02:00 PM | 02:00 PM-03:00 PM)\nBOOK APPOINTMENT",
+    "photo_url": "N/A"
+  },
+  {
+    "name": "Dr Rohit Bhattar",
+    "specialization_experience": "Urology| 12 years exp",
+    "location": "Apollo Hospitals International Limited Ahmedabad",
+    "languages": "English, ગુજરાતી, हिंदी",
+    "qualification": "MBBS, MS, MCh (Urology), Fellowship in Uro-oncology and Robotic Urology (United Kingdom) Urologist, Uro-oncologist and Robotic Urologist, Andrologist and Renal transplant surgeon Dedicated clinical fellowship in Uro-oncology and Robotic Surgery (Manchester &Liverpool, United Kingdom) Fellowship in Department of urology and Robotic sciences (PGIMER Chandigarh and MPUH, Nadiad, Gujarat ) AUA USI travelling fellowship (NAUS)",
+    "timing": "TUE, FRI, SAT, TUE, FRI, SAT | MON, WED, MON, WED\n(10:00 AM-04:30 PM | 01:00 PM-05:00 PM)\nBOOK APPOINTMENT",
+    "photo_url": "N/A"
+  },
+  {
+    "name": "Dr Aishwarya R",
+    "specialization_experience": "Infectious Diseases| 6 years exp",
+    "location": "Apollo Hospitals International Limited Ahmedabad",
+    "languages": "English, हिंदी, ಕನ್ನಡ, தமிழ்",
+    "qualification": "MBBS, DM (Infectious diseases)",
+    "timing": "MON- SAT\n(11:00 AM-02:00 PM)\nBOOK APPOINTMENT",
+    "photo_url": "N/A"
+  },
+  {
+    "name": "Dr Akash Shah",
+    "specialization_experience": "Oncology| 5 years exp",
+    "location": "Apollo Hospitals International Limited Ahmedabad",
+    "languages": "English, ગુજરાતી, हिंदी",
+    "qualification": "MBBS; MD(GenMed); DM(MedicalOncology)",
+    "timing": "MON- SAT, MON- SAT\n(02:30 PM-04:30 PM)\nBOOK APPOINTMENT",
+    "photo_url": "N/A"
+  },
+  {
+    "name": "Dr Ambika Gupta",
+    "specialization_experience": "Medical Genetics| 12 years exp",
+    "location": "Apollo Hospitals International Limited Ahmedabad",
+    "languages": "English, हिंदी",
+    "qualification": "MBBS, MD Pediatrics, DM Medical Genetics (AIIMS, New Delhi)",
+    "timing": "MON- SAT\n(09:00 AM-05:00 PM)\nBOOK APPOINTMENT",
+    "photo_url": "N/A"
+  },
+  {
+    "name": "Dr Anagha Santosh Zope",
+    "specialization_experience": "Breast Surgery| 8 years exp",
+    "location": "Apollo Hospitals International Limited Ahmedabad",
+    "languages": "English, ગુજરાતી, हिंदी, मराठी",
+    "qualification": "MBBS, MS (Gen Surgery)",
+    "timing": "TUE, THU, SAT | MON, WED, FRI\n(02:00 PM-04:00 PM | 11:00 AM-01:00 PM)\nBOOK APPOINTMENT",
+    "photo_url": "N/A"
+  },
+  {
+    "name": "Dr Aniket Dave",
+    "specialization_experience": "Plastic Surgery| 10 years exp",
+    "location": "Apollo Hospitals International Limited Ahmedabad",
+    "languages": "English, ગુજરાતી, हिंदी",
+    "qualification": "MCh- Plastic and Reconstructive Surgery,MRCSEd, MS- General Surgery",
+    "timing": "TUE- SAT, TUE- SAT\n(10:00 AM-01:00 PM)\nBOOK APPOINTMENT",
+    "photo_url": "N/A"
+  },
+  {
+    "name": "Dr Anshul Warman",
+    "specialization_experience": "Dermatology| 10 years exp",
+    "location": "Apollo Hospitals International Limited Ahmedabad",
+    "languages": "English, ગુજરાતી, हिंदी",
+    "qualification": "MBBS, MD(DERMATOLOGY), DNB(Dermatology & Venereology)",
+    "timing": "MON- SAT, MON- SAT\n(02:00 PM-03:30 PM)\nBOOK APPOINTMENT",
+    "photo_url": "N/A"
+  },
+  {
+    "name": "Dr Apurva Shah",
+    "specialization_experience": "Gastroenterology, Transplant Surgery| 7 years exp",
+    "location": "Apollo Hospitals International Limited Ahmedabad",
+    "languages": "English, ગુજરાતી, हिंदी",
+    "qualification": "M.B.B.S. M.D. Internal Medicine DNB Gastroenterology",
+    "timing": "MON- SAT, MON- SAT\n(11:00 AM-05:00 PM)\nBOOK APPOINTMENT",
+    "photo_url": "N/A"
+  },
+  {
+    "name": "Dr Chirag A Shah",
+    "specialization_experience": "Haemato Oncology & Bmt| 25 years exp",
+    "location": "Apollo Hospitals International Limited Ahmedabad",
+    "languages": "English, ગુજરાતી, हिंदी",
+    "qualification": "MBBS, Diplomate American Board of Oncology, Dip of American Board of Hematology, Dip of American Board of Internal Medicine",
+    "timing": "MON- FRI | MON- FRI\n(10:00 AM-11:30 AM | 11:30 AM-01:00 PM)\nBOOK APPOINTMENT",
+    "photo_url": "N/A"
+  },
+  {
+    "name": "Dr Chirag Amin",
+    "specialization_experience": "Radiation Oncology| 10 years exp",
+    "location": "Apollo Hospitals International Limited Ahmedabad",
+    "languages": "English, ગુજરાતી, हिंदी",
+    "qualification": "MBBS; MD (Radiotheraphy)",
+    "timing": "MON- FRI, MON- FRI | SAT, SAT\n(10:00 AM-04:00 PM | 11:30 AM-02:00 PM)\nBOOK APPOINTMENT",
+    "photo_url": "N/A"
+  },
+  {
+    "name": "Dr Chirag Desai",
+    "specialization_experience": "Surgical Gastroenterology, Transplant Surgery| 19 years exp",
+    "location": "Apollo Hospitals International Limited Ahmedabad",
+    "languages": "English, ગુજરાતી, हिंदी",
+    "qualification": "MBBS, MS(GEN.SURGERY), DNB (GASTRO SURGERY), FRCS(Edin), FRCS(Glasg), UK",
+    "timing": "MON- FRI, MON- SAT, SAT\n(11:00 AM-04:00 PM)\nBOOK APPOINTMENT",
+    "photo_url": "N/A"
+  },
+  {
+    "name": "Dr Chirag Shah",
+    "specialization_experience": "Dental| 7 years exp",
+    "location": "Apollo Hospitals International Limited Ahmedabad",
+    "languages": "English, ગુજરાતી, हिंदी",
+    "qualification": "BDS",
+    "timing": "MON- SAT, MON- SAT\n(11:00 AM-03:00 PM)\nBOOK APPOINTMENT",
+    "photo_url": "N/A"
+  },
+  {
+    "name": "Dr Deepak Malhotra",
+    "specialization_experience": "Neurosurgery| 14 years exp",
+    "location": "Apollo Hospitals International Limited Ahmedabad",
+    "languages": "English",
+    "qualification": "MBBS, MS, MCH(Neurosurgery)",
+    "timing": "MON- SAT, MON- SAT\n(11:30 AM-04:00 PM)\nBOOK APPOINTMENT",
+    "photo_url": "N/A"
+  },
+  {
+    "name": "Dr Deepti Pai Dave",
+    "specialization_experience": "Paediatric Surgery| 8 years exp",
+    "location": "Apollo Hospitals International Limited Ahmedabad",
+    "languages": "English, ગુજરાતી, हिंदी, ಕೊಂಕಣಿ",
+    "qualification": "MBBS, MS (General surgery), M.Ch. (Paediatric surgery)",
+    "timing": "MON- SAT, MON- SAT\n(10:00 AM-05:00 PM)\nBOOK APPOINTMENT",
+    "photo_url": "N/A"
+  },
+  {
+    "name": "Dr Devashish Vyas",
+    "specialization_experience": "Neurology| 12 years exp",
+    "location": "Apollo Hospitals International Limited Ahmedabad",
+    "languages": "English, ગુજરાતી, हिंदी",
+    "qualification": "MD (Gen Medicine), DNB (Neurology), FNVI",
+    "timing": "MON- SAT, MON- SAT\n(11:00 AM-03:00 PM)\nBOOK APPOINTMENT",
+    "photo_url": "N/A"
+  },
+  {
+    "name": "Dr Deven Shah",
+    "specialization_experience": "Family Medicine, Endocrinology| 10 years exp",
+    "location": "Apollo Hospitals International Limited Ahmedabad",
+    "languages": "English, ગુજરાતી, हिंदी",
+    "qualification": "DNB FAMILYMEDICINE, ECFMG CERTIFIED, FELLOW OF DIABETES AT JOHN HOPKINS",
+    "timing": "MON- SAT, MON- SAT\n(02:00 PM-04:00 PM)\nBOOK APPOINTMENT",
+    "photo_url": "N/A"
+  },
+  {
+    "name": "Dr Dhiraj Saxena",
+    "specialization_experience": "Respiratory Medicine| 12 years exp",
+    "location": "Apollo Hospitals International Limited Ahmedabad",
+    "languages": "English, ગુજરાતી, हिंदी",
+    "qualification": "M.D,(TB & Respiratory Medicine) PGDHHM, FHBM (Hyperbaric medicine)",
+    "timing": "MON- SAT\n(10:00 AM-05:00 PM)\nBOOK APPOINTMENT",
+    "photo_url": "N/A"
+  },
+  {
+    "name": "Dr Haresh Patel",
+    "specialization_experience": "Nephrology, Transplant Surgery| 16 years exp",
+    "location": "Apollo Hospitals International Limited Ahmedabad",
+    "languages": "English, ગુજરાતી, हिंदी",
+    "qualification": "MBBS, MD (Medicine), DM (Nephrology)",
+    "timing": "MON- WED, FRI, MON- WED, FRI\n(01:30 PM-04:00 PM)\nBOOK APPOINTMENT",
+    "photo_url": "N/A"
+  },
+  {
+    "name": "Dr Harsh Shah",
+    "specialization_experience": "Surgical Oncology| 15 years exp",
+    "location": "Apollo Hospitals International Limited Ahmedabad",
+    "languages": "English, ગુજરાતી, हिंदी",
+    "qualification": "MS(General Surgery), MCh(Surgical gastroenterology)",
+    "timing": "SUN- SAT, MON- SAT\n(09:00 AM-05:00 PM)\nBOOK APPOINTMENT",
+    "photo_url": "N/A"
+  },
+  {
+    "name": "Dr Hasit Joshi",
+    "specialization_experience": "Cardiology| 19 years exp",
+    "location": "Apollo Hospitals International Limited Ahmedabad",
+    "languages": "English, ગુજરાતી, हिंदी",
+    "qualification": "MBBS, MD(MED), DM(CARDIOLOGY)",
+    "timing": "MON- SAT, MON- SAT\n(11:00 AM-01:00 PM)\nBOOK APPOINTMENT",
+    "photo_url": "N/A"
+  },
+  {
+    "name": "Dr Jay K Shah",
+    "specialization_experience": "Paediatrics & Neonatology| 5 years exp",
+    "location": "Apollo Hospitals International Limited Ahmedabad",
+    "languages": "English, ગુજરાતી, हिंदी",
+    "qualification": "MBBS, DCH, DNB, IDPCCM, DPAA",
+    "timing": "MON- SAT, MON- SAT | MON- SAT, MON- SAT\n(02:30 PM-04:30 PM | 09:00 AM-01:30 PM)\nBOOK APPOINTMENT",
+    "photo_url": "N/A"
+  },
+  {
+    "name": "Dr Jay Kothari",
+    "specialization_experience": "Critical Care| 17 years exp",
+    "location": "Apollo Hospitals International Limited Ahmedabad",
+    "languages": "English, ગુજરાતી, हिंदी",
+    "qualification": "MD (Anesthesia), DNB (Critical Care)",
+    "timing": "MON- SAT, MON- SAT\n(02:00 PM-04:00 PM)\nBOOK APPOINTMENT",
+    "photo_url": "N/A"
+  },
+  {
+    "name": "Dr Jay Prakash Neema",
+    "specialization_experience": "Radiation Oncology| 30 years exp",
+    "location": "Apollo Hospitals International Limited Ahmedabad",
+    "languages": "English, ગુજરાતી, हिंदी",
+    "qualification": "M D(Radiotherapy)",
+    "timing": "SAT, SAT | MON- FRI, MON- FRI\n(10:00 AM-01:00 PM | 10:00 AM-02:00 PM)\nBOOK APPOINTMENT",
+    "photo_url": "N/A"
+  },
+  {
+    "name": "Dr Jayesh Prajapati",
+    "specialization_experience": "Cardiology| 19 years exp",
+    "location": "Apollo Hospitals International Limited Ahmedabad",
+    "languages": "English, ગુજરાતી, हिंदी",
+    "qualification": "MBBS, MD(MED), DM(CARDIOLOGY)",
+    "timing": "MON | TUE | WED | THU- SAT\n(02:00 PM-04:00 PM | 10:00 AM-12:00 PM, 02:00 PM-04:00 PM | 02:00 PM-04:00 PM | 10:00 AM-12:00 PM, 02:00 PM-04:00 PM)\nBOOK APPOINTMENT",
+    "photo_url": "N/A"
+  },
+  {
+    "name": "Dr Kamlesh Wadhwani",
+    "specialization_experience": "Plastic Surgery| 10 years exp",
+    "location": "Apollo Hospitals International Limited Ahmedabad",
+    "languages": "English, ગુજરાતી, हिंदी",
+    "qualification": "MS (Gen Surgery), M.Ch(Plastic Surgery)",
+    "timing": "MON- SAT, MON- SAT\n(10:00 AM-12:00 PM)\nBOOK APPOINTMENT",
+    "photo_url": "N/A"
+  },
+  {
+    "name": "Dr Kashmira Jhala",
+    "specialization_experience": "Pulmonology| 14 years exp",
+    "location": "Apollo Hospitals International Limited Ahmedabad",
+    "languages": "English, ગુજરાતી, हिंदी",
+    "qualification": "MBBS, DTDC, MD(Chest Medicine)",
+    "timing": "MON, WED, MON, WED | TUE, THU, FRI, TUE, THU, FRI | FRI, FRI\n(11:30 AM-03:00 PM | 12:00 PM-02:00 PM | 02:00 PM-03:30 PM)\nBOOK APPOINTMENT",
+    "photo_url": "N/A"
+  }
+]

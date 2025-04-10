@@ -5,6 +5,7 @@ import Customer from '../Animation/Rating';
 import StepProcess from '../Animation/StepProcess';
 import Button from '../Animation/Button';
 import {useNavigate } from 'react-router';
+import AyurvedicHealthSection from '../Animation/Infinte';
 
 
 export default function Home() {
@@ -14,76 +15,90 @@ export default function Home() {
  
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-black via-gray-950 to-gray-900 text-gray-100 overflow-hidden">
-      <section className="w-full flex flex-col justify-center items-center pt-12 pb-20 bg-gradient-to-t from-gray-950 via-gray-800 to-transparent">
-        <h2 className="text-6xl text-center font-extrabold tracking-wide text-green-400">
-          Personalized Care for a Healthier Tomorrow
-        </h2>
+    // <div className="min-h-screen  text-gray-100 overflow-hidden">
 
-        <h4 className="text-3xl text-center font-semibold text-gray-300 max-w-3xl mt-6">
-          Your one-stop platform for Ayurvedic wellness, medical guidance, and smart health solutions.
-        </h4>
+    <>
+     {/* <section className="w-full flex flex-col justify-center items-center pt-12 pb-20 bg-gradient-to-t from-amber-100 via-white to-transparent transition-all duration-700 ease-in-out"> */}
+  
 
-        <div className="flex justify-center mt-6">
-          <Button text="Nearby Hospitals" onClick={()=>navigate('/Pincode')} />
-        </div>
+  <AyurvedicHealthSection/>
+{/* </section> */}
 
-        <h3 className="text-2xl text-center font-semibold text-green-300 tracking-wide m-10">
-          Rooted in Ayurveda, Trusted by Many
-        </h3>
+<section className="w-full flex flex-col justify-center items-center pt-12 pb-20 bg-gradient-to-b from-amber-100 via-amber-100 to-amber-200">
+  <h1 className="text-5xl text-center font-extrabold tracking-wide text-amber-700 m-10">
 
-        <Infinite />
-      </section>
+    Ayufit: AI-Powered Diet & Fitness for Better Health
+  </h1>
 
-      <section className="w-full flex flex-col justify-center items-center pt-12 pb-20 bg-gradient-to-b from-gray-950 via-gray-950 to-transparent">
-        <h1 className="text-5xl text-center font-extrabold tracking-wide text-green-400 m-10">
-          Ayufit: AI-Powered Diet & Fitness for Better Health
-        </h1>
+  <h3 className="text-3xl text-center font-semibold text-amber-600 m-10">
+    Struggling with diabetes, BP, or asthma? Get AI-powered diet & workout plans backed by Ayurveda!
+  </h3>
 
-        <h3 className="text-3xl text-center font-semibold text-gray-300 m-10">
-          Struggling with diabetes, BP, or asthma? Get AI-powered diet & workout plans backed by Ayurveda!
-        </h3>
+  {/* <h1 className="text-6xl font-extrabold text-green-400 tracking-wide m-10">
+    How It Works?
+  </h1> */}
 
-        <h1 className="text-6xl font-extrabold text-green-400 tracking-wide m-10">
-          How It Works?
-        </h1>
+  <div className="w-full flex justify-center mt-6">
+    <StepProcess />
+  </div>
+</section>
 
-        <div className="w-full flex justify-center mt-6">
-          <StepProcess />
-        </div>
-      </section>
 
-      <section className="w-full flex flex-col justify-center items-center pt-12 pb-10 bg-gradient-to-t from-gray-950 via-gray-950 to-transparent">
-        <h1 className="text-6xl text-center font-extrabold tracking-wide text-green-400">
-          Ayumed: Your One-Stop Shop for Health & Wellness
-        </h1>
 
-        <h3 className="text-3xl text-center font-semibold text-gray-300 max-w-3xl mt-6">
-          Shop medical essentials and Ayurvedic solutions for a healthier life—trusted, safe, and effective.
-        </h3>
 
-        <div className="w-full flex justify-center mt-6">
-          <MiniShop />
-        </div>
-      </section>
 
-      <section className="w-full flex flex-col justify-center items-center pt-6 pb-20 bg-gradient-to-t from-black via-gray-950">
-        <h1 className="text-6xl text-center font-extrabold tracking-wide m-5 text-green-400">
-          AyuDoctor: Find & Book Ayurvedic Doctors Near You
-        </h1>
 
-        <h3 className="text-3xl text-center font-semibold text-gray-300 max-w-5xl mt-10">
-          Connect with expert Ayurvedic doctors and book hassle-free appointments for natural healing and wellness.
-        </h3>
 
-        <div className="w-full flex justify-center mt-6">
-          <Appointment />
-        </div>
-      </section>
+
+
+
+
+
+
+
+
+<section className="w-full flex flex-col justify-center items-center pt-12 pb-20 bg-gradient-to-b from-amber-200 via-amber-100 to-amber-200">
+  <h1 className="text-5xl text-center font-extrabold tracking-wide text-amber-700 m-10">
+  Ayumed: Your One-Stop Shop for Health & Wellness  </h1>
+
+  <h3 className="text-3xl text-center font-semibold text-amber-600 m-10">
+  Shop medical essentials and Ayurvedic solutions for a healthier life—trusted, safe, and effective.
+  </h3>
+
+  {/* <h1 className="text-6xl font-extrabold text-green-400 tracking-wide m-10">
+    How It Works?
+  </h1> */}
+
+  <div className="w-full flex justify-center mt-6">
+  <MiniShop />
+  </div>
+</section>
+
+
+
+
+
+
+<section className="w-full flex flex-col justify-center items-center pt-12 pb-20 bg-gradient-to-b from-amber-100 via-amber-100 to-amber-100">
+  <h1 className="text-5xl text-center font-extrabold tracking-wide text-amber-700 m-10">
+  AyuDoctor: Find & Book Ayurvedic Doctors Near You
+  </h1>
+
+  <h3 className="text-3xl text-center font-semibold text-amber-600 m-10">
+  Connect with expert Ayurvedic doctors and book hassle-free appointments for natural healing and wellness.
+  </h3>
+
+  
+
+  <div className="w-full flex justify-center mt-6">
+  <Appointment />
+  </div>
+</section>
+
+
+
 
       <Customer />
-
-      
-    </div>
+    </>
   );
 }

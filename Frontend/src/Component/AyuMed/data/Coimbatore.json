@@ -1,0 +1,65 @@
+[
+  {
+    "name": "Dr Abdul Salam",
+    "specialization_experience": "Orthopaedic Surgeon|",
+    "location": "Apollo Clinic Coimbatore",
+    "languages": "English, हिंदी, தமிழ்",
+    "qualification": "M..S.(Ortho), MRCS, M.D (USA)",
+    "timing": "MON- SAT\n(06:00 PM-08:00 PM)\nBOOK APPOINTMENT",
+    "photo_url": "N/A"
+  },
+  {
+    "name": "Dr Anjana G Nath",
+    "specialization_experience": "Dental|",
+    "location": "Apollo Clinic Coimbatore",
+    "languages": "English, हिंदी, മലയാളം, தமிழ்",
+    "qualification": "Bachelor of Dental Surgery (BDS)",
+    "timing": "MON- SAT\n(10:30 AM-05:00 PM)\nBOOK APPOINTMENT",
+    "photo_url": "N/A"
+  },
+  {
+    "name": "Dr Bhargavi K G",
+    "specialization_experience": "Orthodontics And Dentofacial Orthopedic| 10 years exp",
+    "location": "Apollo Dental Saravanampatti",
+    "languages": "English, हिंदी, தமிழ்",
+    "qualification": "MDS",
+    "timing": "MON- SAT\n(09:45 AM-08:00 PM)\nBOOK APPOINTMENT",
+    "photo_url": "N/A"
+  },
+  {
+    "name": "Dr Dr Amsaveni",
+    "specialization_experience": "Diabetology| 12 years exp",
+    "location": "Apollo Sugar Clinics Coimbatore",
+    "languages": "English, हिंदी, русский, தமிழ்",
+    "qualification": "MD(physician), FCD(Diabetes), FDFM (Diabetic foot management)",
+    "timing": "MON- SAT\n(08:00 AM-08:00 PM)\nBOOK APPOINTMENT",
+    "photo_url": "N/A"
+  },
+  {
+    "name": "Dr Monica Sudha Sai",
+    "specialization_experience": "Dental, General Dentistry| 5 years exp",
+    "location": "Apollo Dental Vadavalli",
+    "languages": "English, தமிழ்",
+    "qualification": "BDS",
+    "timing": "MON- SAT\n(09:45 AM-04:00 PM)\nBOOK APPOINTMENT",
+    "photo_url": "N/A"
+  },
+  {
+    "name": "Dr Senthil K",
+    "specialization_experience": "Urology|",
+    "location": "Apollo Clinic Coimbatore",
+    "languages": "English, മലയാളം, தமிழ்",
+    "qualification": "M.S (General Surgery) Mch (Uro), FRCS (edin)",
+    "timing": "MON- SAT\n(06:00 PM-08:00 PM)\nBOOK APPOINTMENT",
+    "photo_url": "N/A"
+  },
+  {
+    "name": "Dr Shraddha Kardile",
+    "specialization_experience": "Physician|",
+    "location": "Apollo Clinic Coimbatore",
+    "languages": "English, हिंदी, मराठी",
+    "qualification": "MBBS",
+    "timing": "MON- SAT\n(10:30 AM-01:00 PM, 04:00 PM-08:00 PM)\nBOOK APPOINTMENT",
+    "photo_url": "N/A"
+  }
+]

@@ -1,0 +1,56 @@
+[
+  {
+    "name": "Dr Anand Kumar Goyal",
+    "specialization_experience": "Orthopaedics| 30 years exp",
+    "location": "Apollo Clinic Dehradun",
+    "languages": "English, हिंदी",
+    "qualification": "MBBS, MS ORTHO",
+    "timing": "MON- SAT\n(11:00 AM-07:00 PM)\nBOOK APPOINTMENT",
+    "photo_url": "N/A"
+  },
+  {
+    "name": "Dr Apoorva Pandey",
+    "specialization_experience": "Ent| 10 years exp",
+    "location": "Apollo Clinic Dehradun",
+    "languages": "English, हिंदी",
+    "qualification": "MBBS, MS",
+    "timing": "MON- SAT\n(05:00 PM-06:00 PM)\nBOOK APPOINTMENT",
+    "photo_url": "N/A"
+  },
+  {
+    "name": "Dr Arvind Kumar Singh",
+    "specialization_experience": "General Physician| 25 years exp",
+    "location": "Apollo Clinic Dehradun",
+    "languages": "English, हिंदी",
+    "qualification": "MBBS",
+    "timing": "MON- SAT\n(11:00 AM-07:00 PM)\nBOOK APPOINTMENT",
+    "photo_url": "N/A"
+  },
+  {
+    "name": "Dr N K Madan",
+    "specialization_experience": "General Medicine| 30 years exp",
+    "location": "Apollo Clinic Dehradun",
+    "languages": "English, हिंदी",
+    "qualification": "MBBS, MD",
+    "timing": "MON- SAT\n(10:30 AM-12:30 PM, 06:00 PM-08:00 PM)\nBOOK APPOINTMENT",
+    "photo_url": "N/A"
+  },
+  {
+    "name": "Dr Rahul Agarwal",
+    "specialization_experience": "Orthopaedics| 13 years exp",
+    "location": "Apollo Clinic Dehradun",
+    "languages": "English, हिंदी",
+    "qualification": "MBBS, MS ORTHO",
+    "timing": "MON- SAT\n(11:00 AM-07:00 PM)\nBOOK APPOINTMENT",
+    "photo_url": "N/A"
+  },
+  {
+    "name": "Dr Sooraj Rana",
+    "specialization_experience": "General Medicine| 10 years exp",
+    "location": "Apollo Clinic Dehradun",
+    "languages": "English, हिंदी",
+    "qualification": "MBBS",
+    "timing": "MON- SAT\n(11:00 AM-07:00 PM)\nBOOK APPOINTMENT",
+    "photo_url": "N/A"
+  }
+]

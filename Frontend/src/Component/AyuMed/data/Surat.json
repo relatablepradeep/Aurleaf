@@ -1,0 +1,92 @@
+[
+  {
+    "name": "Dr Ashish Patel",
+    "specialization_experience": "Opthalmology|",
+    "location": "Apollo Clinic Surat",
+    "languages": "English, ગુજરાતી, हिंदी",
+    "qualification": "M.S.(Opthal)",
+    "timing": "MON, WED, FRI\n(09:00 AM-10:00 AM)\nBOOK APPOINTMENT",
+    "photo_url": "N/A"
+  },
+  {
+    "name": "Dr Dishant Shah",
+    "specialization_experience": "Opthalmology|",
+    "location": "Apollo Clinic Surat",
+    "languages": "English, ગુજરાતી, हिंदी",
+    "qualification": "MBBS(Opthal)",
+    "timing": "MON- SAT\n(09:00 AM-10:00 AM)\nBOOK APPOINTMENT",
+    "photo_url": "N/A"
+  },
+  {
+    "name": "Dr Falguni Patel",
+    "specialization_experience": "Obstetrics & Gynecology|",
+    "location": "Apollo Clinic Surat",
+    "languages": "English, ગુજરાતી, हिंदी",
+    "qualification": "MD(Obst&Gyn)",
+    "timing": "MON- SAT\n(10:00 AM-11:00 AM)\nBOOK APPOINTMENT",
+    "photo_url": "N/A"
+  },
+  {
+    "name": "Dr Manish Singhvi",
+    "specialization_experience": "Physician|",
+    "location": "Apollo Clinic Surat",
+    "languages": "English, ગુજરાતી, हिंदी",
+    "qualification": "MD",
+    "timing": "MON- SAT\n(08:00 AM-10:30 AM)\nBOOK APPOINTMENT",
+    "photo_url": "N/A"
+  },
+  {
+    "name": "Dr Minaz Charmia",
+    "specialization_experience": "Diet & Nutrition|",
+    "location": "Apollo Clinic Surat",
+    "languages": "English, ગુજરાતી, हिंदी",
+    "qualification": "MHSC(F.N.)",
+    "timing": "MON- SAT\n(05:00 PM-06:00 PM)\nBOOK APPOINTMENT",
+    "photo_url": "N/A"
+  },
+  {
+    "name": "Dr Minesh Modi",
+    "specialization_experience": "Laproscopy Surgery|",
+    "location": "Apollo Clinic Surat",
+    "languages": "English, ગુજરાતી, हिंदी",
+    "qualification": "M.S.(Gen.Surgery)",
+    "timing": "TUE, SAT\n(09:00 AM-10:00 AM)\nBOOK APPOINTMENT",
+    "photo_url": "N/A"
+  },
+  {
+    "name": "Dr Nilay Desai",
+    "specialization_experience": "Physician|",
+    "location": "Apollo Clinic Surat",
+    "languages": "English, ગુજરાતી, हिंदी",
+    "qualification": "MD,AFHI",
+    "timing": "MON- SAT\n(10:00 AM-11:30 AM, 05:00 PM-06:00 PM)\nBOOK APPOINTMENT",
+    "photo_url": "N/A"
+  },
+  {
+    "name": "Dr Parulben Kajaliya",
+    "specialization_experience": "Audiology|",
+    "location": "Apollo Clinic Surat",
+    "languages": "English, ગુજરાતી, हिंदी, मराठी",
+    "qualification": "Bachelor in Audiology And Speech Rehabilitatation",
+    "timing": "MON- SAT\n(09:30 AM-10:30 AM)\nBOOK APPOINTMENT",
+    "photo_url": "N/A"
+  },
+  {
+    "name": "Dr Premal Naik",
+    "specialization_experience": "Orthopaedic Surgeon|",
+    "location": "Apollo Clinic Surat",
+    "languages": "English, ગુજરાતી, हिंदी",
+    "qualification": "M.S. D.N.B.(Ortho.)",
+    "timing": "SAT\n(10:00 AM-05:00 PM)\nBOOK APPOINTMENT",
+    "photo_url": "N/A"
+  },
+  {
+    "name": "Dr Vishhnu D",
+    "specialization_experience": "Cardiology| 11 years exp",
+    "location": "Apollo Clinic Surat",
+    "languages": "English",
+    "qualification": "MBBS",
+    "timing": "MON, WED\n(08:00 AM-10:10 AM)\nBOOK APPOINTMENT",
+    "photo_url": "N/A"
+  }
+]

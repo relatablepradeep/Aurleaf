@@ -1,0 +1,128 @@
+[
+  {
+    "name": "Dr Abhay Kumar",
+    "specialization_experience": "General Surgery| 13 years exp",
+    "location": "Big Apollo Spectra Hospitals Patna",
+    "languages": "English, हिंदी",
+    "qualification": "MS FMAS",
+    "timing": "MON- SAT\n(11:00 AM-06:00 PM)\nBOOK APPOINTMENT",
+    "photo_url": "N/A"
+  },
+  {
+    "name": "Dr Amit Kumar Sinha",
+    "specialization_experience": "Orthopaedics| 8 years exp",
+    "location": "Big Apollo Spectra Hospitals Patna",
+    "languages": "English, हिंदी",
+    "qualification": "MBBS D.N.B (Orthopedic)",
+    "timing": "MON, WED- SAT\n(10:00 AM-05:00 PM)\nBOOK APPOINTMENT",
+    "photo_url": "N/A"
+  },
+  {
+    "name": "Dr Anil Kumar Singh",
+    "specialization_experience": "Endocrinology| 21 years exp",
+    "location": "Big Apollo Spectra Hospitals Patna",
+    "languages": "English, हिंदी",
+    "qualification": "MD, Medicine, DNB (Medicine) DM, Endocrinology, DNB",
+    "timing": "MON- FRI\n(03:00 PM-05:00 PM)\nBOOK APPOINTMENT",
+    "photo_url": "N/A"
+  },
+  {
+    "name": "Dr Bindu Sinha",
+    "specialization_experience": "Gynaecology| 30 years exp",
+    "location": "Big Apollo Spectra Hospitals Patna",
+    "languages": "English, हिंदी",
+    "qualification": "Ex Prof. (OBS and Gynee), MD,DGO, DNB, New Delhi MRCOG1",
+    "timing": "MON- SAT\n(03:00 PM-05:00 PM)\nBOOK APPOINTMENT",
+    "photo_url": "N/A"
+  },
+  {
+    "name": "Dr Deepak K",
+    "specialization_experience": "Gastroenterology| 7 years exp",
+    "location": "Big Apollo Spectra Hospitals Patna",
+    "languages": "English, हिंदी",
+    "qualification": "MD, DNB",
+    "timing": "MON, TUE | WED- FRI | SAT\n(11:00 AM-05:00 PM | 11:00 AM-06:00 PM | 11:00 AM-05:00 PM)\nBOOK APPOINTMENT",
+    "photo_url": "N/A"
+  },
+  {
+    "name": "Dr Farogh Haidry",
+    "specialization_experience": "General Medicine| 5 years exp",
+    "location": "Big Apollo Spectra Hospitals Patna",
+    "languages": "English, हिंदी",
+    "qualification": "MBBS MD",
+    "timing": "MON- SAT\n(10:00 AM-04:30 PM)\nBOOK APPOINTMENT",
+    "photo_url": "N/A"
+  },
+  {
+    "name": "Dr Firoz Alam",
+    "specialization_experience": "General & Lap Surgery| 5 years exp",
+    "location": "Big Apollo Spectra Hospitals Patna",
+    "languages": "English, हिंदी",
+    "qualification": "MBBS M.S (General Medicine",
+    "timing": "MON- SAT\n(10:00 AM-04:00 PM)\nBOOK APPOINTMENT",
+    "photo_url": "N/A"
+  },
+  {
+    "name": "Dr Kamlesh Kumar",
+    "specialization_experience": "Cardiology| 6 years exp",
+    "location": "Big Apollo Spectra Hospitals Patna",
+    "languages": "English, हिंदी",
+    "qualification": "MBBS MD (General Medicine)",
+    "timing": "MON- WED, FRI, SAT\n(02:00 PM-06:00 PM)\nBOOK APPOINTMENT",
+    "photo_url": "N/A"
+  },
+  {
+    "name": "Dr Kumar Rohit",
+    "specialization_experience": "Urology| 6 years exp",
+    "location": "Big Apollo Spectra Hospitals Patna",
+    "languages": "English, हिंदी",
+    "qualification": "MBBS, MS, M.ch (Urology)",
+    "timing": "MON- FRI\n(10:00 AM-04:00 PM)\nBOOK APPOINTMENT",
+    "photo_url": "N/A"
+  },
+  {
+    "name": "Dr Nasib Iqbal Iqbal",
+    "specialization_experience": "Neurology| 11 years exp",
+    "location": "Big Apollo Spectra Hospitals Patna",
+    "languages": "English, हिंदी",
+    "qualification": "MBBS MS (General Surgery ) MCh (Neurosurgery )",
+    "timing": "MON- SAT\n(12:00 PM-02:30 PM)\nBOOK APPOINTMENT",
+    "photo_url": "N/A"
+  },
+  {
+    "name": "Dr Pankaj Kumar",
+    "specialization_experience": "Gastroenterology| 13 years exp",
+    "location": "Big Apollo Spectra Hospitals Patna",
+    "languages": "English, हिंदी",
+    "qualification": "MBBS MD",
+    "timing": "MON- SAT\n(09:00 AM-05:00 PM)\nBOOK APPOINTMENT",
+    "photo_url": "N/A"
+  },
+  {
+    "name": "Dr Shivanand Prakash",
+    "specialization_experience": "Urology| 8 years exp",
+    "location": "Big Apollo Spectra Hospitals Patna",
+    "languages": "English, हिंदी",
+    "qualification": "MBBS MS (General Surgery ) MCh (Urology)",
+    "timing": "MON- FRI | SAT\n(03:00 PM-06:30 PM | 01:00 PM-06:30 PM)\nBOOK APPOINTMENT",
+    "photo_url": "N/A"
+  },
+  {
+    "name": "Dr Vijay Mittal",
+    "specialization_experience": "General Surgery| 30 years exp",
+    "location": "Big Apollo Spectra Hospitals Patna",
+    "languages": "English, हिंदी",
+    "qualification": "MS, ( Surgery ) FRCS",
+    "timing": "MON- SAT\n(12:00 PM-02:00 PM)\nBOOK APPOINTMENT",
+    "photo_url": "N/A"
+  },
+  {
+    "name": "Dr Vijay Prakash",
+    "specialization_experience": "Gastroenterology| 30 years exp",
+    "location": "Big Apollo Spectra Hospitals Patna",
+    "languages": "English, हिंदी",
+    "qualification": "MD,DNB,MRCP",
+    "timing": "MON- SAT\n(09:00 AM-03:00 PM)\nREQUEST   APPOINTMENT",
+    "photo_url": "N/A"
+  }
+]

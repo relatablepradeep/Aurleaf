@@ -1,136 +1,185 @@
-import { useState } from 'react';
-import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/clerk-react";
+import { useEffect, useState, useRef } from 'react';
+import { useNavigate } from 'react-router';
+import { Heart, Activity, Zap } from 'lucide-react';
+import disease_data from '../Ayufit/disease_data.json';
 
-const StepProcess = () => {
-  const [currentStep, setCurrentStep] = useState(1);
+export default function StepProcess() {
+  const [diseases, setDiseases] = useState([]);
+  const [activeCardIndex, setActiveCardIndex] = useState(4); // Center card (assuming 9 cards)
+  const navigate = useNavigate();
+  const cardsContainerRef = useRef(null);
 
-  const steps = [
-    { number: 1, title: "Login", description: "Create an account or sign in to get started." },
-    { number: 2, title: "Tell Us About You", description: "Enter your health details & lifestyle preferences." },
-    { number: 3, title: "Get Your Plan", description: "AI generates a personalized diet & workout plan for you." },
-    { number: 4, title: "Start Your Journey", description: "Follow the plan and track your progress!" }
-  ];
+  useEffect(() => {
+    setDiseases(disease_data.slice(0, 9)); // Show only 9 remedies for the ladder display
+  }, []);
 
-  const handleStepClick = (step) => {
-    setCurrentStep(step);
-  };
-
-  const handleNext = () => {
-    if (currentStep < 4) {
-      setCurrentStep(currentStep + 1);
+  const handleCardClick = (disease, index) => {
+    if (index === activeCardIndex) {
+      navigate(`/fitness/${encodeURIComponent(disease.alt_text || disease.disease_name)}`);
+    } else {
+      setActiveCardIndex(index);
     }
   };
 
-  const handlePrev = () => {
-    if (currentStep > 1) {
-      setCurrentStep(currentStep - 1);
+  // Process step boxes
+  // const processSteps = [
+  //   {
+  //     icon: <Activity className="text-amber-500" size={28} />,
+  //     title: "Tell Us Your Condition",
+  //     description: "Share your health concerns and symptoms with our AI"
+  //   },
+  //   {
+  //     icon: <Zap className="text-amber-500" size={28} />,
+  //     title: "Get Personalized Plan",
+  //     description: "Receive custom Ayurvedic diet & workout recommendations"
+  //   },
+  //   {
+  //     icon: <Heart className="text-amber-500" size={28} />,
+  //     title: "Improve Your Health",
+  //     description: "Follow the plan and track your progress over time"
+  //   }
+  // ];
+
+  // Calculate card positions and styles
+  const getCardStyle = (index) => {
+    const isCenterCard = index === activeCardIndex;
+    const distanceFromCenter = Math.abs(index - activeCardIndex);
+    
+    // Base styles
+    let transform = '';
+    let zIndex = 10 - distanceFromCenter;
+    let opacity = 1;
+    let scale = 1;
+    
+    if (distanceFromCenter > 0) {
+      // Side cards
+      const direction = index < activeCardIndex ? -1 : 1; // -1 for left, 1 for right
+      transform = `translateX(${direction * (distanceFromCenter * 40)}%) translateY(${distanceFromCenter * 5}%) scale(${1 - distanceFromCenter * 0.1})`;
+      opacity = 1 - (distanceFromCenter * 0.2);
+      scale = 1 - (distanceFromCenter * 0.1);
+    } else {
+      // Center card
+      transform = 'translateY(-5%) scale(1.05)';
+      zIndex = 20;
     }
+    
+    return {
+      transform,
+      zIndex,
+      opacity,
+      scale,
+      transition: 'all 0.4s ease-out'
+    };
   };
 
   return (
-    <div className="w-full mx-auto p-6 bg-gradient-to-t from-gray-950 via-gray-950 to-transparent rounded-lg shadow-lg text-gray-100">
-      <div className="flex flex-col md:flex-row gap-8">
-        
+    <section className="w-full flex flex-col justify-center items-center pt-12 pb-20 bg-gradient-to-b from-amber-100 via-amber-100 to-amber-200relative">
+      {/* Decorative elements */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute top-0 left-1/4 w-64 h-64 bg-amber-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-pulse"></div>
+        <div className="absolute bottom-0 right-1/4 w-64 h-64 bg-amber-700 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-pulse delay-700"></div>
+      </div>
       
-        <div className="relative md:w-1/3">
-          <div className="flex flex-col">
-            {steps.map((step, index) => (
-              <div 
-                key={step.number}
-                className="flex items-start mb-8 relative cursor-pointer"
-                onClick={() => handleStepClick(step.number)}
+      {/* Main Process Steps */}
+      <div className="w-full max-w-6xl px-4 mb-16">
+        {/* <div className="flex flex-col md:flex-row justify-between gap-6">
+          {processSteps.map((step, idx) => (
+            <div 
+              key={idx} 
+              className="flex-1 bg-white p-6 rounded-xl border border-amber-200 shadow-md transition-all duration-300 hover:shadow-lg hover:border-amber-500 relative overflow-hidden group"
+              style={{
+                animation: `fadeSlideUp 0.8s ease-out ${idx * 0.2}s both`
+              }}
+            >
+              <div className="absolute top-0 right-0 w-32 h-32 bg-amber-100 rounded-full -translate-x-16 -translate-y-16 group-hover:scale-150 transition-transform duration-700"></div>
+              <div className="mb-4 p-3 bg-amber-50 rounded-full border border-amber-200 inline-block relative z-10">
+                {step.icon}
+              </div>
+              <h3 className="text-xl font-bold text-amber-800 mb-2 font-['Verdana'] relative z-10">{step.title}</h3>
+              <p className="text-amber-700 font-['Georgia'] relative z-10">{step.description}</p>
+              <div className="absolute bottom-3 right-3 text-2xl font-bold text-amber-200">{idx + 1}</div>
+            </div>
+          ))}
+        </div> */}
+      </div>
+
+      {/* Staggered Card Layout */}
+      <div className="w-full max-w-6xl px-4">
+        <h3 className="text-2xl font-bold text-amber-800 mb-8 font-['Verdana'] relative inline-block">
+          <span>Explore Ayurvedic Remedies</span>
+          <span className="absolute -bottom-2 left-0 right-0 h-0.5 bg-gradient-to-r from-amber-500 via-amber-600 to-amber-500"></span>
+        </h3>
+        
+        <div className="relative h-96 mb-16" ref={cardsContainerRef}>
+          <div className="absolute inset-0 flex justify-center items-center">
+            {diseases.map((disease, idx) => (
+              <div
+                key={idx}
+                onClick={() => handleCardClick(disease, idx)}
+                className="absolute transition-all duration-300 cursor-pointer min-w-[260px] bg-white border border-amber-200 rounded-xl p-4 shadow-md hover:shadow-xl"
+                style={getCardStyle(idx)}
               >
-               
-                {index < steps.length - 1 && (
-                  <div className="absolute left-4 top-10 w-1 bg-gray-800 h-full -ml-px">
-                    <div 
-                      className="h-full bg-green-400 transition-all duration-500" 
-                      style={{ height: currentStep > step.number ? '100%' : '0%' }}
-                    />
+                <div className="relative overflow-hidden rounded-lg mb-4">
+                  <img
+                    src={disease.image_url || '/api/placeholder/260/150'}
+                    alt={disease.alt_text || 'Remedy'}
+                    className="w-full h-40 object-cover rounded-lg transition-all duration-500 hover:scale-110"
+                  />
+                  {idx === activeCardIndex && (
+                    <div className="absolute inset-0 bg-gradient-to-t from-amber-900/60 to-transparent flex items-end">
+                      <span className="text-white text-sm font-medium p-3">View Details</span>
+                    </div>
+                  )}
+                </div>
+                <h2 className="text-lg font-bold text-amber-800 font-['Verdana']">{disease.alt_text || 'Unnamed Remedy'}</h2>
+                <p className="text-sm text-amber-700 font-['Georgia']">{disease.disease_name || 'Traditional remedy'}</p>
+                {disease.symptoms?.length > 0 && idx === activeCardIndex && (
+                  <div className="mt-2 flex flex-wrap gap-1">
+                    {disease.symptoms.slice(0, 2).map((s, i) => (
+                      <span key={i} className="bg-amber-100 text-amber-800 text-xs px-2 py-1 rounded-full">
+                        {s.length > 20 ? s.substring(0, 20) + '...' : s}
+                      </span>
+                    ))}
                   </div>
                 )}
-                
-               
-                <div className={`rounded-full h-10 w-10 flex items-center justify-center text-lg font-bold 
-                  transition-all duration-300 shrink-0 border-2
-                  ${currentStep >= step.number ? 'bg-green-500 text-black border-green-300' : 'bg-gray-800 text-gray-400 border-gray-600'}
-                  ${currentStep === step.number ? 'ring-4 ring-green-400/50' : ''}`}>
-                  {step.number}
-                </div>
-                
-              
-                <div className="ml-5 flex-grow">
-                  <h3 className={`text-lg font-bold tracking-wide transition-colors 
-                    ${currentStep >= step.number ? 'text-green-400' : 'text-gray-500'}`}>
-                    {step.title}
-                  </h3>
-                  <p className="text-sm text-gray-400 mt-1">{step.description}</p>
-                </div>
+                {idx === activeCardIndex && (
+                  <button className="mt-3 w-full py-2 bg-amber-700 text-white rounded-lg hover:bg-amber-800 transition-colors font-medium">
+                    Learn More
+                  </button>
+                )}
               </div>
             ))}
           </div>
         </div>
         
-     
-        <div className="md:w-2/3">
-          <div className="mb-8 p-6 border border-gray-800 rounded-lg bg-gray-900 shadow-md">
-            <h2 className="text-2xl font-extrabold text-green-400 tracking-wide mb-2">
-              {currentStep}. {steps[currentStep-1].title}
-            </h2>
-            <p className="text-sm text-gray-300">
-              {steps[currentStep-1].description}
-            </p>
-            
-            <div className="h-32 mt-4 flex items-center justify-center rounded-lg bg-gray-800 border border-dashed border-gray-600">
-              <p className="text-gray-400">  
-                Login/Signup
-
-
-              </p>
-
-
-
-
-              <SignedOut>
-        <SignInButton />
-      </SignedOut>
-      
-      <SignedIn>
-        <UserButton />
-      </SignedIn>
-
-            </div>
-          </div>
-          
-        
-          <div className="flex justify-between">
-            <button 
-              onClick={handlePrev} 
-              className={`px-4 py-2 rounded-md font-medium text-sm sm:text-base transition-all duration-300 border 
-                ${currentStep === 1 
-                  ? 'bg-gray-800 text-gray-500 border-gray-700 cursor-not-allowed' 
-                  : 'bg-gray-700 text-white border-gray-600 hover:bg-gray-600'}
-              `}
-              disabled={currentStep === 1}
-            >
-              Previous
-            </button>
-            
-            <button 
-              onClick={handleNext} 
-              className={`px-4 py-2 rounded-md font-medium text-sm sm:text-base transition-all duration-300 border 
-                ${currentStep === 4 
-                  ? 'bg-green-500 text-black border-green-400 hover:bg-green-400' 
-                  : 'bg-green-400 text-black border-green-300 hover:bg-green-300'}
-              `}
-            >
-              {currentStep === 4 ? 'Get Started!' : 'Next'}
-            </button>
-          </div>
+        {/* Card Navigation Dots */}
+        <div className="flex justify-center gap-2 mb-8">
+          {diseases.map((_, idx) => (
+            <button
+              key={idx}
+              className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                idx === activeCardIndex ? 'bg-amber-700 w-6' : 'bg-amber-300 hover:bg-amber-500'
+              }`}
+              onClick={() => setActiveCardIndex(idx)}
+              aria-label={`View card ${idx + 1}`}
+            />
+          ))}
         </div>
       </div>
-    </div>
-  );
-};
 
-export default StepProcess;
+      {/* CSS for animations */}
+      <style jsx>{`
+        @keyframes fadeSlideUp {
+          from {
+            opacity: 0;
+            transform: translateY(20px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+      `}</style>
+    </section>
+  );
+}

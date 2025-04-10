@@ -7,63 +7,70 @@ function Nav() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="bg-white     bg-gradient-to-b from-black via-gray-800 to-black  transition-all     dark:bg-gray-900 shadow sticky  w-full z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600">
+    <nav className="bg-white bg-gradient-to-b from-amber-100 via-amber-50 to-white transition-all shadow sticky w-full z-20 top-0 start-0 border-b border-amber-200">
       <div className="max-w-screen-xl flex items-center justify-between mx-auto p-4">
-       
-
+        {/* Logo and Title */}
         <div className="flex items-center">
           <Link to="/" className="flex items-center space-x-3">
-            <img src={logo} className="h-28 w-auto" alt="Logo" />
-            <span className="text-4xl font-semibold  text-gray-900  hover:text-green-500 dark:text-white">Aurleaf</span>
+            <img src={logo} className="h-20 w-auto" alt="Logo" />
+            <span className="text-4xl font-semibold text-amber-900 hover:text-amber-600">Aurleaf</span>
           </Link>
         </div>
 
+        {/* Desktop Nav Links */}
         <div className="hidden md:flex md:space-x-8 absolute left-1/2 transform -translate-x-1/2">
-          <NavLink to="/fitness" className={(isActive)=>`${isActive?"text-gray-900":" hover:text-green-500"}`} className="text-2xl font-medium text-gray-900  hover:text-green-500 dark:text-white">
-          AyuFit
+          <NavLink
+            to="/fitness"
+            className={({ isActive }) =>
+              `text-2xl font-medium ${isActive ? "text-amber-900" : "text-amber-800 hover:text-amber-600"}`
+            }
+          >
+            AyuFit
           </NavLink>
-          <NavLink to="/products" className="   text-2xl font-medium text-gray-900   hover:text-green-500 dark:text-white">
-          AyuMed
+          <NavLink to="/products" className="text-2xl font-medium text-amber-800 hover:text-amber-600">
+            AyuMed
           </NavLink>
-          <NavLink to="/doctors" className="text-2xl font-medium text-gray-900  hover:text-green-500 dark:text-white">
-          AyuDoctor
+          <NavLink to="/doctors" className="text-2xl font-medium text-amber-800 hover:text-amber-600">
+            AyuDoctor
           </NavLink>
-          <NavLink to="/hospitals" className="text-2xl font-medium text-gray-900 hover:text-green-500 dark:text-white">
-          AyuHospitals
+          <NavLink to="/hospitals" className="text-2xl font-medium text-amber-800 hover:text-amber-600">
+            AyuHospitals
           </NavLink>
         </div>
 
-      
-        <div className="hidden md:flex  ">
-        
-
-
-          <MyButton/>
+        {/* Desktop CTA Button */}
+        <div className="hidden md:flex ">
+          <MyButton />
         </div>
 
-       
+        {/* Hamburger Button */}
         <button
-          className="md:hidden text-gray-500 dark:text-white p-2 rounded-md focus:outline-none"
+          className="md:hidden text-amber-900  p-2 rounded-md focus:outline-none"
           onClick={() => setIsOpen(!isOpen)}
         >
-          <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
             <path d={isOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"} />
           </svg>
         </button>
       </div>
 
-     
+      {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden bg-gray-100 dark:bg-gray-800 p-4">
-          <NavLink to="/fitness" className="block py-2 text-2xl text-gray-900 dark:text-white">AyuFit
+        <div className="md:hidden bg-amber-50 border-t border-amber-200 p-4">
+          <NavLink to="/fitness" className="block py-2 text-2xl text-amber-900 hover:text-amber-600">
+            AyuFit
           </NavLink>
-          <NavLink to="/products" className="block py-2 text-2xl text-gray-900 dark:text-white"> AyuMed
+          <NavLink to="/products" className="block py-2 text-2xl text-amber-900 hover:text-amber-600">
+            AyuMed
           </NavLink>
-          <NavLink to="/doctors" className="block py-2 text-2xl text-gray-900 dark:text-white">AyuDoctor
+          <NavLink to="/doctors" className="block py-2 text-2xl text-amber-900 hover:text-amber-600">
+            AyuDoctor
           </NavLink>
-          <NavLink to="/hospitals" className="block py-2 text-2xl text-gray-900 dark:text-white">  AyuHospitals</NavLink>
-          <button className="w-full mt-3 text-white bg-gray-400 hover:bg-gray-500 font-medium rounded-lg text-3xl px-6 py-3 dark:bg-gray-400 dark:hover:bg-gray-500">
-          Get Instant Help
+          <NavLink to="/hospitals" className="block py-2 text-2xl text-amber-900 hover:text-amber-600">
+            AyuHospitals
+          </NavLink>
+          <button className="w-full mt-3 text-black bg-amber-500 hover:bg-amber-600 font-medium rounded-lg text-3xl px-6 py-3">
+            Get Instant Help
           </button>
         </div>
       )}

@@ -1,0 +1,137 @@
+[
+  {
+    "name": "Dr Anila Sharma",
+    "specialization_experience": "Radiology| 20 years exp",
+    "location": "Apollo Clinic Chandigarh",
+    "languages": "English",
+    "qualification": "DMRD (Gold Medalist)",
+    "timing": "MON- SAT\n(10:30 AM-01:30 PM)\nBOOK APPOINTMENT",
+    "photo_url": "N/A"
+  },
+  {
+    "name": "Dr Gaurav Sharma",
+    "specialization_experience": "Orthopaedics| 15 years exp",
+    "location": "Apollo Clinic Chandigarh",
+    "languages": "English",
+    "qualification": "MBBS MS (ORTHOPEDICS)",
+    "timing": "MON- SAT\n(01:00 PM-01:30 PM)\nBOOK APPOINTMENT",
+    "photo_url": "N/A"
+  },
+  {
+    "name": "Dr Gourav Jain",
+    "specialization_experience": "Neurology| 10 years exp",
+    "location": "Apollo Clinic Chandigarh",
+    "languages": "English",
+    "qualification": "MD, DM (NEUROLOGY)",
+    "timing": "MON- SAT\n(05:00 PM-07:00 PM)\nBOOK APPOINTMENT",
+    "photo_url": "N/A"
+  },
+  {
+    "name": "Dr Gurmeen Garg",
+    "specialization_experience": "Pathology| 8 years exp",
+    "location": "Apollo Clinic Chandigarh",
+    "languages": "English",
+    "qualification": "MBBS, MD (Pathology)",
+    "timing": "MON- WED | THU, FRI | SAT\n(10:30 AM-01:00 PM | 10:30 AM-12:20 PM | 10:30 AM-01:00 PM)\nBOOK APPOINTMENT",
+    "photo_url": "N/A"
+  },
+  {
+    "name": "Dr Gursimran Singh",
+    "specialization_experience": "Bariatric Obesity & Metabolic Surgery| 8 years exp",
+    "location": "Apollo Clinic Chandigarh",
+    "languages": "English, हिंदी, ਪੰਜਾਬੀ",
+    "qualification": "M.B.B.S, MS(General Surgery), F.MAS,D.MAS",
+    "timing": "MON- FRI | SAT\n(09:00 AM-05:00 PM | 09:00 AM-02:00 PM)\nBOOK APPOINTMENT",
+    "photo_url": "N/A"
+  },
+  {
+    "name": "Dr Heena Chawla",
+    "specialization_experience": "Gynaecology| 12 years exp",
+    "location": "Apollo Clinic Chandigarh",
+    "languages": "English, ਪੰਜਾਬੀ",
+    "qualification": "MBBS, MD (Fellowship in Gynaec oncology & Gynaec Laproscopy)",
+    "timing": "MON- FRI | SAT\n(10:30 AM-01:30 PM, 05:00 PM-07:00 PM | 10:30 AM-01:30 PM)\nBOOK APPOINTMENT",
+    "photo_url": "N/A"
+  },
+  {
+    "name": "Dr Lissie palathingal",
+    "specialization_experience": "General Medicine| 15 years exp",
+    "location": "Apollo Clinic Chandigarh",
+    "languages": "English",
+    "qualification": "MBBS",
+    "timing": "MON- SAT\n(10:00 AM-03:00 PM)\nBOOK APPOINTMENT",
+    "photo_url": "N/A"
+  },
+  {
+    "name": "Dr Narula M S",
+    "specialization_experience": "Orthopaedic Surgeon| 18 years exp",
+    "location": "Apollo Clinic Chandigarh",
+    "languages": "English, हिंदी, ਪੰਜਾਬੀ",
+    "qualification": "M.B.B.S, M.S (Orthopaedics)",
+    "timing": "MON- FRI | SAT\n(10:00 AM-07:00 PM | 10:00 AM-02:00 PM)\nBOOK APPOINTMENT",
+    "photo_url": "N/A"
+  },
+  {
+    "name": "Dr Priyanka Arora",
+    "specialization_experience": "Physiotherapy| 12 years exp",
+    "location": "Apollo Clinic Chandigarh",
+    "languages": "English, ਪੰਜਾਬੀ",
+    "qualification": "BPT (Manual Therapist)",
+    "timing": "MON- SAT\n(12:00 PM-02:00 PM)\nBOOK APPOINTMENT",
+    "photo_url": "N/A"
+  },
+  {
+    "name": "Dr R P Singh",
+    "specialization_experience": "Cardiology| 10 years exp",
+    "location": "Apollo Clinic Chandigarh",
+    "languages": "English",
+    "qualification": "MD GEN MEDICINE, DNB CARDIOLOGY",
+    "timing": "MON- THU | FRI\n(05:00 PM-07:00 PM | 05:00 PM-06:40 PM)\nBOOK APPOINTMENT",
+    "photo_url": "N/A"
+  },
+  {
+    "name": "Dr Rishi Mangat",
+    "specialization_experience": "General Medicine| 19 years exp",
+    "location": "Apollo Clinic Chandigarh",
+    "languages": "English",
+    "qualification": "M.B.B.S (Fellow in Diabetes)",
+    "timing": "MON, WED, FRI\n(10:00 AM-01:00 PM)\nBOOK APPOINTMENT",
+    "photo_url": "N/A"
+  },
+  {
+    "name": "Dr Sumeet Dhawan",
+    "specialization_experience": "Paediatric Neurology| 7 years exp",
+    "location": "Apollo Clinic Chandigarh",
+    "languages": "English",
+    "qualification": "DM (Pediatric Neurology)",
+    "timing": "MON | TUE | WED, THU | FRI | SAT\n(10:00 AM-02:00 PM, 06:00 PM-08:00 PM | 06:00 PM-08:00 PM | 10:00 AM-02:00 PM, 06:00 PM-08:00 PM | 06:00 PM-08:00 PM | 10:00 AM-02:00 PM, 06:00 PM-08:00 PM)\nBOOK APPOINTMENT",
+    "photo_url": "N/A"
+  },
+  {
+    "name": "Dr Sushil Rahi",
+    "specialization_experience": "Neurology| 12 years exp",
+    "location": "Apollo Clinic Chandigarh",
+    "languages": "English, ਪੰਜਾਬੀ",
+    "qualification": "M.B.B.S, MD(Medicine), DM (Neurology)",
+    "timing": "MON- SAT\n(05:00 PM-07:00 PM)\nBOOK APPOINTMENT",
+    "photo_url": "N/A"
+  },
+  {
+    "name": "Dr Taminder Dhillon",
+    "specialization_experience": "Gynaecology| 30 years exp",
+    "location": "Apollo Clinic Chandigarh",
+    "languages": "English, ਪੰਜਾਬੀ",
+    "qualification": "DGO, MD(OBS & GYNAE) DNB",
+    "timing": "MON- SAT\n(11:00 AM-01:00 PM)\nBOOK APPOINTMENT",
+    "photo_url": "N/A"
+  },
+  {
+    "name": "Dr Virender Dhankar",
+    "specialization_experience": "Urology| 22 years exp",
+    "location": "Apollo Clinic Chandigarh",
+    "languages": "English, ਪੰਜਾਬੀ",
+    "qualification": "MS, MCH (Urology)",
+    "timing": "MON- SAT\n(10:00 AM-11:00 AM)\nBOOK APPOINTMENT",
+    "photo_url": "N/A"
+  }
+]

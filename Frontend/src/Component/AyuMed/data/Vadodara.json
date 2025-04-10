@@ -1,0 +1,83 @@
+[
+  {
+    "name": "Dr Ameeta Shah",
+    "specialization_experience": "Obstetrics & Gynecology|",
+    "location": "Apollo Clinic Vadodara",
+    "languages": "English, ગુજરાતી, हिंदी, فارسی",
+    "qualification": "MBBS, DGO, HD (O & G) CIH",
+    "timing": "MON- SAT\n(09:00 AM-12:00 PM)\nBOOK APPOINTMENT",
+    "photo_url": "N/A"
+  },
+  {
+    "name": "Dr Bibika Sharma",
+    "specialization_experience": "Audiology| 1 years exp",
+    "location": "Apollo Clinic Vadodara",
+    "languages": "English, हिंदी",
+    "qualification": "Bachelors in Audiology and speech and hearing Bangalore",
+    "timing": "MON- SAT\n(09:00 AM-12:00 PM)\nBOOK APPOINTMENT",
+    "photo_url": "N/A"
+  },
+  {
+    "name": "Dr Mayur Patel",
+    "specialization_experience": "General Physician| 5 years exp",
+    "location": "Apollo Clinic Vadodara",
+    "languages": "English",
+    "qualification": "MD Physician",
+    "timing": "MON- SAT\n(09:00 AM-12:00 PM)\nBOOK APPOINTMENT",
+    "photo_url": "N/A"
+  },
+  {
+    "name": "Dr Meet Parikh",
+    "specialization_experience": "Opthalmology| 6 years exp",
+    "location": "Apollo Clinic Vadodara",
+    "languages": "English",
+    "qualification": "MBBS,MS OPTHALMOLOGY",
+    "timing": "MON | WED | FRI\n(09:00 AM-10:30 AM | 09:00 AM-10:20 AM | 09:00 AM-10:30 AM)\nBOOK APPOINTMENT",
+    "photo_url": "N/A"
+  },
+  {
+    "name": "Dr Megha Rambhal",
+    "specialization_experience": "Obstetrics & Gynecology| 8 years exp",
+    "location": "Apollo Clinic Vadodara",
+    "languages": "English, मराठी",
+    "qualification": "MBBS, DGO",
+    "timing": "MON- SAT\n(09:00 AM-12:00 PM)\nBOOK APPOINTMENT",
+    "photo_url": "N/A"
+  },
+  {
+    "name": "Dr Niklank Mehta",
+    "specialization_experience": "Opthalmology| 6 years exp",
+    "location": "Apollo Clinic Vadodara",
+    "languages": "English",
+    "qualification": "MBBS,MS OPTHALMOLOGY",
+    "timing": "TUE, THU, SAT\n(09:00 AM-10:30 AM)\nBOOK APPOINTMENT",
+    "photo_url": "N/A"
+  },
+  {
+    "name": "Dr Radha C Mohan",
+    "specialization_experience": "Pediatrics| 30 years exp",
+    "location": "Apollo Clinic Vadodara",
+    "languages": "English, हिंदी",
+    "qualification": "MBBS,DCH,DCAH,MHRM",
+    "timing": "MON- SAT\n(09:00 AM-12:00 PM)\nBOOK APPOINTMENT",
+    "photo_url": "N/A"
+  },
+  {
+    "name": "Dr Saket Kumar",
+    "specialization_experience": "Pulmonology| 12 years exp",
+    "location": "Apollo Clinic Vadodara",
+    "languages": "English",
+    "qualification": "MD.Pulmonary medicine, M.Med(family medicine)M.B.B.S",
+    "timing": "MON- SAT\n(10:00 AM-12:00 PM)\nBOOK APPOINTMENT",
+    "photo_url": "N/A"
+  },
+  {
+    "name": "Dr Samir Mahajan",
+    "specialization_experience": "Ent| 10 years exp",
+    "location": "Apollo Clinic Vadodara",
+    "languages": "English, हिंदी",
+    "qualification": "M.S (ENT),MBBS",
+    "timing": "MON- SAT\n(09:00 AM-12:00 PM)\nBOOK APPOINTMENT",
+    "photo_url": "N/A"
+  }
+]
