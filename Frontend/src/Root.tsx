@@ -5,26 +5,35 @@ import Chatbot from "./Component/ChatBot/ChatBot";
 import Translate from "./Component/Language/Translater";
 import Config from './config/Config';
 
-import { ClerkProvider } from '@clerk/clerk-react';
+import {
+  ClerkProvider,
+  SignedIn,
+  SignedOut,
+  RedirectToSignIn
+} from '@clerk/clerk-react';
 
-if (!Config.ClerkUrl) {
+if (!Config.ClerkPublic) {
   throw new Error("Missing Publishable Key");
 }
 
 export default function Root() {
   return (
-    <>
-      <ClerkProvider
-        publishableKey={Config.ClerkPublic}
-        signUpFallbackRedirectUrl="/"
-        signInFallbackRedirectUrl="/"
-      >
+    <ClerkProvider
+      publishableKey={Config.ClerkPublic}
+      signInFallbackRedirectUrl="/"
+      signUpFallbackRedirectUrl="/"
+    >
+      <SignedIn>
         <Nav />
         <Chatbot />
         <Translate />
         <Outlet />
         <Foot />
-      </ClerkProvider>
-    </>
+      </SignedIn>
+
+      <SignedOut>
+        <RedirectToSignIn />
+      </SignedOut>
+    </ClerkProvider>
   );
 }

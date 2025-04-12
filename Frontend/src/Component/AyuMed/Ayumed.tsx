@@ -4,26 +4,26 @@ import { Search } from "lucide-react";
 
 const cityFiles = import.meta.glob("./data/*.json", { eager: true });
 
-// Custom animation directions for each card position in grid
+// Enhanced animation styles with smoother transitions
 const animationDirections = [
-  "fade-left", // first card comes from left
-  "fade-right", // second card comes from right
-  "fade-down", // third card comes from top
-  "fade-up", // fourth card comes from bottom
-  "fade-left", // continue pattern
-  "fade-right",
-  "fade-down",
-  "fade-up",
+  "fade-left-rotate", // first card slides from left with slight rotation
+  "fade-right-rotate", // second card slides from right with opposite rotation
+  "fade-down-scale", // third card comes from top with scale effect
+  "fade-up-scale", // fourth card comes from bottom with scale effect
+  "fade-left-flip", // fifth card slides from left with flip effect
+  "fade-right-flip", // sixth card slides from right with flip effect
+  "fade-zoom", // seventh card zooms in
+  "fade-bounce", // eighth card bounces in
 ];
 
-// City color themes - for visual interest (pastel colors)
+// Updated color themes focused on amber/gold variations
 const cityColors = [
-  "from-blue-400 to-cyan-300",
-  "from-emerald-400 to-teal-300",
-  "from-amber-400 to-yellow-300",
-  "from-rose-400 to-pink-300",
-  "from-violet-400 to-purple-300",
-  "from-indigo-400 to-blue-300",
+  "from-amber-400 to-yellow-300", // primary amber
+  "from-amber-500 to-yellow-400", // deeper amber
+  "from-amber-300 to-yellow-200", // lighter amber
+  "from-amber-600 to-orange-400", // amber-orange
+  "from-amber-400 to-orange-300", // warm amber
+  "from-yellow-500 to-amber-300", // golden amber
 ];
 
 const Ayumed = () => {
@@ -33,7 +33,7 @@ const Ayumed = () => {
   const navigate = useNavigate();
   const cardsRef = useRef([]);
   
-  // Observer setup for scroll animations
+  // Enhanced observer setup with staggered animations
   useEffect(() => {
     const options = {
       root: null,
@@ -42,9 +42,12 @@ const Ayumed = () => {
     };
 
     const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
+      entries.forEach((entry, idx) => {
         if (entry.isIntersecting) {
-          entry.target.classList.add("in-view");
+          // Add staggered delay based on index
+          setTimeout(() => {
+            entry.target.classList.add("in-view");
+          }, idx * 100); // 100ms delay between each card
         }
       });
     }, options);
@@ -81,20 +84,20 @@ const Ayumed = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-slate-100 py-10 px-4 sm:px-6">
+    <div className="min-h-screen bg-gradient-to-br from-amber-50 to-amber-100 py-10 px-4 sm:px-6">
       <div className="max-w-6xl mx-auto">
-        {/* Header */}
-        <div className="text-center mb-10">
-          <h1 className="text-3xl md:text-4xl font-bold text-slate-800 mb-3">
+        {/* Header with subtle animation */}
+        <div className="text-center mb-10 animate-fade-in">
+          <h1 className="text-3xl md:text-5xl font-bold text-amber-800 mb-3 animate-title">
             Find Ayurvedic Treatments
           </h1>
-          <p className="text-slate-600 max-w-lg mx-auto">
+          <p className="text-amber-700 max-w-lg mx-auto animate-subtitle">
             Select your city to discover authentic Ayurvedic doctors and treatments near you
           </p>
         </div>
 
-        {/* Search Bar */}
-        <div className="max-w-md mx-auto mb-10 relative">
+        {/* Search Bar with gentle glow effect */}
+        <div className="max-w-md mx-auto mb-12 relative animate-slide-up">
           <div className="relative">
             <input
               type="text"
@@ -103,19 +106,19 @@ const Ayumed = () => {
               onChange={handleSearchChange}
               onFocus={() => setIsSearchFocused(true)}
               onBlur={() => setTimeout(() => setIsSearchFocused(false), 200)}
-              className="w-full py-3 pl-12 pr-4 rounded-full border border-slate-200 focus:border-blue-500 focus:outline-none shadow-md text-slate-800"
+              className="w-full py-3 pl-12 pr-4 rounded-full border border-amber-200 focus:border-amber-500 focus:outline-none focus:ring-2 focus:ring-amber-300 focus:ring-opacity-50 shadow-md text-amber-900 transition-all duration-300"
             />
-            <Search className="absolute left-4 top-3.5 h-5 w-5 text-slate-500" />
+            <Search className="absolute left-4 top-3.5 h-5 w-5 text-amber-500" />
           </div>
 
-          {/* Search Suggestions */}
+          {/* Search Suggestions with smooth entry */}
           {isSearchFocused && searchTerm && (
-            <div className="absolute z-10 mt-1 w-full bg-white rounded-lg shadow-lg border border-slate-100 py-2 max-h-64 overflow-y-auto">
+            <div className="absolute z-10 mt-1 w-full bg-white rounded-lg shadow-lg border border-amber-100 py-2 max-h-64 overflow-y-auto animate-expand">
               {filteredCities.length > 0 ? (
                 filteredCities.map((city) => (
                   <div
                     key={`suggestion-${city}`}
-                    className="px-4 py-2 hover:bg-blue-50 cursor-pointer"
+                    className="px-4 py-2 hover:bg-amber-50 cursor-pointer transition-colors duration-200"
                     onClick={() => {
                       setSearchTerm(city);
                       handleClick(city);
@@ -125,7 +128,7 @@ const Ayumed = () => {
                   </div>
                 ))
               ) : (
-                <div className="px-4 py-2 text-gray-500 italic">
+                <div className="px-4 py-2 text-amber-500 italic">
                   No cities found
                 </div>
               )}
@@ -133,7 +136,7 @@ const Ayumed = () => {
           )}
         </div>
 
-        {/* City Grid - Simplified Cards with Animations */}
+        {/* City Grid with enhanced animations */}
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
           {(searchTerm ? filteredCities : cities).map((city, index) => (
             <div
@@ -142,8 +145,10 @@ const Ayumed = () => {
               className={`animation-card ${animationDirections[index % animationDirections.length]} cursor-pointer transform transition-all duration-500 hover:scale-105`}
               onClick={() => handleClick(city)}
             >
-              <div className={`h-36 flex items-center justify-center rounded-xl shadow-md bg-gradient-to-br ${cityColors[index % cityColors.length]} overflow-hidden`}>
-                <h2 className="text-xl font-bold capitalize text-white tracking-wide">
+              <div 
+                className={`h-40 flex items-center justify-center rounded-xl shadow-lg bg-gradient-to-br ${cityColors[index % cityColors.length]} overflow-hidden card-glow`}
+              >
+                <h2 className="text-xl font-bold capitalize text-white tracking-wide text-shadow">
                   {city}
                 </h2>
               </div>
@@ -151,15 +156,15 @@ const Ayumed = () => {
           ))}
         </div>
 
-        {/* No Results */}
+        {/* No Results with fade animation */}
         {searchTerm && filteredCities.length === 0 && (
-          <div className="text-center py-10">
-            <p className="text-gray-500 text-lg">
+          <div className="text-center py-10 animate-fade-in">
+            <p className="text-amber-600 text-lg">
               No cities found matching "{searchTerm}"
             </p>
             <button
               onClick={() => setSearchTerm("")}
-              className="mt-4 px-4 py-2 bg-blue-100 text-blue-700 rounded-full hover:bg-blue-200 transition"
+              className="mt-4 px-6 py-2 bg-amber-100 text-amber-700 rounded-full hover:bg-amber-200 transition-all duration-300 hover:shadow-md"
             >
               Clear Search
             </button>
@@ -167,40 +172,110 @@ const Ayumed = () => {
         )}
       </div>
 
-      {/* CSS for animations */}
+      {/* Enhanced CSS for animations */}
       <style jsx>{`
+        @keyframes title-animation {
+          0% { opacity: 0; transform: translateY(-20px); }
+          100% { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes subtitle-animation {
+          0% { opacity: 0; transform: translateY(-10px); }
+          30% { opacity: 0; }
+          100% { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes slide-up {
+          0% { opacity: 0; transform: translateY(30px); }
+          100% { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes expand {
+          0% { opacity: 0; transform: scaleY(0.8); transform-origin: top; }
+          100% { opacity: 1; transform: scaleY(1); transform-origin: top; }
+        }
+        
+        .animate-title {
+          animation: title-animation 0.8s ease-out forwards;
+        }
+        
+        .animate-subtitle {
+          animation: subtitle-animation 1.2s ease-out forwards;
+        }
+        
+        .animate-slide-up {
+          animation: slide-up 0.8s ease-out 0.4s forwards;
+          opacity: 0;
+        }
+        
+        .animate-expand {
+          animation: expand 0.3s ease-out forwards;
+        }
+        
         .animation-card {
           opacity: 0;
-          transform: translateY(20px);
-          transition: all 0.6s ease-out;
+          transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
         }
         
         .animation-card.in-view {
           opacity: 1;
-          transform: translateY(0);
+          transform: translateY(0) translateX(0) rotate(0) scale(1);
         }
         
-        .fade-left {
-          transform: translateX(-50px);
+        .fade-left-rotate {
+          transform: translateX(-60px) rotate(-5deg);
         }
         
-        .fade-right {
-          transform: translateX(50px);
+        .fade-right-rotate {
+          transform: translateX(60px) rotate(5deg);
         }
         
-        .fade-up {
-          transform: translateY(50px);
+        .fade-down-scale {
+          transform: translateY(-50px) scale(0.8);
         }
         
-        .fade-down {
-          transform: translateY(-50px);
+        .fade-up-scale {
+          transform: translateY(50px) scale(0.8);
         }
         
-        .fade-left.in-view,
-        .fade-right.in-view,
-        .fade-up.in-view,
-        .fade-down.in-view {
-          transform: translateX(0) translateY(0);
+        .fade-left-flip {
+          transform: translateX(-60px) rotateY(15deg);
+        }
+        
+        .fade-right-flip {
+          transform: translateX(60px) rotateY(-15deg);
+        }
+        
+        .fade-zoom {
+          transform: scale(0.7);
+        }
+        
+        .fade-bounce {
+          transform: translateY(40px);
+        }
+        
+        .text-shadow {
+          text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .card-glow {
+          box-shadow: 0 5px 15px rgba(245, 158, 11, 0.3);
+          transition: all 0.3s ease;
+        }
+        
+        .card-glow:hover {
+          box-shadow: 0 8px 25px rgba(245, 158, 11, 0.5);
+        }
+        
+        /* Add subtle pulse animation to cards */
+        @keyframes subtle-pulse {
+          0% { box-shadow: 0 5px 15px rgba(245, 158, 11, 0.3); }
+          50% { box-shadow: 0 8px 20px rgba(245, 158, 11, 0.5); }
+          100% { box-shadow: 0 5px 15px rgba(245, 158, 11, 0.3); }
+        }
+        
+        .animation-card.in-view .card-glow {
+          animation: subtle-pulse 3s infinite ease-in-out;
         }
       `}</style>
     </div>

@@ -9,6 +9,7 @@ import Diease from './Component/Ayufit/Diease'
 import Ayumed from './Component/AyuMed/Ayumed'
 import Ayudoctor from './Component/AyuMed/Ayudoctor'
 import Ayumedical from './Component/Ayumedical/Ayumedical';
+import BMI from './Component/BMI/BMI'
 
 
 
@@ -26,6 +27,8 @@ const router = createBrowserRouter(
       <Route path="doctors" element={<Ayumed />} />
       <Route path="products/:city" element={<Ayudoctor/>}/>
       <Route path="products" element={<Ayumedical />} />
+      <Route path="BMI" element={<BMI />} />
+
 
 
     </Route>

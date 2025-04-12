@@ -1,10 +1,13 @@
-import { Link, NavLink } from "react-router";
+import { Link, NavLink, useNavigate } from "react-router";
 import logo from "../../Assets/logo.png";
 import { useState } from "react";
-import MyButton from '../Animation/MyButton'
+import MyButton from '../Animation/MyButton';
+import { useClerk } from "@clerk/clerk-react";
 
 function Nav() {
   const [isOpen, setIsOpen] = useState(false);
+  const { signOut } = useClerk();
+  const navigate = useNavigate();
 
   return (
     <nav className="bg-white bg-gradient-to-b from-amber-100 via-amber-50 to-white transition-all shadow sticky w-full z-20 top-0 start-0 border-b border-amber-200">
@@ -13,7 +16,7 @@ function Nav() {
         <div className="flex items-center">
           <Link to="/" className="flex items-center space-x-3">
             <img src={logo} className="h-20 w-auto" alt="Logo" />
-            <span className="text-4xl font-semibold text-amber-900 hover:text-amber-600">Aurleaf</span>
+            <span className="text-4xl font-semibold text-amber-900 hover:text-amber-600">Ayurleaf</span>
           </Link>
         </div>
 
@@ -38,14 +41,20 @@ function Nav() {
           </NavLink>
         </div>
 
-        {/* Desktop CTA Button */}
-        <div className="hidden md:flex ">
+        
+        <div className="hidden md:flex items-center space-x-4">
           <MyButton />
+          <button
+            onClick={() => signOut()}
+            className="text-amber-800 hover:text-white border border-amber-600 hover:bg-amber-600 font-medium rounded-lg text-lg px-4 py-2 transition-all"
+          >
+            Logout
+          </button>
         </div>
 
         {/* Hamburger Button */}
         <button
-          className="md:hidden text-amber-900  p-2 rounded-md focus:outline-none"
+          className="md:hidden text-amber-900 p-2 rounded-md focus:outline-none"
           onClick={() => setIsOpen(!isOpen)}
         >
           <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -69,8 +78,17 @@ function Nav() {
           <NavLink to="/hospitals" className="block py-2 text-2xl text-amber-900 hover:text-amber-600">
             AyuHospitals
           </NavLink>
-          <button className="w-full mt-3 text-black bg-amber-500 hover:bg-amber-600 font-medium rounded-lg text-3xl px-6 py-3">
+          <button
+            onClick={() => navigate('/BMI')}
+            className="w-full mt-3 text-black bg-amber-500 hover:bg-amber-600 font-medium rounded-lg text-3xl px-6 py-3"
+          >
             Get Instant Help
+          </button>
+          <button
+            onClick={() => signOut()}
+            className="w-full mt-3 text-amber-800 border border-amber-600 hover:bg-amber-600 hover:text-white font-medium rounded-lg text-2xl px-6 py-3"
+          >
+            Logout
           </button>
         </div>
       )}

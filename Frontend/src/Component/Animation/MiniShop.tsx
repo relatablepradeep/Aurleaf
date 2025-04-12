@@ -60,8 +60,8 @@ function MiniShop() {
   };
 
   return (
-    <div className="w-full max-w-6xl p-6">
-      <h2 className="text-3xl font-semibold mb-8 text-amber-900 font-['Georgia'] relative inline-block">
+    <div className="w-full max-w-6xl p-6 text-center ">
+      <h2 className="text-3xl font-semibold mb-14 text-amber-900 font-['Georgia'] relative inline-block">
         <span>🌿 Featured Health Products</span>
         <span className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-amber-500 via-amber-600 to-amber-500 rounded-full"></span>
       </h2>

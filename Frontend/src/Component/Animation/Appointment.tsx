@@ -2,9 +2,16 @@ import { useState, useEffect } from 'react';
 import image1 from '../../Assets/image (1).jpg'
 import image2 from '../../Assets/image (2).jpg'
 import image3 from '../../Assets/image.jpg'
+import { useNavigate } from 'react-router-dom';
 
 const Appointment = () => {
   const [currentDoctorIndex, setCurrentDoctorIndex] = useState(0);
+
+
+
+  const navigate = useNavigate();
+
+  
   
   const doctors = [
     {
@@ -99,12 +106,31 @@ const Appointment = () => {
               </div>
             </div>
             
-            <button className="bg-amber-500 hover:bg-amber-600 text-white py-2 px-4 rounded-md flex items-center justify-center transition-all duration-300">
-              <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-              </svg>
-              Call for Appointment
-            </button>
+            <button
+       onClick={() => {
+        console.log('Navigation button clicked');
+        navigate('/doctors');
+      }}
+      
+      className="bg-amber-500 hover:bg-amber-600 text-white py-2 px-4 rounded-md flex items-center justify-center transition-all duration-300"
+    >
+      <svg
+        className="w-4 h-4 mr-2"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth={2}
+          d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+        />
+      </svg>
+      
+
+      Call for Appointment
+    </button>
           </div>
         </div>
         
@@ -116,6 +142,7 @@ const Appointment = () => {
                 index === currentDoctorIndex ? "bg-amber-500" : "bg-amber-300"
               }`}
               onClick={() => setCurrentDoctorIndex(index)}
+              // onClick={() => navigate('/doctors')} 
               aria-label={`View doctor ${index + 1}`}
             />
           ))}

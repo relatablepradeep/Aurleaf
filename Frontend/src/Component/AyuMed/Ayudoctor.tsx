@@ -178,7 +178,9 @@ const Ayudoctor = () => {
                     </p>
                   </div>
                   
-                  <button 
+                  <button   onClick={() => {
+    window.location.href = 'https://www.askapollo.com/physical-appointment/city';
+  }}
                     className="w-full py-3 rounded-lg bg-gradient-to-r from-teal-500 to-green-500 text-white font-medium shadow-md hover:shadow-lg transform transition duration-300 hover:-translate-y-0.5 flex items-center justify-center gap-2"
                   >
                     <Calendar className="h-5 w-5" />

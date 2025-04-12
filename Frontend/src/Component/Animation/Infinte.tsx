@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { Sparkles, Leaf, Sun, Moon, CloudFog } from 'lucide-react';
+import {useNavigate} from 'react-router'
 
 const Button = ({ text, onClick }) => (
   <button
@@ -70,7 +71,14 @@ const Infinite = () => {
 
     animationRef.current = setInterval(moveBoxes, 50);
     return () => clearInterval(animationRef.current);
+
+
+
   }, [isAnimationPaused]);
+
+
+
+  
 
   return (
     <div className="relative w-full h-72 sm:h-80 overflow-hidden flex items-center">
@@ -107,7 +115,9 @@ const Infinite = () => {
 };
 
 const AyurvedicHealthSection = () => {
-  const navigate = (path) => console.log(`Navigating to: ${path}`);
+  // const navigate = (path) => console.log(`Navigating to: ${path}`);
+
+  const navigate = useNavigate(); 
 
   return (
     <section className="w-full flex flex-col justify-center items-center pt-12 pb-20 px-4 sm:px-6 md:px-8 bg-amber-50 relative overflow-hidden">
@@ -131,7 +141,7 @@ const AyurvedicHealthSection = () => {
       </div>
 
       <div className="flex justify-center mt-8">
-        <Button text="Nearby Hospitals" onClick={() => navigate('/Pincode')} />
+      <Button text="Nearby Hospitals" onClick={() => navigate('/hospitals')} />
       </div>
 
       <div className="flex justify-center">

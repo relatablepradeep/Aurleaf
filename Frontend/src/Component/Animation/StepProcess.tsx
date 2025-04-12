@@ -104,8 +104,8 @@ export default function StepProcess() {
       </div>
 
       {/* Staggered Card Layout */}
-      <div className="w-full max-w-6xl px-4">
-        <h3 className="text-2xl font-bold text-amber-800 mb-8 font-['Verdana'] relative inline-block">
+      <div className="w-full max-w-6xl px-4 text-center">
+        <h3 className="text-2xl font-bold  text-amber-800 mb-8 font-['Verdana'] relative inline-block">
           <span>Explore Ayurvedic Remedies</span>
           <span className="absolute -bottom-2 left-0 right-0 h-0.5 bg-gradient-to-r from-amber-500 via-amber-600 to-amber-500"></span>
         </h3>

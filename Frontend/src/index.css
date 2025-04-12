@@ -30,3 +30,22 @@
       }
     }
   }
+
+
+
+
+  /* Hide the Google Translate top banner */
+body .goog-te-banner-frame.skiptranslate {
+    display: none !important;
+  }
+  
+  /* Remove spacing created for the banner */
+  body {
+    top: 0px !important;
+  }
+  
+  /* Optional: hide Google Translate's inline frame */
+  body .goog-te-gadget-icon {
+    display: none !important;
+  }
+  
