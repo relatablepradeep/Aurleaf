@@ -1,22 +1,26 @@
 import { Review } from '../models/Review.models.js';
 
-// Create Review
-export const createReview = async (req, res) => {
+export const submitReview = async (req, res) => {
   try {
-    const { username, photo, review, rating } = req.body;
-    const newReview = await Review.create({ username, photo, review, rating });
-    res.status(201).json(newReview);
-  } catch (err) {
-    res.status(400).json({ error: err.message });
+    const { name, rating, thought } = req.body;
+
+    if (!name || !rating || !thought) {
+      return res.status(400).json({ message: 'All fields are required' });
+    }
+
+    const review = new Review({ name, rating, thought });
+    await review.save();
+    res.status(201).json({ message: 'Review submitted successfully', review });
+  } catch (error) {
+    res.status(500).json({ message: 'Server error', error });
   }
 };
 
-// Get All Reviews
 export const getAllReviews = async (req, res) => {
   try {
     const reviews = await Review.find().sort({ createdAt: -1 });
     res.status(200).json(reviews);
-  } catch (err) {
-    res.status(500).json({ error: err.message });
+  } catch (error) {
+    res.status(500).json({ message: 'Failed to fetch reviews', error });
   }
 };

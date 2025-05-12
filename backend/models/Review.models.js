@@ -1,15 +1,7 @@
-import mongoose from 'mongoose'
+import mongoose from 'mongoose';
 
 const reviewSchema = new mongoose.Schema({
-  username: {
-    type: String,
-    required: true,
-  },
-  photo: {
-    type: String, 
-    required: true,
-  },
-  review: {
+  name: {
     type: String,
     required: true,
   },
@@ -19,12 +11,12 @@ const reviewSchema = new mongoose.Schema({
     min: 1,
     max: 5,
   },
-  createdAt: {
-    type: Date,
-    default: Date.now,
+  thought: {
+    type: String,
+    required: true,
   },
+}, {
+  timestamps: true,
 });
 
-
-
-export const Review = mongoose.model("Review", reviewSchema)
+export const Review = mongoose.model('Review', reviewSchema);

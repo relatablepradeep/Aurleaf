@@ -1,26 +1,47 @@
-import express from 'express';
-import mongoose from 'mongoose';
-import cors from 'cors';
-import reviewRoutes from './Route/Review.js';
+import express from 'express'
+import cors from 'cors'
+import dotenv from 'dotenv'
+import connect from './connection.js';
+import reviewRoutes from './Route/Review.js'
 
-const app = express();
-const PORT = 3005;
 
-// Middleware
+dotenv.config();
+
+const app=express();
+
 app.use(cors());
+
+const port=process.env.port ||3001;
+
+
+
 app.use(express.json());
 
-// Routes
-app.use('/api/v1/Reviews', reviewRoutes);
+app.use('/api/reviews', reviewRoutes);
 
-// DB & Server Start
-mongoose
-  .connect('mongodb://127.0.0.1:27017/reviewApp', {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
+
+
+connect()
+  .then(()=>{
+    app.listen(port,()=>{
+      console.log(`server is connected on port ${port}`);
+    })
   })
-  .then(() => {
-    console.log('MongoDB connected');
-    app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+  .catch((err)=>{
+    console.log(`mongoose is not connected ${err}`)
   })
-  .catch((err) => console.error('MongoDB connection error:', err));
+
+
+  app.get('/email',(req,res)=>{
+    res.send("hey there connected")
+  })
+
+
+
+  app.listen(port, () => {
+  console.log(`Server is running on http://localhost:${port}`);
+});
+
+
+
+
