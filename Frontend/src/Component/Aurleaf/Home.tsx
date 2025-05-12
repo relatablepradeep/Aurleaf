@@ -6,6 +6,9 @@ import StepProcess from '../Animation/StepProcess';
 import Button from '../Animation/Button';
 import {useNavigate } from 'react-router';
 import AyurvedicHealthSection from '../Animation/Infinte';
+import ReviewsComponent from '../Rating/ReviewsComponent'
+
+
 
 
 
@@ -101,6 +104,21 @@ export default function Home() {
 
 
       <Customer />
+
+
+
+
+
+
+
+
+      {/* <ReviewsComponent/> */}
+
+
+
+
+
+      
 
 
 
