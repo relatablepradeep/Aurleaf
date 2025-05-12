@@ -11,13 +11,18 @@ const app=express();
 
 app.use(cors());
 
-const port=process.env.port ||3001;
+const port=process.env.port ||3003;
 
 
 
 app.use(express.json());
 
 app.use('/api/reviews', reviewRoutes);
+
+
+ app.get('/email',(req,res)=>{
+    res.send("hey there connected")
+  })
 
 
 
@@ -32,15 +37,13 @@ connect()
   })
 
 
-  app.get('/email',(req,res)=>{
-    res.send("hey there connected")
-  })
+ 
 
 
 
-  app.listen(port, () => {
-  console.log(`Server is running on http://localhost:${port}`);
-});
+//   app.listen(port, () => {
+//   console.log(`Server is running on http://localhost:${port}`);
+// });
 
 
 
