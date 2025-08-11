@@ -1,4 +1,4 @@
-Ayurleaf — Project Description
+# Ayurleaf — Project Description
 Ayurleaf is a comprehensive medical platform designed to connect users with nearby Ayurvedic clinics, doctors, and hospitals. It empowers users to take control of their health through a range of features including:
 
 Location-based search: Find Ayurvedic healthcare providers and hospitals nearby based on your location.
@@ -20,7 +20,7 @@ Thanks to mg1 for providing valuable medical remedies information.
 Special thanks to AppoDoctor for the support with doctor-related data and services.
 
 
-#Clerk Api References
+# Clerk Api References
 
 1-Create a Clerk account at https://clerk.com
 
@@ -66,4 +66,10 @@ Install my-project with git
   npm start
 
   ```
+
+## Live_hosting
+
+
+You can access the live Ayurleaf website here:
+https://ayurleaf.vercel.app/
     
