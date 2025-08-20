@@ -1,12 +1,12 @@
 import { Link, NavLink, useNavigate } from "react-router";
 import logo from "../../Assets/logo.png";
 import { useState } from "react";
-import MyButton from '../Animation/MyButton';
-import { useClerk } from "@clerk/clerk-react";
+
+
 
 function Nav() {
   const [isOpen, setIsOpen] = useState(false);
-  const { signOut } = useClerk();
+
   const navigate = useNavigate();
 
   return (
@@ -42,15 +42,7 @@ function Nav() {
         </div>
 
         
-        <div className="hidden md:flex items-center space-x-4">
-          <MyButton />
-          <button
-            onClick={() => signOut()}
-            className="text-amber-800 hover:text-white border border-amber-600 hover:bg-amber-600 font-medium rounded-lg text-lg px-4 py-2 transition-all"
-          >
-            Logout
-          </button>
-        </div>
+       
 
         {/* Hamburger Button */}
         <button
@@ -84,12 +76,7 @@ function Nav() {
           >
             Get Instant Help
           </button>
-          <button
-            onClick={() => signOut()}
-            className="w-full mt-3 text-amber-800 border border-amber-600 hover:bg-amber-600 hover:text-white font-medium rounded-lg text-2xl px-6 py-3"
-          >
-            Logout
-          </button>
+        
         </div>
       )}
     </nav>
