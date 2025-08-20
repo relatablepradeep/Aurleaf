@@ -20,23 +20,7 @@ Thanks to mg1 for providing valuable medical remedies information.
 Special thanks to AppoDoctor for the support with doctor-related data and services.
 
 
-# Clerk Api References
 
-1-Create a Clerk account at https://clerk.com
-
-2-Set up a new application/project in Clerk dashboard.
-
-3-Find your Frontend API and Publishable Key in the project settings.
-
-4-Add these values to your .env file in the frontend folder:
-
-```bash
-
-VITE_CLERK_URL="your-clerk-frontend-api-url"
-VITE_CLERK_PUBLIC="your-clerk-publishable-key"
-
-
-```
 ## Authors
 
 - [@relatablepradeep](https://github.com/relatablepradeep)
@@ -56,6 +40,11 @@ Install my-project with git
   npm run dev 
 
 ```
+
+```bash
+ cd backend
+ port=3000 //or enter your own port number
+url=monogodb url  to connect review base to database
 
 ```bash
   
