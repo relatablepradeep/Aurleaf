@@ -158,17 +158,17 @@ const Pincode = () => {
               
               <div className="mb-12 space-y-6">
                 <div className="bg-white bg-opacity-10 p-4 rounded-lg backdrop-blur-sm border border-white border-opacity-20 transform transition-all duration-300 hover:translate-y-1 hover:bg-opacity-20">
-                  <p className="italic text-white text-opacity-90 font-serif">
+                  <p className="italic text-slate-900 font-bold subpixel-antialiased  text-xl text-opacity-90 font-poppins">
                     "Ayurveda is the science of life and it has a very basic, simple kind of approach, which is that we are part of the universe and the universe is intelligent and the human body is part of the cosmic body."
                   </p>
-                  <p className="text-right mt-2 text-white text-opacity-70">— Deepak Chopra</p>
+                  <p className="text-right mt-2 text-slate-500 text-opacity-70">— Deepak Chopra</p>
                 </div>
                 
                 <div className="bg-white bg-opacity-10 p-4 rounded-lg backdrop-blur-sm border border-white border-opacity-20 transform transition-all duration-300 hover:translate-y-1 hover:bg-opacity-20">
-                  <p className="italic text-white text-opacity-90 font-serif">
+                  <p className="italic text-slate-900 font-bold subpixel-antialiased text-xl text-opacity-90 font-poppins">
                     "When diet is wrong, medicine is of no use. When diet is correct, medicine is of no need."
                   </p>
-                  <p className="text-right mt-2 text-white text-opacity-70">— Ayurvedic Proverb</p>
+                  <p className="text-right mt-2 text-slate-500 text-opacity-70">— Ayurvedic Proverb</p>
                 </div>
               </div>
               

@@ -12,7 +12,7 @@ export default function StepProcess() {
 
   useEffect(() => {
     setDiseases(disease_data.slice(0, 9)); // Show only 9 remedies for the ladder display
-    
+
     // Handle window resize
     const handleResize = () => {
       setWindowWidth(window.innerWidth);
@@ -34,17 +34,17 @@ export default function StepProcess() {
   const getCardStyle = (index) => {
     const isCenterCard = index === activeCardIndex;
     const distanceFromCenter = Math.abs(index - activeCardIndex);
-    
+
     // Base styles
     let transform = '';
     let zIndex = 10 - distanceFromCenter;
     let opacity = 1;
-    
+
     // Scale factors based on screen size
     const xTranslationFactor = windowWidth < 640 ? 20 : windowWidth < 768 ? 30 : 40;
     const yTranslationFactor = windowWidth < 640 ? 3 : 5;
     const scaleFactor = windowWidth < 640 ? 0.08 : 0.1;
-    
+
     // Hide cards that are too far from center on small screens
     if (windowWidth < 640 && distanceFromCenter > 1) {
       opacity = 0;
@@ -62,7 +62,7 @@ export default function StepProcess() {
       transform = 'translateY(-5%) scale(1.05)';
       zIndex = 20;
     }
-    
+
     return {
       transform,
       zIndex,
@@ -104,7 +104,7 @@ export default function StepProcess() {
         <div className="absolute top-0 left-1/4 w-32 sm:w-64 h-32 sm:h-64 bg-amber-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-pulse"></div>
         <div className="absolute bottom-0 right-1/4 w-32 sm:w-64 h-32 sm:h-64 bg-amber-700 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-pulse delay-700"></div>
       </div>
-      
+
       {/* Main Process Steps - uncomment if needed */}
       <div className="w-full max-w-6xl px-4 mb-8 sm:mb-16">
         {/* <div className="flex flex-col md:flex-row justify-between gap-4 sm:gap-6">
@@ -134,7 +134,7 @@ export default function StepProcess() {
           <span>Explore Ayurvedic Remedies</span>
           <span className="absolute -bottom-2 left-0 right-0 h-0.5 bg-gradient-to-r from-amber-500 via-amber-600 to-amber-500"></span>
         </h3>
-        
+
         <div className="relative h-80 sm:h-96 mb-8 sm:mb-16" ref={cardsContainerRef}>
           <div className="absolute inset-0 flex justify-center items-center">
             {diseases.map((disease, idx) => (
@@ -145,11 +145,36 @@ export default function StepProcess() {
                 style={getCardStyle(idx)}
               >
                 <div className="relative overflow-hidden rounded-lg mb-3 sm:mb-4">
-                  <img
-                    src={disease.image_url || '/api/placeholder/260/150'}
-                    alt={disease.alt_text || 'Remedy'}
-                    className="w-full h-32 sm:h-40 object-cover rounded-lg transition-all duration-500 hover:scale-110"
-                  />
+                  <figure className="w-full h-32 sm:h-40 rounded-lg overflow-hidden">
+                    <figure className="w-full h-32 sm:h-40 rounded-lg overflow-hidden">
+                      <img
+                        src={disease.image_url || '/api/placeholder/260/150'}
+                        alt={disease.alt_text || 'Remedy'}
+                        loading="lazy"
+                        decoding="async"
+                        width="260"
+                        height="150"
+                        className="w-full h-full object-cover transition-all duration-500 hover:scale-110"
+                        srcSet={`
+      ${disease.image_url.replace("w_64,h_64", "w_320,h_180")} 320w,
+      ${disease.image_url.replace("w_64,h_64", "w_640,h_360")} 640w,
+      ${disease.image_url.replace("w_64,h_64", "w_1280,h_720")} 1280w
+    `}
+                        sizes="(max-width: 640px) 100vw, 640px"
+                      />
+                      <figcaption className="sr-only">
+                        {disease.alt_text || 'Remedy'}
+                      </figcaption>
+                    </figure>
+
+
+                    {/* Accessible caption (screen readers only) */}
+                    <figcaption className="sr-only">
+                      {disease.alt_text || 'Remedy'}
+                    </figcaption>
+                  </figure>
+
+
                   {idx === activeCardIndex && (
                     <div className="absolute inset-0 bg-gradient-to-t from-amber-900/60 to-transparent flex items-end">
                       <span className="text-white text-xs sm:text-sm font-medium p-2 sm:p-3">View Details</span>
@@ -176,15 +201,14 @@ export default function StepProcess() {
             ))}
           </div>
         </div>
-        
+
         {/* Card Navigation Dots */}
         <div className="flex justify-center gap-1 sm:gap-2 mb-4 sm:mb-8">
           {diseases.map((_, idx) => (
             <button
               key={idx}
-              className={`w-1.5 sm:w-2 h-1.5 sm:h-2 rounded-full transition-all duration-300 ${
-                idx === activeCardIndex ? 'bg-amber-700 w-4 sm:w-6' : 'bg-amber-300 hover:bg-amber-500'
-              }`}
+              className={`w-1.5 sm:w-2 h-1.5 sm:h-2 rounded-full transition-all duration-300 ${idx === activeCardIndex ? 'bg-amber-700 w-4 sm:w-6' : 'bg-amber-300 hover:bg-amber-500'
+                }`}
               onClick={() => setActiveCardIndex(idx)}
               aria-label={`View card ${idx + 1}`}
             />
