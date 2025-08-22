@@ -25,18 +25,18 @@ function Nav() {
           <NavLink
             to="/fitness"
             className={({ isActive }) =>
-              `text-2xl font-medium ${isActive ? "text-amber-900" : "text-amber-800 hover:text-amber-600"}`
+              `text-2xl font-medium ${isActive ? "text-amber-900" : "text-amber-800 underline hover:text-amber-600"}`
             }
           >
             AyuFit
           </NavLink>
-          <NavLink to="/products" className="text-2xl font-medium text-amber-800 hover:text-amber-600">
+          <NavLink to="/products" className="text-2xl font-medium text-amber-800 underline hover:text-amber-600">
             AyuMed
           </NavLink>
-          <NavLink to="/doctors" className="text-2xl font-medium text-amber-800 hover:text-amber-600">
+          <NavLink to="/doctors" className="text-2xl font-medium text-amber-800 underline hover:text-amber-600">
             AyuDoctor
           </NavLink>
-          <NavLink to="/hospitals" className="text-2xl font-medium text-amber-800 hover:text-amber-600">
+          <NavLink to="/hospitals" className="text-2xl font-medium text-amber-800 underline hover:text-amber-600">
             AyuHospitals
           </NavLink>
         </div>
