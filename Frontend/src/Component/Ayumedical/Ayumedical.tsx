@@ -127,7 +127,7 @@ const Ayumedical = () => {
       <div className="max-w-7xl mx-auto p-4 md:p-6">
         {/* Header */}
         <div className="mb-8 text-center">
-          <h1 className="text-3xl md:text-4xl font-bold text-green-800 mb-2">Ayurveda Products</h1>
+          <h1 className="text-3xl md:text-4xl font-bold text-green-700 mb-2">Ayurveda Products</h1>
           <p className="text-green-700">Natural healing for mind, body, and spirit</p>
         </div>
 
