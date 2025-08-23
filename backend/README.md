@@ -1,6 +1,7 @@
 <div align="center">
 
-# Aurleaf - Backend ⚙️
+  <img src="https://github.com/relatablepradeep/Aurleaf/blob/main/Frontend/src/Assets/logo.png?raw=true" alt="Aurleaf Logo" width="150"/>
+  <h1>🌿 Aurleaf - Backend ⚙️</h1>
 
 **This is the backend for the Aurleaf application, built with Express.js and MongoDB.**
 
@@ -106,6 +107,8 @@ To get the backend server running on your local machine, follow these steps.
 
 ### Running the Application
 
+<div class="aurleaf-card">
+
 Start the development server with the following command:
 
 ```sh
@@ -113,6 +116,8 @@ npm run dev
 ```
 
 The server will start on the port specified in your `.env` file.
+
+</div>
 
 ---
 
@@ -140,6 +145,8 @@ The server will start on the port specified in your `.env` file.
 
 ## 📂 Folder Structure
 
+<div class="aurleaf-card">
+
 ```
 backend/
 ├── Route/
@@ -159,8 +166,14 @@ backend/
 └── package.json
 ```
 
+</div>
+
 ---
 
 ## 📜 License
 
+<div class="aurleaf-card">
+
 This project is licensed under the GPL-2.0 license.
+
+</div>
