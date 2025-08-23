@@ -1,0 +1,15 @@
+{
+  "editor.minimap.enabled": false,
+  "editor.smoothScrolling": false,
+  "files.watcherExclude": {
+    "**/.git/objects/**": true,
+    "**/node_modules/**": true,
+    "**/dist/**": true,
+    "**/build/**": true
+  },
+  "search.followSymlinks": false,
+  "terminal.integrated.gpuAcceleration": "off",
+  "javascript.suggest.autoImports": false,
+  "typescript.suggest.autoImports": false,
+  "typescript.tsserver.maxTsServerMemory": 1024
+}
