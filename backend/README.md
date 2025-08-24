@@ -20,14 +20,18 @@
 <!-- Note: Shields.io has no collaborators badge. Use a GitHub Action if you need one. -->
 
 
-
+<style>
+.aurleaf-card{padding:12px;border:1px solid #e5e7eb;border-radius:12px;margin-bottom:8px}
+.aurleaf-pill{display:inline-block;padding:2px 8px;border:1px solid #e5e7eb;border-radius:999px;margin:2px}
+.aurleaf-note{opacity:.85}
+</style>
 
 
 ---
 
 ## 🛠️ Tech Stack & Libraries
 
-
+<div class="aurleaf-card">
 
 * **Framework:** Express.js
 * **Database:** MongoDB with Mongoose
@@ -61,13 +65,13 @@ To get the backend server running on your local machine, follow these steps.
 
 ### Prerequisites
 
-* Node.js (v18 or higher)
-* npm
-* MongoDB
+* <span class="aurleaf-pill">Node.js (v18 or higher)</span>
+* <span class="aurleaf-pill">npm</span>
+* <span class="aurleaf-pill">MongoDB</span>
 
 ### Installation & Setup
 
-
+<div class="aurleaf-card">
 
 1. **Clone the repository (if you haven't already):**
 
@@ -103,7 +107,7 @@ To get the backend server running on your local machine, follow these steps.
 
 ### Running the Application
 
-
+<div class="aurleaf-card">
 
 Start the development server with the following command:
 
@@ -119,7 +123,7 @@ The server will start on the port specified in your `.env` file.
 
 ## 🔌 API Endpoints
 
-
+<div class="aurleaf-card">
 
 ### Review Routes
 
@@ -141,7 +145,7 @@ The server will start on the port specified in your `.env` file.
 
 ## 📂 Folder Structure
 
-
+<div class="aurleaf-card">
 
 ```
 backend/
@@ -168,7 +172,8 @@ backend/
 
 ## 📜 License
 
-
+<div class="aurleaf-card">
 
 This project is licensed under the GPL-2.0 license.
 
+</div>
