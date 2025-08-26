@@ -115,7 +115,7 @@ export default function Disease() {
   return (
     <div className="flex flex-col md:flex-row bg-amber-50 min-h-screen font-serif">
       {/* Left Side Navigation */}
-      <div className="md:w-72 lg:w-80 bg-amber-100 p-4 shadow-inner md:sticky md:top-0 md:h-screen overflow-y-auto">
+      <div className="w-full md:fixed md:w-56 lg:w-64 bg-amber-100 p-4 shadow-inner flex-shrink-0 overflow-y-auto md:h-screen">
         <div className="sticky top-4">
           <h3 className="text-xl font-semibold text-amber-800 mb-6 border-b border-amber-300 pb-2">
             Treatment Journey
@@ -142,7 +142,7 @@ export default function Disease() {
                     {index + 1}
                   </div>
                   {index < availableSections.length - 1 && (
-                    <div className={`h-10 w-0.5 absolute ml-4 mt-10 ${
+                    <div className={`h-8 w-0.5 absolute ml-4 mt-15 ${
                       index < availableSections.findIndex(s => s.id === activeSection)
                         ? 'bg-amber-600'
                         : 'bg-amber-300'
@@ -157,7 +157,8 @@ export default function Disease() {
       </div>
 
       {/* Main Content */}
-      <div className="flex-grow p-6 md:p-8 lg:p-10 max-w-6xl mx-auto overflow-y-auto">
+
+      <div className="flex-grow p-6 md:p-8 lg:p-10 max-w-6xl mx-auto md:ml-56 lg:ml-64 overflow-y-auto">
         {/* Header */}
         <div className="flex flex-col md:flex-row items-center md:items-start mb-10 border-b-2 border-amber-200 pb-8">
           <img
