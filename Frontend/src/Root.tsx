@@ -4,6 +4,7 @@ import Foot from './Component/Footer/Foot';
 import Chatbot from "./Component/ChatBot/ChatBot";
 import Translate from "./Component/Language/Translater";
 import ScrollToTopButton from "./Component/ScrollToTopButton";
+import ScrollToTop from "./Component/ScrollToTop";
 
 
 export default function Root() {
@@ -16,6 +17,7 @@ export default function Root() {
      <Nav />
         <Chatbot />
         <Translate />
+        <ScrollToTop/>
         <Outlet />
         <ScrollToTopButton />
         <Foot />
