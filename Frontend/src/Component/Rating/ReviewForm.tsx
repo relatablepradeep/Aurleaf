@@ -1,16 +1,33 @@
 import { useState, useEffect } from 'react';
 
+// 1. Define review type
+type Review = {
+  name: string;
+  rating: number;
+  thought: string;
+  photo?: string;
+};
+
+const defaultAvatarURL = 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png';
+
 const ReviewForm = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [showFeedbackForm, setShowFeedbackForm] = useState(false);
-  const [formData, setFormData] = useState({ 
-    name: '', 
-    rating: 5, 
+
+  const [formData, setFormData] = useState<{
+    name: string;
+    rating: number;
+    thought: string;
+    photo: string;
+  }>({
+    name: '',
+    rating: 0, // Set default rating to 0 (so all stars are unfilled)
     thought: '',
-    photo: "/api/placeholder/80/80"
+    photo: defaultAvatarURL,
   });
-  const [reviews, setReviews] = useState([]);
-  const [previewUrl, setPreviewUrl] = useState("/api/placeholder/80/80");
+
+  const [reviews, setReviews] = useState<Review[]>([]);
+  const [previewUrl, setPreviewUrl] = useState<string>(defaultAvatarURL);
 
   const fetchReviews = async () => {
     try {
@@ -32,27 +49,26 @@ const ReviewForm = () => {
   const goToNext = () => setActiveIndex((prev) => (prev + 1) % reviews.length);
   const goToPrev = () => setActiveIndex((prev) => (prev - 1 + reviews.length) % reviews.length);
 
-  const renderStars = (rating) => (
+  const renderStars = (rating: number) => (
     <div className="flex justify-center mt-2">
       {[...Array(5)].map((_, i) => (
-        <span key={i} className={`text-lg ${i < rating ? "text-amber-400" : "text-gray-400"}`}>★</span>
+        <span key={i} className={`text-lg ${i < rating ? 'text-amber-400' : 'text-gray-400'}`}>★</span>
       ))}
     </div>
   );
 
-  const handleProfilePicChange = (e) => {
+  const handleProfilePicChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (file) {
       const url = URL.createObjectURL(file);
       setPreviewUrl(url);
-      setFormData(prev => ({ ...prev, photo: url }));
+      setFormData((prev) => ({ ...prev, photo: url }));
     }
   };
 
   const handleSubmit = async () => {
-    // Validate form data
     if (!formData.name.trim() || !formData.thought.trim()) {
-      alert("Please enter your name and review");
+      alert('Please enter your name and review');
       return;
     }
 
@@ -64,20 +80,19 @@ const ReviewForm = () => {
           name: formData.name,
           rating: formData.rating,
           thought: formData.thought,
-          photo: formData.photo
+          photo: formData.photo,
         }),
       });
 
       const result = await res.json();
       if (res.ok) {
-        // Reset form and fetch updated reviews
-        setFormData({ 
-          name: '', 
-          rating: 5, 
+        setFormData({
+          name: '',
+          rating: 0, // Reset to 0 as well
           thought: '',
-          photo: "/api/placeholder/80/80"
+          photo: defaultAvatarURL,
         });
-        setPreviewUrl("/api/placeholder/80/80");
+        setPreviewUrl(defaultAvatarURL);
         setShowFeedbackForm(false);
         fetchReviews();
       } else {
@@ -109,14 +124,19 @@ const ReviewForm = () => {
             <div className="w-full max-w-lg p-6 bg-amber-50 border border-amber-100 rounded-xl shadow-md text-center transition-all duration-300">
               <div className="flex justify-center -mt-14 mb-4">
                 <img
-                  src={reviews[activeIndex].photo || "/api/placeholder/80/80"}
-                  alt={reviews[activeIndex].name}
+                  src={reviews[activeIndex]?.photo || defaultAvatarURL}
+                  alt={reviews[activeIndex]?.name || 'Profile Preview'}
                   className="w-20 h-20 rounded-full object-cover border-4 border-amber-500 bg-white"
+                  onError={(e) => {
+                    e.currentTarget.src = defaultAvatarURL;
+                  }}
                 />
               </div>
-              <h3 className="text-lg font-semibold text-amber-800">{reviews[activeIndex].name}</h3>
-              <p className="text-sm text-gray-600 mt-2">{reviews[activeIndex].thought}</p>
-              {renderStars(reviews[activeIndex].rating)}
+              <h3 className="text-lg font-semibold text-amber-800">
+                {reviews[activeIndex]?.name}
+              </h3>
+              <p className="text-sm text-gray-600 mt-2">{reviews[activeIndex]?.thought}</p>
+              {reviews[activeIndex] && renderStars(reviews[activeIndex].rating)}
             </div>
 
             <button
@@ -134,7 +154,7 @@ const ReviewForm = () => {
                 key={index}
                 onClick={() => setActiveIndex(index)}
                 className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                  index === activeIndex ? "bg-amber-600 scale-125" : "bg-gray-300"
+                  index === activeIndex ? 'bg-amber-600 scale-125' : 'bg-gray-300'
                 }`}
               />
             ))}
@@ -155,9 +175,9 @@ const ReviewForm = () => {
         </button>
       </div>
 
-      {/* Feedback Form */}
+      {/* Feedback Form with Blurred Backdrop */}
       {showFeedbackForm && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
+        <div className="fixed inset-0 bg-black/30 backdrop-blur-sm flex items-center justify-center z-50 p-4">
           <div
             onClick={(e) => e.stopPropagation()}
             className="bg-white text-gray-800 rounded-xl p-6 w-full max-w-md shadow-lg"
@@ -166,37 +186,34 @@ const ReviewForm = () => {
 
             <label className="block text-sm font-medium mb-1 text-gray-700">Profile Picture</label>
             <div className="flex items-center space-x-4 mb-4">
-              <img 
-                src={previewUrl} 
-                alt="Profile Preview" 
-                className="w-16 h-16 rounded-full border-2 border-amber-500" 
+              <img
+                src={previewUrl || defaultAvatarURL}
+                alt="Profile Preview"
+                className="w-16 h-16 rounded-full border-2 border-amber-500"
+                onError={(e) => {
+                  e.currentTarget.src = defaultAvatarURL;
+                }}
               />
-              <input 
-                type="file" 
-                accept="image/*" 
-                onChange={handleProfilePicChange} 
+              <input
+                type="file"
+                accept="image/*"
+                onChange={handleProfilePicChange}
               />
             </div>
 
-            <input
-              type="text"
-              className="w-full border border-gray-300 rounded px-3 py-2 mb-4 bg-white"
-              placeholder="Your Name"
-              value={formData.name}
-              onChange={(e) => setFormData(prev => ({ ...prev, name: e.target.value }))}
-              required
-            />
-
+            {/* RATING SECTION */}
             <div className="mb-4">
-              <label className="block text-sm font-medium mb-1 text-gray-700">Rating</label>
+              <label className="block text-sm font-medium mb-1 text-gray-700 text-center w-full">
+                Rating
+              </label>
               <div className="flex justify-center space-x-2">
                 {[1, 2, 3, 4, 5].map((star) => (
                   <button
                     key={star}
                     type="button"
-                    onClick={() => setFormData(prev => ({ ...prev, rating: star }))}
+                    onClick={() => setFormData((prev) => ({ ...prev, rating: star }))}
                     className={`text-2xl ${
-                      star <= formData.rating ? "text-amber-400" : "text-gray-400"
+                      star <= formData.rating ? 'text-amber-400' : 'text-gray-400'
                     }`}
                   >
                     ★
@@ -204,12 +221,22 @@ const ReviewForm = () => {
                 ))}
               </div>
             </div>
+            {/* END RATING SECTION */}
+
+            <input
+              type="text"
+              className="w-full border border-gray-300 rounded px-3 py-2 mb-4 bg-white"
+              placeholder="Your Name"
+              value={formData.name}
+              onChange={(e) => setFormData((prev) => ({ ...prev, name: e.target.value }))}
+              required
+            />
 
             <textarea
               className="w-full border border-gray-300 rounded px-3 py-2 h-24 bg-white"
               placeholder="Write your review..."
               value={formData.thought}
-              onChange={(e) => setFormData(prev => ({ ...prev, thought: e.target.value }))}
+              onChange={(e) => setFormData((prev) => ({ ...prev, thought: e.target.value }))}
               required
             />
 
