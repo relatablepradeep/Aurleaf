@@ -1,3 +1,4 @@
+@import "./Component/Animation/animation.css";
 @import "tailwindcss";
 
 .text-green-800:hover{

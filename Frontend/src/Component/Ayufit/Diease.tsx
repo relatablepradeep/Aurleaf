@@ -6,6 +6,7 @@ export default function Disease() {
   const { diseaseId } = useParams();
   const [disease, setDisease] = useState(null);
   const [activeSection, setActiveSection] = useState('overview');
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const navigate = useNavigate();
   
   // Refs for scrolling to sections
@@ -114,8 +115,16 @@ export default function Disease() {
 
   return (
     <div className="flex flex-col md:flex-row bg-amber-50 min-h-screen font-serif">
+      {/* Sidebar Toggle Button */}
+      <button 
+        className="md:hidden fixed top-4 right-4 z-20 bg-amber-500 text-white w-10 h-10 rounded-full shadow-lg flex items-center justify-center"
+        onClick={() => setIsSidebarOpen(!isSidebarOpen)}
+      >
+        {isSidebarOpen ? '✕' : '☰'}
+      </button>
+
       {/* Left Side Navigation */}
-      <div className="w-full md:fixed md:w-56 lg:w-64 bg-amber-100 p-4 shadow-inner flex-shrink-0 overflow-y-auto md:h-screen">
+      <div className={`w-full md:fixed md:w-56 lg:w-64 bg-amber-100 p-4 shadow-inner flex-shrink-0 overflow-y-auto md:h-screen transform md:transform-none transition-transform duration-300 ease-in-out ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'} md:translate-x-0`}>
         <div className="sticky top-4">
           <h3 className="text-xl font-semibold text-amber-800 mb-6 border-b border-amber-300 pb-2">
             Treatment Journey
@@ -124,7 +133,10 @@ export default function Disease() {
             {availableSections.map((section, index) => (
               <button
                 key={section.id}
-                onClick={() => scrollToSection(section.ref)}
+                onClick={() => {
+                  scrollToSection(section.ref);
+                  setIsSidebarOpen(false);
+                }}
                 className={`flex items-center p-3 rounded-lg transition-all ${
                   activeSection === section.id
                     ? 'bg-amber-500 text-white font-medium'
@@ -157,7 +169,6 @@ export default function Disease() {
       </div>
 
       {/* Main Content */}
-
       <div className="flex-grow p-6 md:p-8 lg:p-10 max-w-6xl mx-auto md:ml-56 lg:ml-64 overflow-y-auto">
         {/* Header */}
         <div className="flex flex-col md:flex-row items-center md:items-start mb-10 border-b-2 border-amber-200 pb-8">

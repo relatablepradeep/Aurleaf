@@ -88,10 +88,10 @@ const Ayumed = () => {
       <div className="max-w-6xl mx-auto">
         {/* Header with subtle animation */}
         <div className="text-center mb-10 animate-fade-in">
-          <h1 className="text-3xl md:text-5xl font-bold text-amber-800 mb-3 animate-title">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-amber-800 mb-3 animate-title">
             Find Ayurvedic Treatments
           </h1>
-          <p className="text-amber-700 max-w-lg mx-auto animate-subtitle">
+          <p className="text-base sm:text-lg text-amber-700 max-w-lg mx-auto animate-subtitle">
             Select your city to discover authentic Ayurvedic doctors and treatments near you
           </p>
         </div>
@@ -137,7 +137,7 @@ const Ayumed = () => {
         </div>
 
         {/* City Grid with enhanced animations */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
+        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {(searchTerm ? filteredCities : cities).map((city, index) => (
             <div
               key={city}
@@ -146,7 +146,7 @@ const Ayumed = () => {
               onClick={() => handleClick(city)}
             >
               <div 
-                className={`h-40 flex items-center justify-center rounded-xl shadow-lg bg-gradient-to-br ${cityColors[index % cityColors.length]} overflow-hidden card-glow`}
+                className={`h-40 flex items-center justify-center rounded-xl shadow-lg bg-gradient-to-br ${cityColors[index % cityColors.length]} overflow-hidden card-glow transition-all duration-300 ease-in-out transform hover:scale-105`}
               >
                 <h2 className="text-xl font-bold capitalize text-white tracking-wide text-shadow">
                   {city}

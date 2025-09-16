@@ -298,9 +298,9 @@ export default function BMICalculator() {
   };
 
   return (
-    <div className="flex flex-col md:flex-row w-full h-full bg-amber-50 rounded-lg overflow-hidden shadow-lg border-t border-amber-200">
+    <div className="flex flex-col w-full h-full bg-amber-50 rounded-lg overflow-hidden shadow-lg border-t border-amber-200">
       {/* Left Side - Avatar and BMI Result */}
-      <div className="w-full md:w-1/3 bg-amber-50 p-6 flex flex-col border-r border-amber-200">
+      <div className="w-full bg-amber-50 p-6 flex flex-col border-b border-amber-200">
         <h2 className="text-xl font-bold mb-6 text-amber-800 flex items-center">
           <User className="mr-2" size={20} />
           Personal Profile
@@ -326,7 +326,7 @@ export default function BMICalculator() {
       </div>
       
       {/* Right Side - Form and Results */}
-      <div className="w-full md:w-2/3 bg-amber-50 p-6">
+      <div className="w-full bg-amber-50 p-6">
         {!isSubmitted ? (
           <form onSubmit={handleSubmit} className="space-y-4">
             <h1 className="text-2xl font-bold text-amber-800 mb-6">BMI Calculator</h1>

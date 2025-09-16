@@ -72,11 +72,11 @@ const Ayudoctor = () => {
         <div className="container mx-auto">
           <div className="flex items-center gap-3 mb-2">
             <Users className="h-6 w-6" />
-            <h1 className="text-3xl font-bold capitalize">
+            <h1 className="text-2xl sm:text-3xl font-bold capitalize">
               Ayurvedic Physicians in {city}
             </h1>
           </div>
-          <p className="opacity-90 ml-9">
+          <p className="opacity-90 ml-9 text-sm sm:text-base">
             Find holistic healing with our experienced Ayurvedic doctors
           </p>
         </div>
@@ -119,11 +119,11 @@ const Ayudoctor = () => {
             <p className="text-gray-600">No doctors found in this category.</p>
           </div>
         ) : (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {filteredDoctors.map((doc, i) => (
               <div 
                 key={i} 
-                className="bg-white rounded-xl overflow-hidden shadow-lg transform transition duration-300 hover:shadow-xl hover:-translate-y-1"
+                className="bg-white rounded-xl overflow-hidden shadow-lg transform transition duration-300 hover:shadow-xl hover:-translate-y-1 hover:scale-105"
                 style={{ animationDelay: `${i * 100}ms` }}
               >
                 <div className="h-44 overflow-hidden">

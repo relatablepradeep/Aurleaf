@@ -72,8 +72,8 @@ const Appointment = () => {
   };
 
   return (
-    <div className="w-full flex justify-center items-center py-16 bg-gradient-to-br from-amber-100 via-amber-100 to-amber-100">
-      <div className="w-full max-w-4xl p-6 bg-amber-100 rounded-xl  text-gray-800">
+    <div className="w-full flex justify-center items-center py-12 sm:py-16 bg-gradient-to-br from-amber-100 via-amber-100 to-amber-100">
+      <div className="w-full max-w-4xl p-4 sm:p-6 bg-amber-100 rounded-xl  text-gray-800">
         <div className="flex flex-col md:flex-row w-full">
          
           <div className="w-full md:w-1/2 p-4 flex items-center justify-center">
@@ -81,7 +81,7 @@ const Appointment = () => {
               <img 
                 src={doctor.image} 
                 alt={doctor.name}
-                className="max-h-64 object-cover rounded-lg shadow-md"
+                className="max-h-60 sm:max-h-64 object-cover rounded-lg shadow-md"
               />
               <div className="absolute bottom-2 right-2 bg-amber-500 w-4 h-4 rounded-full border-2 border-white"></div>
             </div>
@@ -89,11 +89,11 @@ const Appointment = () => {
           
           <div className="w-full md:w-1/2 p-4 flex flex-col justify-between">
             <div>
-              <h2 className="text-2xl font-bold text-amber-600 mb-2">{doctor.name}</h2>
-              <div className="mb-2 text-amber-500 font-medium">
+              <h2 className="text-xl sm:text-2xl font-bold text-amber-600 mb-2">{doctor.name}</h2>
+              <div className="mb-2 text-amber-500 font-medium text-sm sm:text-base">
                 {doctor.specialist}
               </div>
-              <p className="text-gray-700 mb-3 text-sm">{doctor.description}</p>
+              <p className="text-gray-700 mb-3 text-xs sm:text-sm">{doctor.description}</p>
               <div className="mb-3">
                 {renderStars(doctor.rating)}
               </div>
@@ -107,30 +107,27 @@ const Appointment = () => {
             </div>
             
             <button
-       onClick={() => {
-        console.log('Navigation button clicked');
-        navigate('/doctors');
-      }}
-      
-      className="bg-amber-500 hover:bg-amber-600 text-white py-2 px-4 rounded-md flex items-center justify-center transition-all duration-300"
-    >
-      <svg
-        className="w-4 h-4 mr-2"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={2}
-          d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
-        />
-      </svg>
-      
-
-      Call for Appointment
-    </button>
+              onClick={() => {
+                console.log('Navigation button clicked');
+                navigate('/doctors');
+              }}
+              className="bg-amber-500 hover:bg-amber-600 text-white py-2 px-4 rounded-md flex items-center justify-center transition-all duration-300 text-sm sm:text-base"
+            >
+              <svg
+                className="w-4 h-4 mr-2"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                />
+              </svg>
+              Call for Appointment
+            </button>
           </div>
         </div>
         
@@ -138,11 +135,8 @@ const Appointment = () => {
           {doctors.map((_, index) => (
             <button
               key={index}
-              className={`mx-1 w-3 h-3 rounded-full transition-all duration-300 ${
-                index === currentDoctorIndex ? "bg-amber-500" : "bg-amber-300"
-              }`}
+              className={`mx-1 w-3 h-3 rounded-full transition-all duration-300 ${index === currentDoctorIndex ? "bg-amber-500" : "bg-amber-300"}`}
               onClick={() => setCurrentDoctorIndex(index)}
-              // onClick={() => navigate('/doctors')} 
               aria-label={`View doctor ${index + 1}`}
             />
           ))}
