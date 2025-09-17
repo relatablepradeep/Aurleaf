@@ -145,61 +145,8 @@ const Pincode = () => {
         <div className="absolute -right-24 -bottom-24 w-48 h-48 rounded-full bg-teal-100 opacity-50"></div>
         
         <div className="md:flex">
-          {/* Left sidebar with illustrations and quotes */}
-          <div className="hidden lg:block lg:w-1/3 bg-gradient-to-b from-emerald-500 to-teal-600 p-8 text-white relative overflow-hidden">
-            <div className="relative z-10">
-              <div className="w-20 h-20 bg-white bg-opacity-20 rounded-full flex items-center justify-center mb-8 animate-float">
-                <svg className="w-12 h-12 text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                  <path fillRule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clipRule="evenodd"></path>
-                </svg>
-              </div>
-              
-              <h2 className="text-3xl font-bold mb-6 font-serif tracking-wide">Discover Holistic Wellness</h2>
-              
-              <div className="mb-12 space-y-6">
-                <div className="bg-white bg-opacity-10 p-4 rounded-lg backdrop-blur-sm border border-white border-opacity-20 transform transition-all duration-300 hover:translate-y-1 hover:bg-opacity-20">
-                  <p className="italic text-slate-900 font-bold subpixel-antialiased  text-xl text-opacity-90 font-poppins">
-                    "Ayurveda is the science of life and it has a very basic, simple kind of approach, which is that we are part of the universe and the universe is intelligent and the human body is part of the cosmic body."
-                  </p>
-                  <p className="text-right mt-2 text-slate-500 text-opacity-70">— Deepak Chopra</p>
-                </div>
-                
-                <div className="bg-white bg-opacity-10 p-4 rounded-lg backdrop-blur-sm border border-white border-opacity-20 transform transition-all duration-300 hover:translate-y-1 hover:bg-opacity-20">
-                  <p className="italic text-slate-900 font-bold subpixel-antialiased text-xl text-opacity-90 font-poppins">
-                    "When diet is wrong, medicine is of no use. When diet is correct, medicine is of no need."
-                  </p>
-                  <p className="text-right mt-2 text-slate-500 text-opacity-70">— Ayurvedic Proverb</p>
-                </div>
-              </div>
-              
-              <div className="space-y-4">
-                <h3 className="font-semibold text-xl mb-2">Principles of Ayurveda</h3>
-                <div className="flex items-center space-x-2">
-                  <div className="w-2 h-2 rounded-full bg-white"></div>
-                  <p>Balance of Doshas</p>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <div className="w-2 h-2 rounded-full bg-white"></div>
-                  <p>Natural Healing</p>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <div className="w-2 h-2 rounded-full bg-white"></div>
-                  <p>Personalized Treatment</p>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <div className="w-2 h-2 rounded-full bg-white"></div>
-                  <p>Mind-Body Connection</p>
-                </div>
-              </div>
-            </div>
-            
-            {/* Decorative circles */}
-            <div className="absolute -bottom-20 -right-20 w-40 h-40 border-4 border-white border-opacity-30 rounded-full"></div>
-            <div className="absolute top-20 -right-10 w-20 h-20 border-4 border-white border-opacity-20 rounded-full"></div>
-          </div>
-          
           {/* Main content */}
-          <div className="lg:w-2/3 p-6 md:p-12">
+          <div className="w-full p-6 md:p-12">
             <div className="flex items-center mb-8 animate-fade-in">
               <div className="w-12 h-12 mr-4 rounded-full bg-gradient-to-r from-emerald-500 to-teal-600 flex items-center justify-center shadow-lg">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -318,7 +265,7 @@ const Pincode = () => {
                 </div>
               )}
 
-              <div className="grid gap-6 md:grid-cols-2 animate-fade-in">
+              <div className="grid gap-6 md:grid-cols-1 animate-fade-in">
                 {hospitals.map((hospital, index) => (
                   <div 
                     key={hospital.id} 

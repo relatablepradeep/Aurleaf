@@ -14,18 +14,6 @@ const Button = ({ text, onClick }) => (
 );
 
 const Infinite = () => {
-  const [positions, setPositions] = useState([
-    { left: '-30%' },
-    { left: '0%' },
-    { left: '30%' },
-    { left: '60%' },
-    { left: '90%' }
-  ]);
-
-  const [isAnimationPaused, setIsAnimationPaused] = useState(false);
-  const boxWidth = 64;
-  const animationRef = useRef(null);
-
   const boxContents = [
     {
       title: "200+",
@@ -54,62 +42,30 @@ const Infinite = () => {
     }
   ];
 
-  useEffect(() => {
-    const moveBoxes = () => {
-      if (isAnimationPaused) return;
-
-      setPositions(prevPositions => {
-        return prevPositions.map((box, idx) => {
-          if (parseFloat(box.left) < -boxWidth) {
-            const rightmost = Math.max(...prevPositions.map(p => parseFloat(p.left)));
-            return { ...box, left: `${rightmost + 30}%` };
-          }
-          return { ...box, left: `${parseFloat(box.left) - 0.3}%` };
-        });
-      });
-    };
-
-    animationRef.current = setInterval(moveBoxes, 50);
-    return () => clearInterval(animationRef.current);
-
-
-
-  }, [isAnimationPaused]);
-
-
-
-  
-
   return (
-    <div className="relative w-full h-72 sm:h-80 overflow-hidden flex items-center">
+    <div className="relative w-full h-auto overflow-hidden flex items-center py-12">
       <div className="absolute inset-0 bg-[url('/api/placeholder/400/320')] bg-cover bg-center opacity-5"></div>
-      {positions.map((box, index) => (
-        <div
-          key={index}
-          className="absolute w-48 sm:w-56 md:w-64 h-40 sm:h-48 md:h-64 rounded-xl bg-white flex flex-col items-center justify-center p-4 
-          border border-amber-200 shadow-lg text-amber-900 transform transition-all duration-300 
-          hover:shadow-amber-500/30 hover:scale-105"
-          style={{
-            left: box.left,
-            top: '50%',
-            transform: 'translateY(-50%)',
-            transition: 'left 0.1s linear, transform 0.3s ease, box-shadow 0.3s ease',
-          }}
-          onMouseEnter={() => setIsAnimationPaused(true)}
-          onMouseLeave={() => setIsAnimationPaused(false)}
-        >
-          <div className="mb-3 p-2 rounded-full bg-amber-50 border border-amber-200">
-            {boxContents[index % boxContents.length].icon}
+      <div className="flex animate-infinite-scroll group-hover:pause-animation">
+        {boxContents.concat(boxContents).map((box, index) => (
+          <div
+            key={index}
+            className="flex-shrink-0 w-64 sm:w-72 md:w-80 h-48 sm:h-56 md:h-64 rounded-xl bg-white flex flex-col items-center justify-center p-4 mx-4
+            border border-amber-200 shadow-lg text-amber-900 transform transition-all duration-300
+            hover:shadow-amber-500/30 hover:scale-105"
+          >
+            <div className="mb-3 p-2 rounded-full bg-amber-50 border border-amber-200">
+              {box.icon}
+            </div>
+            <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-amber-700 tracking-wide font-['Verdana'] relative text-center">
+              {box.title}
+              <span className="absolute -bottom-1 left-0 right-0 h-px bg-gradient-to-r from-transparent via-amber-500/50 to-transparent"></span>
+            </h1>
+            <p className="mt-2 text-xs sm:text-sm md:text-base text-center text-amber-800 font-['Georgia']">
+              {box.detail}
+            </p>
           </div>
-          <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-amber-700 tracking-wide font-['Verdana'] relative text-center">
-            {boxContents[index % boxContents.length].title}
-            <span className="absolute -bottom-1 left-0 right-0 h-px bg-gradient-to-r from-transparent via-amber-500/50 to-transparent"></span>
-          </h1>
-          <p className="mt-2 text-xs sm:text-sm md:text-base text-center text-amber-800 font-['Georgia']">
-            {boxContents[index % boxContents.length].detail}
-          </p>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   );
 };

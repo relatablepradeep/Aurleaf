@@ -116,7 +116,7 @@ const ReviewForm = () => {
           <div className="relative w-full max-w-4xl flex items-center justify-center">
             <button
               onClick={goToPrev}
-              className="absolute left-0 sm:left-4 bg-amber-500 hover:bg-amber-600 text-white w-10 h-10 sm:w-12 sm:h-12 rounded-full shadow-md flex items-center justify-center z-10 transition"
+              className="absolute left-0 sm:left-4 bg-amber-500 hover:bg-amber-600 text-white w-8 h-8 sm:w-12 sm:h-12 rounded-full shadow-md flex items-center justify-center z-10 transition"
             >
               ←
             </button>
@@ -135,13 +135,13 @@ const ReviewForm = () => {
               <h3 className="text-lg font-semibold text-amber-800">
                 {reviews[activeIndex]?.name}
               </h3>
-              <p className="text-sm text-gray-600 mt-2">{reviews[activeIndex]?.thought}</p>
+              <p className="text-sm text-gray-600 mt-2 px-4">{reviews[activeIndex]?.thought}</p>
               {reviews[activeIndex] && renderStars(reviews[activeIndex].rating)}
             </div>
 
             <button
               onClick={goToNext}
-              className="absolute right-0 sm:right-4 bg-amber-500 hover:bg-amber-600 text-white w-10 h-10 sm:w-12 sm:h-12 rounded-full shadow-md flex items-center justify-center z-10 transition"
+              className="absolute right-0 sm:right-4 bg-amber-500 hover:bg-amber-600 text-white w-8 h-8 sm:w-12 sm:h-12 rounded-full shadow-md flex items-center justify-center z-10 transition"
             >
               →
             </button>
@@ -180,9 +180,9 @@ const ReviewForm = () => {
         <div className="fixed inset-0 bg-black/30 backdrop-blur-sm flex items-center justify-center z-50 p-4">
           <div
             onClick={(e) => e.stopPropagation()}
-            className="bg-white text-gray-800 rounded-xl p-6 w-full max-w-md shadow-lg"
+            className="bg-white text-gray-800 rounded-xl p-6 w-full max-w-md shadow-lg m-4 sm:m-6"
           >
-            <h3 className="text-xl font-bold mb-4 text-amber-700">Share Your Experience</h3>
+            <h3 className="text-xl sm:text-2xl font-bold mb-4 text-amber-700">Share Your Experience</h3>
 
             <label className="block text-sm font-medium mb-1 text-gray-700">Profile Picture</label>
             <div className="flex items-center space-x-4 mb-4">
@@ -198,6 +198,7 @@ const ReviewForm = () => {
                 type="file"
                 accept="image/*"
                 onChange={handleProfilePicChange}
+                className="text-sm"
               />
             </div>
 
@@ -212,7 +213,7 @@ const ReviewForm = () => {
                     key={star}
                     type="button"
                     onClick={() => setFormData((prev) => ({ ...prev, rating: star }))}
-                    className={`text-2xl ${
+                    className={`text-2xl sm:text-3xl ${
                       star <= formData.rating ? 'text-amber-400' : 'text-gray-400'
                     }`}
                   >
@@ -225,7 +226,7 @@ const ReviewForm = () => {
 
             <input
               type="text"
-              className="w-full border border-gray-300 rounded px-3 py-2 mb-4 bg-white"
+              className="w-full border border-gray-300 rounded px-3 py-2 mb-4 bg-white text-sm sm:text-base"
               placeholder="Your Name"
               value={formData.name}
               onChange={(e) => setFormData((prev) => ({ ...prev, name: e.target.value }))}
@@ -233,7 +234,7 @@ const ReviewForm = () => {
             />
 
             <textarea
-              className="w-full border border-gray-300 rounded px-3 py-2 h-24 bg-white"
+              className="w-full border border-gray-300 rounded px-3 py-2 h-24 bg-white text-sm sm:text-base"
               placeholder="Write your review..."
               value={formData.thought}
               onChange={(e) => setFormData((prev) => ({ ...prev, thought: e.target.value }))}
@@ -244,14 +245,14 @@ const ReviewForm = () => {
               <button
                 type="button"
                 onClick={() => setShowFeedbackForm(false)}
-                className="px-4 py-2 bg-gray-300 hover:bg-gray-400 text-gray-700 rounded-lg mr-2"
+                className="px-4 py-2 bg-gray-300 hover:bg-gray-400 text-gray-700 rounded-lg mr-2 text-sm sm:text-base"
               >
                 Cancel
               </button>
               <button
                 type="button"
                 onClick={handleSubmit}
-                className="px-4 py-2 bg-amber-500 hover:bg-amber-600 text-white rounded-lg"
+                className="px-4 py-2 bg-amber-500 hover:bg-amber-600 text-white rounded-lg text-sm sm:text-base"
               >
                 Submit Review
               </button>

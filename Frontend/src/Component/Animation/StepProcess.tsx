@@ -105,29 +105,6 @@ export default function StepProcess() {
         <div className="absolute bottom-0 right-1/4 w-32 sm:w-64 h-32 sm:h-64 bg-amber-700 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-pulse delay-700"></div>
       </div>
 
-      {/* Main Process Steps - uncomment if needed */}
-      <div className="w-full max-w-6xl px-4 mb-8 sm:mb-16">
-        {/* <div className="flex flex-col md:flex-row justify-between gap-4 sm:gap-6">
-          {processSteps.map((step, idx) => (
-            <div 
-              key={idx} 
-              className="flex-1 bg-white p-4 sm:p-6 rounded-xl border border-amber-200 shadow-md transition-all duration-300 hover:shadow-lg hover:border-amber-500 relative overflow-hidden group"
-              style={{
-                animation: `fadeSlideUp 0.8s ease-out ${idx * 0.2}s both`
-              }}
-            >
-              <div className="absolute top-0 right-0 w-24 sm:w-32 h-24 sm:h-32 bg-amber-100 rounded-full -translate-x-16 -translate-y-16 group-hover:scale-150 transition-transform duration-700"></div>
-              <div className="mb-3 sm:mb-4 p-2 sm:p-3 bg-amber-50 rounded-full border border-amber-200 inline-block relative z-10">
-                {step.icon}
-              </div>
-              <h3 className="text-lg sm:text-xl font-bold text-amber-800 mb-1 sm:mb-2 font-['Verdana'] relative z-10">{step.title}</h3>
-              <p className="text-sm sm:text-base text-amber-700 font-['Georgia'] relative z-10">{step.description}</p>
-              <div className="absolute bottom-3 right-3 text-xl sm:text-2xl font-bold text-amber-200">{idx + 1}</div>
-            </div>
-          ))}
-        </div> */}
-      </div>
-
       {/* Staggered Card Layout */}
       <div className="w-full max-w-6xl px-4 text-center">
         <h3 className="text-xl sm:text-2xl font-bold text-amber-800 mb-6 sm:mb-8 font-['Verdana'] relative inline-block">
@@ -135,71 +112,66 @@ export default function StepProcess() {
           <span className="absolute -bottom-2 left-0 right-0 h-0.5 bg-gradient-to-r from-amber-500 via-amber-600 to-amber-500"></span>
         </h3>
 
-        <div className="relative h-80 sm:h-96 mb-8 sm:mb-16" ref={cardsContainerRef}>
-          <div className="absolute inset-0 flex justify-center items-center">
-            {diseases.map((disease, idx) => (
-              <div
-                key={idx}
-                onClick={() => handleCardClick(disease, idx)}
-                className={`absolute transition-all duration-300 cursor-pointer ${getCardWidth()} bg-white border border-amber-200 rounded-xl p-3 sm:p-4 shadow-md hover:shadow-xl`}
-                style={getCardStyle(idx)}
-              >
-                <div className="relative overflow-hidden rounded-lg mb-3 sm:mb-4">
-                  <figure className="w-full h-32 sm:h-40 rounded-lg overflow-hidden">
-                    <figure className="w-full h-32 sm:h-40 rounded-lg overflow-hidden">
-                      <img
-                        src={disease.image_url || '/api/placeholder/260/150'}
-                        alt={disease.alt_text || 'Remedy'}
-                        loading="lazy"
-                        decoding="async"
-                        width="260"
-                        height="150"
-                        className="w-full h-full object-cover transition-all duration-500 hover:scale-110"
-                        srcSet={`
-      ${disease.image_url.replace("w_64,h_64", "w_320,h_180")} 320w,
-      ${disease.image_url.replace("w_64,h_64", "w_640,h_360")} 640w,
-      ${disease.image_url.replace("w_64,h_64", "w_1280,h_720")} 1280w
-    `}
-                        sizes="(max-width: 640px) 100vw, 640px"
-                      />
-                      <figcaption className="sr-only">
-                        {disease.alt_text || 'Remedy'}
-                      </figcaption>
-                    </figure>
+        <div className="relative h-96 mb-8 sm:mb-16 flex justify-center items-center">
+          {diseases.map((disease, idx) => (
+            <div
+              key={idx}
+              onClick={() => handleCardClick(disease, idx)}
+              className={`absolute transition-all duration-300 cursor-pointer w-52 sm:w-64 bg-white border border-amber-200 rounded-xl p-3 sm:p-4 shadow-md hover:shadow-xl 
+                ${activeCardIndex === idx ? 'z-20 scale-105 -translate-y-2' : 'z-10'}
+                ${activeCardIndex - 1 === idx ? '-translate-x-20 sm:-translate-x-32 scale-90 opacity-80' : ''}
+                ${activeCardIndex + 1 === idx ? 'translate-x-20 sm:translate-x-32 scale-90 opacity-80' : ''}
+                ${activeCardIndex - 2 === idx ? '-translate-x-40 sm:-translate-x-64 scale-80 opacity-50 hidden md:block' : ''}
+                ${activeCardIndex + 2 === idx ? 'translate-x-40 sm:translate-x-64 scale-80 opacity-50 hidden md:block' : ''}
+                ${Math.abs(activeCardIndex - idx) > 2 ? 'opacity-0 scale-75 hidden' : ''}
+              `}
+            >
+              <div className="relative overflow-hidden rounded-lg mb-3 sm:mb-4">
+                <figure className="w-full h-32 sm:h-40 rounded-lg overflow-hidden">
+                  <img
+                    src={disease.image_url || '/api/placeholder/260/150'}
+                    alt={disease.alt_text || 'Remedy'}
+                    loading="lazy"
+                    decoding="async"
+                    width="260"
+                    height="150"
+                    className="w-full h-full object-cover transition-all duration-500 hover:scale-110"
+                    srcSet={`
+                      ${disease.image_url.replace("w_64,h_64", "w_320,h_180")} 320w,
+                      ${disease.image_url.replace("w_64,h_64", "w_640,h_360")} 640w,
+                      ${disease.image_url.replace("w_64,h_64", "w_1280,h_720")} 1280w
+                    `}
+                    sizes="(max-width: 640px) 100vw, 640px"
+                  />
+                  <figcaption className="sr-only">
+                    {disease.alt_text || 'Remedy'}
+                  </figcaption>
+                </figure>
 
-
-                    {/* Accessible caption (screen readers only) */}
-                    <figcaption className="sr-only">
-                      {disease.alt_text || 'Remedy'}
-                    </figcaption>
-                  </figure>
-
-
-                  {idx === activeCardIndex && (
-                    <div className="absolute inset-0 bg-gradient-to-t from-amber-900/60 to-transparent flex items-end">
-                      <span className="text-white text-xs sm:text-sm font-medium p-2 sm:p-3">View Details</span>
-                    </div>
-                  )}
-                </div>
-                <h2 className="text-base sm:text-lg font-bold text-amber-800 font-['Verdana'] line-clamp-1">{disease.alt_text || 'Unnamed Remedy'}</h2>
-                <p className="text-xs sm:text-sm text-amber-700 font-['Georgia'] line-clamp-1">{disease.disease_name || 'Traditional remedy'}</p>
-                {disease.symptoms?.length > 0 && idx === activeCardIndex && (
-                  <div className="mt-1 sm:mt-2 flex flex-wrap gap-1">
-                    {disease.symptoms.slice(0, 2).map((s, i) => (
-                      <span key={i} className="bg-amber-100 text-amber-800 text-xs px-2 py-0.5 rounded-full">
-                        {s.length > 15 ? s.substring(0, 15) + '...' : s}
-                      </span>
-                    ))}
+                {idx === activeCardIndex && (
+                  <div className="absolute inset-0 bg-gradient-to-t from-amber-900/60 to-transparent flex items-end">
+                    <span className="text-white text-xs sm:text-sm font-medium p-2 sm:p-3">View Details</span>
                   </div>
                 )}
-                {idx === activeCardIndex && (
-                  <button className="mt-2 sm:mt-3 w-full py-1.5 sm:py-2 bg-amber-700 text-white rounded-lg hover:bg-amber-800 transition-colors font-medium text-xs sm:text-sm">
-                    Learn More
-                  </button>
-                )}
               </div>
-            ))}
-          </div>
+              <h2 className="text-base sm:text-lg font-bold text-amber-800 font-['Verdana'] line-clamp-1">{disease.alt_text || 'Unnamed Remedy'}</h2>
+              <p className="text-xs sm:text-sm text-amber-700 font-['Georgia'] line-clamp-1">{disease.disease_name || 'Traditional remedy'}</p>
+              {disease.symptoms?.length > 0 && idx === activeCardIndex && (
+                <div className="mt-1 sm:mt-2 flex flex-wrap gap-1">
+                  {disease.symptoms.slice(0, 2).map((s, i) => (
+                    <span key={i} className="bg-amber-100 text-amber-800 text-xs px-2 py-0.5 rounded-full">
+                      {s.length > 15 ? s.substring(0, 15) + '...' : s}
+                    </span>
+                  ))}
+                </div>
+              )}
+              {idx === activeCardIndex && (
+                <button className="mt-2 sm:mt-3 w-full py-1.5 sm:py-2 bg-amber-700 text-white rounded-lg hover:bg-amber-800 transition-colors font-medium text-xs sm:text-sm">
+                  Learn More
+                </button>
+              )}
+            </div>
+          ))}
         </div>
 
         {/* Card Navigation Dots */}

@@ -16,27 +16,27 @@ export default function Foot() {
           Ayurleaf — Your personal doctor who truly cares about you.
         </p>
 
-        <div className="hidden md:flex md:space-x-8 mt-28 absolute left-1/2 transform -translate-x-1/2">
+        <div className="flex flex-col md:flex-row md:space-x-8 mt-8 md:mt-12 text-center">
           <NavLink
             to="/fitness"
             className={({ isActive }) =>
-              `text-2xl font-medium ${isActive ? "text-amber-900" : "text-amber-800 hover:text-amber-600"}`
+              `text-lg md:text-2xl font-medium ${isActive ? "text-amber-900" : "text-amber-800 hover:text-amber-600"} mb-2 md:mb-0`
             }
           >
             AyuFit
           </NavLink>
-          <NavLink to="/products" className="text-2xl font-medium text-amber-800 hover:text-amber-600">
+          <NavLink to="/products" className="text-lg md:text-2xl font-medium text-amber-800 hover:text-amber-600 mb-2 md:mb-0">
             AyuMed
           </NavLink>
-          <NavLink to="/doctors" className="text-2xl font-medium text-amber-800 hover:text-amber-600">
+          <NavLink to="/doctors" className="text-lg md:text-2xl font-medium text-amber-800 hover:text-amber-600 mb-2 md:mb-0">
             AyuDoctor
           </NavLink>
-          <NavLink to="/hospitals" className="text-2xl font-medium text-amber-800 hover:text-amber-600">
+          <NavLink to="/hospitals" className="text-lg md:text-2xl font-medium text-amber-800 hover:text-amber-600">
             AyuHospitals
           </NavLink>
         </div>
 
-        <span className="text-sm text-amber-700 m-5">
+        <span className="text-sm text-amber-700 mt-8 md:mt-12">
           © 2025 <Link to="/" className="hover:underline text-amber-600">Ayurleaf™</Link>. All Rights Reserved.
         </span>
       </div>
