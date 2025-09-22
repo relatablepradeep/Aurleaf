@@ -23,15 +23,26 @@ const ScrollToTopButton: React.FC = () => {
   return (
     <button
       onClick={scrollToTop}
-      className={`fixed bottom-20 right-5 sm:bottom-24 sm:right-8 md:bottom-28 md:right-10 lg:bottom-32 lg:right-12
-                  bg-green-600 text-white border-2 border-green-800 rounded-full
-                  w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16
-                  text-3xl font-bold cursor-pointer
-                  shadow-lg z-50
-                  transition-transform duration-200 ease-in-out
-                  hover:scale-110
-                  focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500
-                  ${visible ? "inline-block" : "hidden"}`}
+        onMouseEnter={e => (e.currentTarget.style.transform = "scale(1.2)")}
+        onMouseLeave={e => (e.currentTarget.style.transform = "scale(1)")}
+      style={{
+        display: visible ? "inline" : "inline",
+        position: "fixed",
+        bottom: "120px",
+        right: "48px",
+        backgroundColor: "#4caf50",
+        color: "white",
+        border: "2px solid #388e3c",
+        borderRadius: "50%",
+        width: "50px",
+        height: "50px",
+        fontSize: "33px",
+        fontWeight: "bold",
+        cursor: "pointer",
+        boxShadow: "0 2px 6px rgba(0,0,0,0.3)",
+        zIndex: 99999,
+        transition: "transform 0.2s",
+      }}
       title="Go to top"
       aria-label="Scroll to top"
     >

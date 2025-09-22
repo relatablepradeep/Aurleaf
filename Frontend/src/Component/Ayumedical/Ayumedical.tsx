@@ -127,8 +127,8 @@ const Ayumedical = () => {
       <div className="max-w-7xl mx-auto p-4 md:p-6">
         {/* Header */}
         <div className="mb-8 text-center">
-          <h1 className="text-3xl sm:text-4xl font-bold text-green-700 mb-2">Ayurveda Products</h1>
-          <p className="text-base sm:text-lg text-green-700">Natural healing for mind, body, and spirit</p>
+          <h1 className="text-3xl md:text-4xl font-bold text-green-700 mb-2">Ayurveda Products</h1>
+          <p className="text-green-700">Natural healing for mind, body, and spirit</p>
         </div>
 
         {/* Search and Filters Section */}
@@ -261,12 +261,12 @@ const Ayumedical = () => {
           </div>
         ) : (
           <div className={viewMode === "grid" 
-            ? "grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6" 
+            ? "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" 
             : "flex flex-col gap-4"
           }>
             {currentProducts.map((item, idx) => (
               viewMode === "grid" ? (
-                <div key={idx} className="bg-white rounded-xl shadow-md hover:shadow-lg transition overflow-hidden transform hover:-translate-y-1 hover:scale-105">
+                <div key={idx} className="bg-white rounded-xl shadow-md hover:shadow-lg transition overflow-hidden">
                   <div className="relative bg-amber-50 p-4 h-48 flex items-center justify-center">
                     <img
                       src={item.image_url || "/api/placeholder/180/180"}
