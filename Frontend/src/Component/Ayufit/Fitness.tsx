@@ -105,8 +105,8 @@ export default function Fitness() {
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-10 opacity-0 animate-fadeIn animation-delay-100">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-amber-800 mb-4">Ayurvedic Remedies</h1>
-          <p className="text-base sm:text-lg md:text-xl text-amber-700 max-w-3xl mx-auto">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-amber-800 mb-4">Ayurvedic Remedies</h1>
+          <p className="text-lg md:text-xl text-amber-700 max-w-3xl mx-auto">
             Discover ancient wisdom for modern healing through our comprehensive collection of Ayurvedic remedies.
           </p>
         </div>
@@ -137,7 +137,7 @@ export default function Fitness() {
                 filteredDiseases.slice(0, 10).map((disease, index) => (
                   <div
                     key={index}
-                    className="p-3 hover:bg-amber-100 cursor-pointer flex items-center border-b border-amber-100 last:border-0 transition-all duration-200"
+                    className="p-3 hover:bg-amber-50 cursor-pointer flex items-center border-b border-amber-100 last:border-0 transition-all duration-200"
                     onClick={(e) => handleSuggestionClick(e, disease)}
                   >
                     <img
@@ -167,6 +167,7 @@ export default function Fitness() {
 
         {/* Disease Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-4 md:gap-6 lg:gap-8">
+
           {filteredDiseases.map((disease, index) => (
             <div
               key={index}

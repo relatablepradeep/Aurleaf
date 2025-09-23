@@ -47,6 +47,8 @@ function MiniShop() {
         autoplay={{ delay: 2700, disableOnInteraction: false }}
         slidesPerView="auto"
         spaceBetween={15}
+        slidesOffsetBefore={sideOffset}
+        slidesOffsetAfter={sideOffset}
         coverflowEffect={{
           rotate: 0,
           stretch: 0,

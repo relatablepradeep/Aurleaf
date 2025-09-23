@@ -166,6 +166,7 @@ export default function StepProcess() {
                 </div>
               ))}
             </div>
+
           </div>
         </div>
 

@@ -42,15 +42,8 @@ function Nav() {
           </NavLink>
         </div>
 
-        {/* Get Instant Help Button */}
-        <div className="hidden md:flex items-center">
-          <button
-            onClick={() => navigate('/BMI')}
-            className="text-black bg-amber-500 hover:bg-amber-600 font-medium rounded-lg text-3xl px-6 py-3"
-          >
-            Get Instant Help
-          </button>
-        </div>
+        
+       
 
         {/* Hamburger Button */}
         <button
