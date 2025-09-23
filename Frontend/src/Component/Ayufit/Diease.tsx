@@ -114,14 +114,15 @@ export default function Disease() {
   const availableSections = sections.filter(section => section.condition);
 
   return (
-    <div className="flex flex-col md:flex-row bg-amber-50 min-h-screen font-serif">
+    <div className="flex flex-col md:flex-row bg-amber-50 min-h-screen font-serif m-0 p-0">
+
       {/* Sidebar Toggle Button */}
       <button 
-        className="md:hidden fixed top-4 right-4 z-20 bg-amber-500 text-white w-10 h-10 rounded-full shadow-lg flex items-center justify-center"
-        onClick={() => setIsSidebarOpen(!isSidebarOpen)}
-      >
-        {isSidebarOpen ? '✕' : '☰'}
-      </button>
+    className="md:hidden fixed top-0 right-4 z-20 bg-amber-500 text-white w-10 h-10 rounded-full shadow-lg flex items-center justify-center mt-2"
+    onClick={() => setIsSidebarOpen(!isSidebarOpen)}
+  >
+    {isSidebarOpen ? '✕' : '☰'}
+  </button>
 
       {/* Left Side Navigation */}
       <div className={`w-full md:fixed md:w-56 lg:w-64 bg-amber-100 p-4 shadow-inner flex-shrink-0 overflow-y-auto md:h-screen transform md:transform-none transition-transform duration-300 ease-in-out ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'} md:translate-x-0`}>
@@ -169,7 +170,7 @@ export default function Disease() {
       </div>
 
       {/* Main Content */}
-      <div className="flex-grow p-6 md:p-8 lg:p-10 max-w-6xl mx-auto md:ml-56 lg:ml-64 overflow-y-auto">
+      <div className="flex-grow pt-0 pb-4 px-4 md:pt-8 md:pb-8 md:px-8 lg:pt-10 lg:pb-10 lg:px-10 sm:pt-0 max-w-6xl mx-auto md:ml-56 lg:ml-64 overflow-y-auto">
         {/* Header */}
         <div className="flex flex-col md:flex-row items-center md:items-start mb-10 border-b-2 border-amber-200 pb-8">
           <img

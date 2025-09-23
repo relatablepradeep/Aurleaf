@@ -1,204 +1,224 @@
 import { useEffect, useState, useRef } from 'react';
 import { useNavigate } from 'react-router';
-import { Heart, Activity, Zap } from 'lucide-react';
+import { Heart, Activity, Zap, ChevronLeft, ChevronRight, ArrowRight } from 'lucide-react';
 import disease_data from '../Ayufit/disease_data.json';
 
 export default function StepProcess() {
   const [diseases, setDiseases] = useState([]);
-  const [activeCardIndex, setActiveCardIndex] = useState(4); // Center card (assuming 9 cards)
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [cardsPerView, setCardsPerView] = useState(3);
   const navigate = useNavigate();
   const cardsContainerRef = useRef(null);
-  const [windowWidth, setWindowWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : 1200);
 
   useEffect(() => {
-    setDiseases(disease_data.slice(0, 9)); // Show only 9 remedies for the ladder display
+    setDiseases(disease_data.slice(0, 12)); 
 
-    // Handle window resize
     const handleResize = () => {
-      setWindowWidth(window.innerWidth);
+      const width = window.innerWidth;
+      if (width < 640) {
+        setCardsPerView(1);
+      } else if (width < 768) {
+        setCardsPerView(2);
+      } else if (width < 1024) {
+        setCardsPerView(3);
+      } else {
+        setCardsPerView(4);
+      }
     };
 
+    handleResize();
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  const handleCardClick = (disease, index) => {
-    if (index === activeCardIndex) {
-      navigate(`/fitness/${encodeURIComponent(disease.alt_text || disease.disease_name)}`);
-    } else {
-      setActiveCardIndex(index);
-    }
+  const handleCardClick = (disease) => {
+    navigate(`/fitness/${encodeURIComponent(disease.alt_text || disease.disease_name)}`);
   };
 
-  // Calculate card positions and styles
-  const getCardStyle = (index) => {
-    const isCenterCard = index === activeCardIndex;
-    const distanceFromCenter = Math.abs(index - activeCardIndex);
-
-    // Base styles
-    let transform = '';
-    let zIndex = 10 - distanceFromCenter;
-    let opacity = 1;
-
-    // Scale factors based on screen size
-    const xTranslationFactor = windowWidth < 640 ? 20 : windowWidth < 768 ? 30 : 40;
-    const yTranslationFactor = windowWidth < 640 ? 3 : 5;
-    const scaleFactor = windowWidth < 640 ? 0.08 : 0.1;
-
-    // Hide cards that are too far from center on small screens
-    if (windowWidth < 640 && distanceFromCenter > 1) {
-      opacity = 0;
-      zIndex = -1;
-    } else if (windowWidth < 768 && distanceFromCenter > 2) {
-      opacity = 0;
-      zIndex = -1;
-    } else if (distanceFromCenter > 0) {
-      // Side cards
-      const direction = index < activeCardIndex ? -1 : 1; // -1 for left, 1 for right
-      transform = `translateX(${direction * (distanceFromCenter * xTranslationFactor)}%) translateY(${distanceFromCenter * yTranslationFactor}%) scale(${1 - distanceFromCenter * scaleFactor})`;
-      opacity = 1 - (distanceFromCenter * 0.2);
-    } else {
-      // Center card
-      transform = 'translateY(-5%) scale(1.05)';
-      zIndex = 20;
-    }
-
-    return {
-      transform,
-      zIndex,
-      opacity,
-      transition: 'all 0.4s ease-out'
-    };
+  const nextSlide = () => {
+    setCurrentIndex(prev => 
+      prev + cardsPerView >= diseases.length ? 0 : prev + 1
+    );
   };
 
-  // Process step boxes - commented out in original code but keeping for reference
-  const processSteps = [
-    {
-      icon: <Activity className="text-amber-500" size={28} />,
-      title: "Tell Us Your Condition",
-      description: "Share your health concerns and symptoms with our AI"
-    },
-    {
-      icon: <Zap className="text-amber-500" size={28} />,
-      title: "Get Personalized Plan",
-      description: "Receive custom Ayurvedic diet & workout recommendations"
-    },
-    {
-      icon: <Heart className="text-amber-500" size={28} />,
-      title: "Improve Your Health",
-      description: "Follow the plan and track your progress over time"
-    }
-  ];
-
-  // Calculate dynamic card width based on screen size
-  const getCardWidth = () => {
-    if (windowWidth < 640) return 'min-w-[200px]';
-    if (windowWidth < 768) return 'min-w-[220px]';
-    return 'min-w-[260px]';
+  const prevSlide = () => {
+    setCurrentIndex(prev => 
+      prev <= 0 ? Math.max(0, diseases.length - cardsPerView) : prev - 1
+    );
   };
+
+  const goToSlide = (index) => {
+    setCurrentIndex(index);
+  };
+
+  const maxStartIndex = Math.max(0, diseases.length - cardsPerView);
+  const dotCount = Math.ceil((maxStartIndex + 1) / cardsPerView);
 
   return (
-    <section className="w-full flex flex-col justify-center items-center pt-8 sm:pt-12 pb-16 sm:pb-20 bg-gradient-to-b from-amber-100 via-amber-100 to-amber-200 relative overflow-hidden">
-      {/* Decorative elements */}
+    <section className="w-full flex flex-col justify-center items-center pt-8 sm:pt-12 pb-16 sm:pb-20 bg-gradient-to-br from-amber-50 via-orange-50 to-yellow-50 relative overflow-hidden">
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-0 left-1/4 w-32 sm:w-64 h-32 sm:h-64 bg-amber-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-pulse"></div>
-        <div className="absolute bottom-0 right-1/4 w-32 sm:w-64 h-32 sm:h-64 bg-amber-700 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-pulse delay-700"></div>
+        <div className="absolute top-10 left-10 w-20 h-20 bg-gradient-to-r from-amber-400 to-orange-400 rounded-full mix-blend-multiply filter blur-2xl opacity-20 animate-float"></div>
+        <div className="absolute top-1/3 right-20 w-16 h-16 bg-gradient-to-r from-yellow-400 to-amber-400 rounded-full mix-blend-multiply filter blur-2xl opacity-20 animate-float-delayed"></div>
+        <div className="absolute bottom-20 left-1/4 w-24 h-24 bg-gradient-to-r from-orange-400 to-red-400 rounded-full mix-blend-multiply filter blur-2xl opacity-15 animate-float"></div>
       </div>
 
-      {/* Staggered Card Layout */}
-      <div className="w-full max-w-6xl px-4 text-center">
-        <h3 className="text-xl sm:text-2xl font-bold text-amber-800 mb-6 sm:mb-8 font-['Verdana'] relative inline-block">
-          <span>Explore Ayurvedic Remedies</span>
-          <span className="absolute -bottom-2 left-0 right-0 h-0.5 bg-gradient-to-r from-amber-500 via-amber-600 to-amber-500"></span>
-        </h3>
+      <div className="w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-12">
+          
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-800 mb-4">
+            Explore Ayurvedic
+            <span className="block bg-gradient-to-r from-amber-600 to-orange-600 bg-clip-text text-transparent">
+              Remedies
+            </span>
+          </h2>
+          
+        </div>
 
-        <div className="relative h-96 mb-8 sm:mb-16 flex justify-center items-center">
-          {diseases.map((disease, idx) => (
-            <div
-              key={idx}
-              onClick={() => handleCardClick(disease, idx)}
-              className={`absolute transition-all duration-300 cursor-pointer w-52 sm:w-64 bg-white border border-amber-200 rounded-xl p-3 sm:p-4 shadow-md hover:shadow-xl 
-                ${activeCardIndex === idx ? 'z-20 scale-105 -translate-y-2' : 'z-10'}
-                ${activeCardIndex - 1 === idx ? '-translate-x-20 sm:-translate-x-32 scale-90 opacity-80' : ''}
-                ${activeCardIndex + 1 === idx ? 'translate-x-20 sm:translate-x-32 scale-90 opacity-80' : ''}
-                ${activeCardIndex - 2 === idx ? '-translate-x-40 sm:-translate-x-64 scale-80 opacity-50 hidden md:block' : ''}
-                ${activeCardIndex + 2 === idx ? 'translate-x-40 sm:translate-x-64 scale-80 opacity-50 hidden md:block' : ''}
-                ${Math.abs(activeCardIndex - idx) > 2 ? 'opacity-0 scale-75 hidden' : ''}
-              `}
+        <div className="relative">
+          <button
+            onClick={prevSlide}
+            className="absolute left-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 bg-white/90 backdrop-blur-sm hover:bg-white border border-gray-200 rounded-full shadow-lg hover:shadow-xl transition-all duration-200 flex items-center justify-center group"
+            disabled={currentIndex === 0}
+          >
+            <ChevronLeft className="w-5 h-5 text-gray-600 group-hover:text-amber-600 transition-colors" />
+          </button>
+
+          <button
+            onClick={nextSlide}
+            className="absolute right-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 bg-white/90 backdrop-blur-sm hover:bg-white border border-gray-200 rounded-full shadow-lg hover:shadow-xl transition-all duration-200 flex items-center justify-center group"
+            disabled={currentIndex + cardsPerView >= diseases.length}
+          >
+            <ChevronRight className="w-5 h-5 text-gray-600 group-hover:text-amber-600 transition-colors" />
+          </button>
+
+          <div className="mx-12 overflow-hidden">
+            <div 
+              ref={cardsContainerRef}
+              className="flex transition-transform duration-500 ease-out"
+              style={{
+                transform: `translateX(-${currentIndex * (100 / cardsPerView)}%)`
+              }}
             >
-              <div className="relative overflow-hidden rounded-lg mb-3 sm:mb-4">
-                <figure className="w-full h-32 sm:h-40 rounded-lg overflow-hidden">
-                  <img
-                    src={disease.image_url || '/api/placeholder/260/150'}
-                    alt={disease.alt_text || 'Remedy'}
-                    loading="lazy"
-                    decoding="async"
-                    width="260"
-                    height="150"
-                    className="w-full h-full object-cover transition-all duration-500 hover:scale-110"
-                    srcSet={`
-                      ${disease.image_url.replace("w_64,h_64", "w_320,h_180")} 320w,
-                      ${disease.image_url.replace("w_64,h_64", "w_640,h_360")} 640w,
-                      ${disease.image_url.replace("w_64,h_64", "w_1280,h_720")} 1280w
-                    `}
-                    sizes="(max-width: 640px) 100vw, 640px"
-                  />
-                  <figcaption className="sr-only">
-                    {disease.alt_text || 'Remedy'}
-                  </figcaption>
-                </figure>
+              {diseases.map((disease, idx) => (
+                <div
+                  key={idx}
+                  className="flex-shrink-0 px-3"
+                  style={{ width: `${100 / cardsPerView}%` }}
+                >
+                  <div
+                    onClick={() => handleCardClick(disease)}
+                    className="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer overflow-hidden border border-gray-100 hover:border-amber-200 transform hover:-translate-y-2"
+                  >
+                    <div className="relative overflow-hidden">
+                      <div className="aspect-[4/3] relative">
+                        <img
+                          src={disease.image_url || '/api/placeholder/400/300'}
+                          alt={disease.alt_text || 'Ayurvedic Remedy'}
+                          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                          loading="lazy"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                        
+                        <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300">
+                          <div className="bg-white/90 backdrop-blur-sm rounded-full p-3 transform scale-75 group-hover:scale-100 transition-transform duration-300">
+                            <ArrowRight className="w-6 h-6 text-amber-600" />
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <div className="absolute top-4 left-4">
+                        <span className="bg-amber-500 text-white text-xs font-medium px-3 py-1 rounded-full">
+                          Natural Remedy
+                        </span>
+                      </div>
+                    </div>
 
-                {idx === activeCardIndex && (
-                  <div className="absolute inset-0 bg-gradient-to-t from-amber-900/60 to-transparent flex items-end">
-                    <span className="text-white text-xs sm:text-sm font-medium p-2 sm:p-3">View Details</span>
+                    <div className="p-6">
+                      <h3 className="text-xl font-bold text-gray-800 mb-2 line-clamp-2 group-hover:text-amber-700 transition-colors">
+                        {disease.alt_text || 'Ayurvedic Treatment'}
+                      </h3>
+                      
+                      <p className="text-gray-600 text-sm mb-4 line-clamp-2">
+                        {disease.disease_name || 'Traditional natural healing approach for better health'}
+                      </p>
+                      
+                      {disease.symptoms?.length > 0 && (
+                        <div className="flex flex-wrap gap-2 mb-4">
+                          {disease.symptoms.slice(0, 2).map((symptom, i) => (
+                            <span 
+                              key={i} 
+                              className="bg-amber-50 text-amber-700 text-xs px-3 py-1 rounded-full border border-amber-200"
+                            >
+                              {symptom.length > 12 ? symptom.substring(0, 12) + '...' : symptom}
+                            </span>
+                          ))}
+                        </div>
+                      )}
+                      
+                      <div className="flex items-center justify-between">
+                        <span className="text-amber-600 font-medium text-sm group-hover:text-amber-700 transition-colors">
+                          Learn More
+                        </span>
+                        <ArrowRight className="w-4 h-4 text-amber-600 group-hover:text-amber-700 group-hover:translate-x-1 transition-all duration-200" />
+                      </div>
+                    </div>
                   </div>
-                )}
-              </div>
-              <h2 className="text-base sm:text-lg font-bold text-amber-800 font-['Verdana'] line-clamp-1">{disease.alt_text || 'Unnamed Remedy'}</h2>
-              <p className="text-xs sm:text-sm text-amber-700 font-['Georgia'] line-clamp-1">{disease.disease_name || 'Traditional remedy'}</p>
-              {disease.symptoms?.length > 0 && idx === activeCardIndex && (
-                <div className="mt-1 sm:mt-2 flex flex-wrap gap-1">
-                  {disease.symptoms.slice(0, 2).map((s, i) => (
-                    <span key={i} className="bg-amber-100 text-amber-800 text-xs px-2 py-0.5 rounded-full">
-                      {s.length > 15 ? s.substring(0, 15) + '...' : s}
-                    </span>
-                  ))}
                 </div>
-              )}
-              {idx === activeCardIndex && (
-                <button className="mt-2 sm:mt-3 w-full py-1.5 sm:py-2 bg-amber-700 text-white rounded-lg hover:bg-amber-800 transition-colors font-medium text-xs sm:text-sm">
-                  Learn More
-                </button>
-              )}
+              ))}
             </div>
-          ))}
+          </div>
         </div>
 
-        {/* Card Navigation Dots */}
-        <div className="flex justify-center gap-1 sm:gap-2 mb-4 sm:mb-8">
-          {diseases.map((_, idx) => (
-            <button
-              key={idx}
-              className={`w-1.5 sm:w-2 h-1.5 sm:h-2 rounded-full transition-all duration-300 ${idx === activeCardIndex ? 'bg-amber-700 w-4 sm:w-6' : 'bg-amber-300 hover:bg-amber-500'
+        <div className="flex justify-center gap-2 mt-8">
+          {Array.from({ length: Math.ceil(diseases.length / cardsPerView) }, (_, idx) => {
+            const slideIndex = idx * cardsPerView;
+            return (
+              <button
+                key={idx}
+                className={`transition-all duration-300 rounded-full ${
+                  Math.floor(currentIndex / cardsPerView) === idx
+                    ? 'w-8 h-2 bg-amber-600' 
+                    : 'w-2 h-2 bg-amber-300 hover:bg-amber-400'
                 }`}
-              onClick={() => setActiveCardIndex(idx)}
-              aria-label={`View card ${idx + 1}`}
-            />
-          ))}
+                onClick={() => goToSlide(slideIndex)}
+                aria-label={`Go to slide group ${idx + 1}`}
+              />
+            );
+          })}
         </div>
       </div>
 
-      {/* CSS for animations */}
       <style jsx>{`
-        @keyframes fadeSlideUp {
-          from {
-            opacity: 0;
-            transform: translateY(20px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
+        @keyframes float {
+          0%, 100% { transform: translateY(0px) rotate(0deg); }
+          50% { transform: translateY(-10px) rotate(5deg); }
+        }
+        
+        @keyframes float-delayed {
+          0%, 100% { transform: translateY(0px) rotate(0deg); }
+          50% { transform: translateY(-15px) rotate(-5deg); }
+        }
+        
+        .animate-float {
+          animation: float 6s ease-in-out infinite;
+        }
+        
+        .animate-float-delayed {
+          animation: float-delayed 8s ease-in-out infinite 2s;
+        }
+        
+        .line-clamp-1 {
+          overflow: hidden;
+          display: -webkit-box;
+          -webkit-line-clamp: 1;
+          -webkit-box-orient: vertical;
+        }
+        
+        .line-clamp-2 {
+          overflow: hidden;
+          display: -webkit-box;
+          -webkit-line-clamp: 2;
+          -webkit-box-orient: vertical;
         }
       `}</style>
     </section>

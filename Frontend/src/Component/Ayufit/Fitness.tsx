@@ -166,53 +166,53 @@ export default function Fitness() {
         </div>
 
         {/* Disease Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-4 md:gap-6 lg:gap-8">
           {filteredDiseases.map((disease, index) => (
             <div
               key={index}
               onClick={() => handleCardClick(disease)}
-              className={`flex flex-col border-2 rounded-lg p-4 md:p-6 cursor-pointer bg-white shadow-sm 
-                hover:shadow-lg transform hover:-translate-y-2 transition-all duration-300 border-amber-200
-                opacity-0 animate-fadeUp`}
-              style={{ animationDelay: `${150 + index * 50}ms` }}
+              className={`group flex flex-col border-2 rounded-xl p-4 md:p-5 lg:p-6 cursor-pointer bg-gradient-to-br from-amber-100 to-amber-50 shadow-lg 
+                hover:shadow-2xl transform hover:-translate-y-3 hover:scale-105 transition-all duration-700 ease-in-out border-amber-400
+                animate-slideIn`}
+              style={{ animationDelay: `${100 + index * 75}ms`, animationDuration: '800ms', animationFillMode: 'forwards' }}
             >
               <div className="flex items-center mb-4">
-                <div className="flex-shrink-0">
+                <div className="flex-shrink-0 overflow-hidden rounded-full ring-2 ring-amber-300 ring-offset-2">
                   <img
                     src={disease.image_url || '/api/placeholder/100/100'}
                     alt={disease.alt_text || 'Ayurvedic Remedy'}
-                    className="w-16 h-16 md:w-20 md:h-20 object-cover rounded-full shadow-sm border-2 border-amber-300"
+                    className="w-16 h-16 md:w-20 md:h-20 object-cover rounded-full shadow-lg transform transition-transform duration-700 group-hover:scale-110 group-hover:rotate-6"
                     onError={(e) => {
                       e.target.src = '/api/placeholder/100/100';
                     }}
                   />
                 </div>
                 <div className="ml-4 flex-grow">
-                  <h2 className="font-bold text-lg md:text-xl text-amber-800">{disease.alt_text || 'Unnamed Remedy'}</h2>
-                  <div className="text-sm md:text-base mt-1 text-amber-600">
+                  <h2 className="font-bold text-lg md:text-2xl text-amber-900 transition-colors duration-300 group-hover:text-amber-700">{disease.alt_text || 'Unnamed Remedy'}</h2>
+                  <div className="text-sm md:text-md mt-1 text-amber-700 font-medium">
                     {disease.disease_name || 'Traditional remedy'}
                   </div>
                 </div>
               </div>
               {disease.brief_text && (
-                <p className="text-amber-700 text-sm md:text-base mt-2 line-clamp-2">{disease.brief_text}</p>
+                <p className="text-amber-800 text-sm md:text-md mt-2 line-clamp-3 transition-opacity duration-300 group-hover:opacity-90">{disease.brief_text}</p>
               )}
               {disease.symptoms && disease.symptoms.length > 0 && (
-                <div className="mt-3 flex flex-wrap gap-2">
+                <div className="mt-3 flex flex-wrap gap-1 md:gap-2">
                   {disease.symptoms.slice(0, 3).map((symptom, idx) => (
-                    <span key={idx} className="bg-amber-100 text-amber-800 text-xs px-2 py-1 rounded-full">
+                    <span key={idx} className="bg-amber-200 text-amber-900 text-xs px-2 py-1 rounded-lg transition-transform duration-300 group-hover:scale-105 group-hover:bg-amber-300">
                       {symptom.length > 20 ? symptom.substring(0, 20) + '...' : symptom}
                     </span>
                   ))}
                   {disease.symptoms.length > 3 && (
-                    <span className="bg-amber-200 text-amber-800 text-xs px-2 py-1 rounded-full">
+                    <span className="bg-amber-300 text-amber-900 text-xs px-2 py-1 rounded-lg transition-transform duration-300 group-hover:scale-105 group-hover:bg-amber-400">
                       +{disease.symptoms.length - 3} more
                     </span>
                   )}
                 </div>
               )}
               <div className="mt-auto pt-4 text-right">
-                <span className="text-amber-500 text-sm md:text-base font-medium">View Details →</span>
+                <span className="text-amber-600 text-sm md:text-md font-semibold transition-colors duration-300 group-hover:text-amber-800 group-hover:underline">View Details →</span>
               </div>
             </div>
           ))}

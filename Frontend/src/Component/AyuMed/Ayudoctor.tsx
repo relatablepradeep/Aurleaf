@@ -123,7 +123,7 @@ const Ayudoctor = () => {
             {filteredDoctors.map((doc, i) => (
               <div 
                 key={i} 
-                className="bg-white rounded-xl overflow-hidden shadow-lg transform transition duration-300 hover:shadow-xl hover:-translate-y-1 hover:scale-105"
+                className="bg-white rounded-xl overflow-hidden shadow-lg transform transition duration-300 hover:shadow-xl hover:-translate-y-1 hover:scale-105 flex flex-col h-full"
                 style={{ animationDelay: `${i * 100}ms` }}
               >
                 <div className="h-44 overflow-hidden">
@@ -138,7 +138,7 @@ const Ayudoctor = () => {
                   )}
                 </div>
                 
-                <div className="p-5">
+                <div className="p-5 flex flex-col flex-grow">
                   <h2 className="text-xl font-bold mb-2" style={{ color: colors.text }}>
                     {doc.name}
                   </h2>
@@ -171,17 +171,17 @@ const Ayudoctor = () => {
                     </p>
                   </div>
                   
-                  <div className="flex items-start gap-2 mb-4">
+                  <div className="flex items-start gap-2 mb-4 flex-grow">
                     <Clock className="h-4 w-4 mt-1 flex-shrink-0 text-teal-600" />
                     <p className="text-sm text-teal-700 font-medium">
                       {doc.timing}
                     </p>
                   </div>
                   
-                  <button   onClick={() => {
-    window.location.href = 'https://www.askapollo.com/physical-appointment/city';
-  }}
-                    className="w-full py-3 rounded-lg bg-gradient-to-r from-teal-500 to-green-500 text-white font-medium shadow-md hover:shadow-lg transform transition duration-300 hover:-translate-y-0.5 flex items-center justify-center gap-2"
+                  <button onClick={() => {
+                      window.location.href = 'https://www.askapollo.com/physical-appointment/city';
+                    }}
+                    className="w-full py-3 rounded-lg bg-gradient-to-r from-teal-500 to-green-500 text-white font-medium shadow-md hover:shadow-lg transform transition duration-300 hover:-translate-y-0.5 flex items-center justify-center gap-2 mt-auto"
                   >
                     <Calendar className="h-5 w-5" />
                     Book Appointment
