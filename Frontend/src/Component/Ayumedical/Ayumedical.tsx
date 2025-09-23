@@ -179,24 +179,28 @@ const Ayumedical = () => {
                 <div className="flex items-center border border-green-300 rounded p-2 w-1/2">
                   <span className="text-green-700 mr-1">₹</span>
                   <input
+                    id="price-min"
                     type="number"
                     value={priceRange[0]}
                     onChange={(e) => handlePriceChange(e.target.value, false)}
                     min="0"
                     max={priceRange[1]}
                     className="w-full outline-none"
+                    aria-label="Minimum price"
                   />
                 </div>
                 <span className="text-green-700">to</span>
                 <div className="flex items-center border border-green-300 rounded p-2 w-1/2">
                   <span className="text-green-700 mr-1">₹</span>
                   <input
+                    id="price-max"
                     type="number"
                     value={priceRange[1]}
                     onChange={(e) => handlePriceChange(e.target.value, true)}
                     min={priceRange[0]}
                     max={maxPrice}
                     className="w-full outline-none"
+                    aria-label="Maximum price"
                   />
                 </div>
               </div>
