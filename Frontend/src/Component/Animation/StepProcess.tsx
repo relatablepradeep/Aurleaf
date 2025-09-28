@@ -156,10 +156,11 @@ export default function StepProcess() {
                         height="150"
                         className="w-full h-full object-cover transition-all duration-500 hover:scale-110"
                         srcSet={`
-      ${disease.image_url.replace("w_64,h_64", "w_320,h_180")} 320w,
-      ${disease.image_url.replace("w_64,h_64", "w_640,h_360")} 640w,
-      ${disease.image_url.replace("w_64,h_64", "w_1280,h_720")} 1280w
-    `}
+  ${(disease.image_url || '/api/placeholder/260/150').replace("w_64,h_64", "w_320,h_180")} 320w,
+  ${(disease.image_url || '/api/placeholder/260/150').replace("w_64,h_64", "w_640,h_360")} 640w,
+  ${(disease.image_url || '/api/placeholder/260/150').replace("w_64,h_64", "w_1280,h_720")} 1280w
+`}
+
                         sizes="(max-width: 640px) 100vw, 640px"
                       />
                       <figcaption className="sr-only">
