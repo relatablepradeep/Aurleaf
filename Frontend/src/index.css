@@ -72,4 +72,65 @@ body .goog-te-banner-frame.skiptranslate {
   body .goog-te-gadget-icon {
     display: none !important;
   }
-  
+
+  /* Updated website colors and fonts */
+body {
+  background: linear-gradient(to bottom, #0f172a, #1e293b, #334155);
+  color: #e2e8f0;
+  font-family: 'Roboto', sans-serif;
+}
+
+h1, h2, h3 {
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.6);
+  font-family: 'Montserrat', sans-serif;
+}
+
+button {
+  background: linear-gradient(to right, #2563eb, #1d4ed8);
+  color: #ffffff;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Add card styles */
+.card {
+  background: #1e293b;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+  padding: 25px;
+  margin: 25px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+
+/* Updated tab styles with new colors and fonts */
+.tab {
+  background: linear-gradient(to right, #4f46e5, #9333ea);
+  color: #ffffff;
+  font-family: 'Inter', sans-serif;
+  padding: 10px 15px;
+  border-radius: 5px;
+  margin: 5px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tab:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.tab.active {
+  background: linear-gradient(to right, #9333ea, #f43f5e);
+  font-weight: bold;
+}
