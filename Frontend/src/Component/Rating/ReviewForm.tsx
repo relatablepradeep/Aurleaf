@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-// 1. Define review type
+
 type Review = {
   name: string;
   rating: number;
@@ -21,7 +21,7 @@ const ReviewForm = () => {
     photo: string;
   }>({
     name: '',
-    rating: 0, // Set default rating to 0 (so all stars are unfilled)
+    rating: 0, 
     thought: '',
     photo: defaultAvatarURL,
   });
@@ -105,7 +105,7 @@ const ReviewForm = () => {
   };
 
   return (
-    <div className="w-full flex flex-col items-center bg-white bg-gradient-to-b from-amber-100 via-amber-50 to-amber-100 transition-all text-gray-900 py-16 px-4 font-sans">
+    <div className="w-full flex flex-col items-center bg-amber-50 from-amber-100 via-amber-50 to-amber-100 transition-all text-gray-900 py-16 px-4 font-sans">
       <h2 className="text-4xl sm:text-5xl font-bold text-amber-600 text-center mb-10 tracking-wide">
         Your Health, Your Story
       </h2>

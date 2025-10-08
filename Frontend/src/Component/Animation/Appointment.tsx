@@ -72,7 +72,7 @@ const Appointment = () => {
   };
 
   return (
-    <div className="w-full flex justify-center items-center py-16 bg-gradient-to-br from-amber-100 via-amber-100 to-amber-100">
+    <div className="w-full flex justify-center items-center py-16 bg-amber-50 from-amber-100 via-amber-100 to-amber-100">
       <div className="w-full max-w-4xl p-6 bg-amber-100 rounded-xl  text-gray-800">
         <div className="flex flex-col md:flex-row w-full">
          

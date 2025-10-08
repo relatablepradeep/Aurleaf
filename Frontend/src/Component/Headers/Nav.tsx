@@ -21,10 +21,20 @@ function Nav() {
             <span className="text-3xl font-semibold text-amber-900 hover:text-amber-600 transition-colors">
               Ayurleaf
             </span>
+
+    <nav className="bg-white bg-gradient-to-b  from-amber-100 via-amber-50 to-white transition-all shadow sticky w-full z-20 top-0 start-0 border-b border-amber-200">
+      <div className="max-w-screen-xl flex items-center justify-between  p-6">
+        {/* Logo and Title */}
+        <div className="flex items-center">
+          <Link to="/" className="flex items-center space-x-5">
+            <img src={logo} className="h-20 w-auto" alt="Logo" />
+            <span className="text-4xl font-semibold text-amber-900 hover:text-amber-600">Ayurleaf</span>
+
           </Link>
         </div>
 
         {/* Desktop Nav Links */}
+
         <div className="hidden md:flex md:space-x-12 absolute left-1/2 transform -translate-x-1/2">
           {[
             { to: "/fitness", label: "AyuFit" },
@@ -50,21 +60,23 @@ function Nav() {
           <NavLink to="/" className="text-2xl font-medium text-amber-800 underline hover:text-amber-600">
             Home
           </NavLink>
+        <div className="hidden md:flex md:space-x-32 absolute left-1/2 transform -translate-x-1/2">
+
           <NavLink
             to="/fitness"
             className={({ isActive }) =>
-              `text-2xl font-medium ${isActive ? "text-amber-900" : "text-amber-800 underline hover:text-amber-600"}`
+              `text-2xl font-medium ${isActive ? "text-amber-900" : "text-amber-800 hover:text-amber-600"}`
             }
           >
             AyuFit
           </NavLink>
-          <NavLink to="/products" className="text-2xl font-medium text-amber-800 underline hover:text-amber-600">
+          <NavLink to="/products" className="text-2xl font-medium text-amber-800 hover:text-amber-600">
             AyuMed
           </NavLink>
-          <NavLink to="/doctors" className="text-2xl font-medium text-amber-800 underline hover:text-amber-600">
+          <NavLink to="/doctors" className="text-2xl font-medium text-amber-800 hover:text-amber-600">
             AyuDoctor
           </NavLink>
-          <NavLink to="/hospitals" className="text-2xl font-medium text-amber-800 underline hover:text-amber-600">
+          <NavLink to="/hospitals" className="text-2xl font-medium text-amber-800 hover:text-amber-600">
             AyuHospitals
           </NavLink>
 
