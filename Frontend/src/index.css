@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@import "./Component/Animation/animation.css";
+
 .text-green-800:hover{
   color: rgb(33, 238, 30);
   /* cursor: pointer; */
