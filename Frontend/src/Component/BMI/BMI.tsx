@@ -332,11 +332,12 @@ export default function BMICalculator() {
             <h1 className="text-2xl font-bold text-amber-800 mb-6">BMI Calculator</h1>
             
             <div className="form-group">
-              <label className="flex items-center text-amber-800 mb-2">
+              <label htmlFor="user-name" className="flex items-center text-amber-800 mb-2">
                 <User className="mr-2" size={16} />
                 Your Name:
               </label>
               <input
+                id="user-name"
                 type="text"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
@@ -346,7 +347,7 @@ export default function BMICalculator() {
             </div>
             
             <div className="form-group mb-6">
-              <label className="flex items-center text-amber-800 mb-2">
+              <label htmlFor="profile-upload" className="flex items-center text-amber-800 mb-2">
                 <Upload className="mr-2" size={16} />
                 Profile Picture:
               </label>
@@ -379,12 +380,13 @@ export default function BMICalculator() {
             </div>
             
             <div className="form-group">
-              <label className="flex items-center text-amber-800 mb-2">
+              <label htmlFor="user-weight" className="flex items-center text-amber-800 mb-2">
                 <Scale className="mr-2" size={16} />
                 Weight:
               </label>
               <div className="flex">
                 <input
+                  id="user-weight"
                   type="number"
                   value={weight}
                   onChange={(e) => setWeight(e.target.value)}
@@ -397,6 +399,7 @@ export default function BMICalculator() {
                   value={weightUnit}
                   onChange={(e) => setWeightUnit(e.target.value)}
                   className="bg-amber-100 border border-amber-300 rounded-r-md px-3 focus:outline-none text-amber-800"
+                  aria-label="Weight unit"
                 >
                   <option value="kg">kg</option>
                   <option value="lb">lb</option>
@@ -405,12 +408,13 @@ export default function BMICalculator() {
             </div>
             
             <div className="form-group">
-              <label className="flex items-center text-amber-800 mb-2">
+              <label htmlFor="user-height" className="flex items-center text-amber-800 mb-2">
                 <Ruler className="mr-2" size={16} />
                 Height:
               </label>
               <div className="flex">
                 <input
+                  id="user-height"
                   type="number"
                   value={height}
                   onChange={(e) => setHeight(e.target.value)}
@@ -423,6 +427,7 @@ export default function BMICalculator() {
                   value={heightUnit}
                   onChange={(e) => setHeightUnit(e.target.value)}
                   className="bg-amber-100 border border-amber-300 rounded-r-md px-3 focus:outline-none text-amber-800"
+                  aria-label="Height unit"
                 >
                   <option value="cm">cm</option>
                   <option value="m">m</option>
@@ -432,11 +437,12 @@ export default function BMICalculator() {
             </div>
             
             <div className="form-group">
-              <label className="flex items-center text-amber-800 mb-2">
+              <label htmlFor="calorie-intake" className="flex items-center text-amber-800 mb-2">
                 <Coffee className="mr-2" size={16} />
                 Daily Calorie Intake (optional):
               </label>
               <input
+                id="calorie-intake"
                 type="number"
                 value={calorieIntake}
                 onChange={(e) => setCalorieIntake(e.target.value)}
