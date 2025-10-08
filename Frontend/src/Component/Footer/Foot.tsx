@@ -1,5 +1,5 @@
-import { Link, NavLink } from "react-router-dom"; // React Router DOM
-import { FaTwitter, FaLinkedin, FaGithub } from "react-icons/fa"; // Only required social icons
+import { Link, NavLink } from "react-router-dom"; 
+import { FaTwitter, FaLinkedin, FaGithub } from "react-icons/fa";
 import logo from "../../Assets/logo.png";
 
 export default function Foot() {
