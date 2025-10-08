@@ -6,6 +6,7 @@ export default function Disease() {
   const { diseaseId } = useParams();
   const [disease, setDisease] = useState(null);
   const [activeSection, setActiveSection] = useState('overview');
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const navigate = useNavigate();
   
   // Refs for scrolling to sections
@@ -124,7 +125,7 @@ export default function Disease() {
   </button>
 
       {/* Left Side Navigation */}
-      <div className="w-full md:fixed md:w-56 lg:w-64 bg-amber-100 p-4 shadow-inner flex-shrink-0 overflow-y-auto md:h-screen">
+      <div className={`w-full md:fixed md:w-56 lg:w-64 bg-amber-100 p-4 shadow-inner flex-shrink-0 overflow-y-auto md:h-screen ${isSidebarOpen ? 'block' : 'hidden'} md:block`}>
         <div className="sticky top-4">
           <h3 className="text-xl font-semibold text-amber-800 mb-6 border-b border-amber-300 pb-2">
             Treatment Journey
