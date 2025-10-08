@@ -184,7 +184,7 @@ const ReviewForm = () => {
           >
             <h3 className="text-xl font-bold mb-4 text-amber-700">Share Your Experience</h3>
 
-            <label className="block text-sm font-medium mb-1 text-gray-700">Profile Picture</label>
+            <label htmlFor="profile-picture" className="block text-sm font-medium mb-1 text-gray-700">Profile Picture</label>
             <div className="flex items-center space-x-4 mb-4">
               <img
                 src={previewUrl || defaultAvatarURL}
@@ -195,6 +195,7 @@ const ReviewForm = () => {
                 }}
               />
               <input
+                id="profile-picture"
                 type="file"
                 accept="image/*"
                 onChange={handleProfilePicChange}
@@ -223,7 +224,9 @@ const ReviewForm = () => {
             </div>
             {/* END RATING SECTION */}
 
+            <label htmlFor="reviewer-name" className="block text-sm font-medium mb-1 text-gray-700">Your Name</label>
             <input
+              id="reviewer-name"
               type="text"
               className="w-full border border-gray-300 rounded px-3 py-2 mb-4 bg-white"
               placeholder="Your Name"
@@ -232,7 +235,9 @@ const ReviewForm = () => {
               required
             />
 
+            <label htmlFor="review-text" className="block text-sm font-medium mb-1 text-gray-700">Your Review</label>
             <textarea
+              id="review-text"
               className="w-full border border-gray-300 rounded px-3 py-2 h-24 bg-white"
               placeholder="Write your review..."
               value={formData.thought}

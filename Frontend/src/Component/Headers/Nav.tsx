@@ -7,9 +7,14 @@ function Nav() {
   const navigate = useNavigate();
 
   return (
+
     <nav className="bg-white bg-gradient-to-b from-amber-100 via-amber-50 to-white shadow sticky top-0 z-20 border-b border-amber-200">
       <div className="max-w-screen-xl flex items-center justify-between mx-auto px-4 py-2">
         {/* Logo and Title */}
+
+    <nav className="bg-white bg-gradient-to-b from-amber-100 via-amber-50 to-white transition-all shadow sticky w-full top-0 start-0 border-b border-amber-200 z-100">
+      <div className="max-w-screen-xl flex items-center justify-between mx-auto p-4">
+
         <div className="flex items-center">
           <Link to="/" className="flex items-center space-x-3">
             <img src={logo} className="h-14 w-auto" alt="Logo" />
@@ -40,6 +45,29 @@ function Nav() {
               {link.label}
             </NavLink>
           ))}
+
+        <div className="hidden md:flex md:space-x-8 absolute left-1/2 transform -translate-x-1/2">
+          <NavLink to="/" className="text-2xl font-medium text-amber-800 underline hover:text-amber-600">
+            Home
+          </NavLink>
+          <NavLink
+            to="/fitness"
+            className={({ isActive }) =>
+              `text-2xl font-medium ${isActive ? "text-amber-900" : "text-amber-800 underline hover:text-amber-600"}`
+            }
+          >
+            AyuFit
+          </NavLink>
+          <NavLink to="/products" className="text-2xl font-medium text-amber-800 underline hover:text-amber-600">
+            AyuMed
+          </NavLink>
+          <NavLink to="/doctors" className="text-2xl font-medium text-amber-800 underline hover:text-amber-600">
+            AyuDoctor
+          </NavLink>
+          <NavLink to="/hospitals" className="text-2xl font-medium text-amber-800 underline hover:text-amber-600">
+            AyuHospitals
+          </NavLink>
+
         </div>
 
         {/* Hamburger Button */}

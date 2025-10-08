@@ -146,13 +146,15 @@ const Customer = () => {
           >
             <h3 className="text-xl font-bold mb-4 text-amber-700">Share Your Experience</h3>
 
-            <label className="block text-sm font-medium mb-1 text-gray-700">Profile Picture</label>
+            <label htmlFor="profile-picture-upload" className="block text-sm font-medium mb-1 text-gray-700">Profile Picture</label>
             <div className="flex items-center space-x-4 mb-4">
               <img src={previewUrl} className="w-16 h-16 rounded-full border-2 border-amber-500" />
-              <input type="file" accept="image/*" onChange={handleProfilePicChange} />
+              <input id="profile-picture-upload" type="file" accept="image/*" onChange={handleProfilePicChange} />
             </div>
 
+            <label htmlFor="reviewer-name-input" className="block text-sm font-medium mb-1 text-gray-700">Your Name</label>
             <input
+              id="reviewer-name-input"
               type="text"
               className="w-full border border-gray-300 rounded px-3 py-2 mb-4 bg-white"
               placeholder="Your Name"
@@ -160,7 +162,9 @@ const Customer = () => {
               onChange={(e) => setName(e.target.value)}
             />
 
+            <label htmlFor="review-text-area" className="block text-sm font-medium mb-1 text-gray-700">Your Review</label>
             <textarea
+              id="review-text-area"
               className="w-full border border-gray-300 rounded px-3 py-2 h-24 bg-white"
               placeholder="Write your review..."
               value={review}

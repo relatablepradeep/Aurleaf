@@ -133,7 +133,7 @@ const Ayumedical = () => {
 
         {/* Search and Filters Section */}
         <div className="mb-8 bg-white rounded-lg shadow-md p-4">
-          <div className="flex flex-col md:flex-row gap-4">
+          <div className="flex flex-col md:flex-row md:items-center gap-4">
             {/* Search Bar with Suggestions */}
             <div className="flex-1 relative">
               <div className="relative">
@@ -173,30 +173,34 @@ const Ayumedical = () => {
             </div>
 
             {/* Price Range Filter */}
-            <div className="md:w-1/3 flex flex-col">
-              <label className="mb-2 font-medium text-green-800">Price Range</label>
+            <div className="md:w-1/3">
+              <label className=" block mb-2 font-medium text-green-800">Price Range</label>
               <div className="flex items-center gap-2">
                 <div className="flex items-center border border-green-300 rounded p-2 w-1/2">
                   <span className="text-green-700 mr-1">₹</span>
                   <input
+                    id="price-min"
                     type="number"
                     value={priceRange[0]}
                     onChange={(e) => handlePriceChange(e.target.value, false)}
                     min="0"
                     max={priceRange[1]}
                     className="w-full outline-none"
+                    aria-label="Minimum price"
                   />
                 </div>
                 <span className="text-green-700">to</span>
                 <div className="flex items-center border border-green-300 rounded p-2 w-1/2">
                   <span className="text-green-700 mr-1">₹</span>
                   <input
+                    id="price-max"
                     type="number"
                     value={priceRange[1]}
                     onChange={(e) => handlePriceChange(e.target.value, true)}
                     min={priceRange[0]}
                     max={maxPrice}
                     className="w-full outline-none"
+                    aria-label="Maximum price"
                   />
                 </div>
               </div>

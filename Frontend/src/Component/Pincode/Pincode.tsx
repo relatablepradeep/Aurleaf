@@ -219,9 +219,10 @@ const Pincode = () => {
 
               {/* Specialty Dropdown with Enhanced Styling */}
               <div className="mb-6">
-                <label className="block text-emerald-700 mb-2 font-medium">Select Specialty</label>
+                <label htmlFor="specialty-select" className="block text-emerald-700 mb-2 font-medium">Select Specialty</label>
                 <div className="relative group">
                   <select
+                    id="specialty-select"
                     className="appearance-none w-full bg-white border-2 border-emerald-200 p-4 rounded-lg pl-5 pr-10 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all duration-300 shadow-sm hover:shadow-md cursor-pointer text-gray-700"
                     value={speciality}
                     onChange={(e) => setSpeciality(e.target.value)}
@@ -244,9 +245,10 @@ const Pincode = () => {
 
               {/* Pincode input with Enhanced Styling */}
               <div className="mb-8">
-                <label className="block text-emerald-700 mb-2 font-medium">Enter Location Pincode</label>
+                <label htmlFor="location-pincode" className="block text-emerald-700 mb-2 font-medium">Enter Location Pincode</label>
                 <div className="relative group">
                   <input
+                    id="location-pincode"
                     type="text"
                     placeholder="Enter Pincode (optional)"
                     value={pincode}
