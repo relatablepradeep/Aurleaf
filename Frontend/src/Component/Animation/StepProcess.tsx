@@ -139,6 +139,57 @@ export default function StepProcess() {
                       </div>
                     </div>
 
+      {/* Staggered Card Layout */}
+      <div className="w-full max-w-6xl px-4 text-center">
+        <h3 className="text-xl sm:text-2xl font-bold text-amber-800 mb-6 sm:mb-8 font-['Verdana'] relative inline-block">
+          <span>Explore Ayurvedic Remedies</span>
+          <span className="absolute -bottom-2 left-0 right-0 h-0.5 bg-gradient-to-r from-amber-500 via-amber-600 to-amber-500"></span>
+        </h3>
+
+        <div className="relative h-80 sm:h-96 mb-8 sm:mb-16" ref={cardsContainerRef}>
+          <div className="absolute inset-0 flex justify-center items-center">
+            {diseases.map((disease, idx) => (
+              <div
+                key={idx}
+                onClick={() => handleCardClick(disease, idx)}
+                className={`absolute transition-all duration-300 cursor-pointer ${getCardWidth()} bg-white border border-amber-200 rounded-xl p-3 sm:p-4 shadow-md hover:shadow-xl`}
+                style={getCardStyle(idx)}
+              >
+                <div className="relative overflow-hidden rounded-lg mb-3 sm:mb-4">
+                  <figure className="w-full h-32 sm:h-40 rounded-lg overflow-hidden">
+                    <figure className="w-full h-32 sm:h-40 rounded-lg overflow-hidden">
+                      <img
+                        src={disease.image_url || '/api/placeholder/260/150'}
+                        alt={disease.alt_text || 'Remedy'}
+                        loading="lazy"
+                        decoding="async"
+                        width="260"
+                        height="150"
+                        className="w-full h-full object-cover transition-all duration-500 hover:scale-110"
+                        srcSet={`
+  ${(disease.image_url || '/api/placeholder/260/150').replace("w_64,h_64", "w_320,h_180")} 320w,
+  ${(disease.image_url || '/api/placeholder/260/150').replace("w_64,h_64", "w_640,h_360")} 640w,
+  ${(disease.image_url || '/api/placeholder/260/150').replace("w_64,h_64", "w_1280,h_720")} 1280w
+`}
+
+                        sizes="(max-width: 640px) 100vw, 640px"
+                      />
+                      <figcaption className="sr-only">
+                        {disease.alt_text || 'Remedy'}
+                      </figcaption>
+                    </figure>
+
+
+                    {/* Accessible caption (screen readers only) */}
+                    <figcaption className="sr-only">
+                      {disease.alt_text || 'Remedy'}
+                    </figcaption>
+                  </figure>
+
+
+                  {idx === activeCardIndex && (
+                    <div className="absolute inset-0 bg-gradient-to-t from-amber-900/60 to-transparent flex items-end">
+                      <span className="text-white text-xs sm:text-sm font-medium p-2 sm:p-3">View Details</span>
                     <div className="p-6">
                       <h3 className="text-xl font-bold text-gray-800 mb-2 line-clamp-2 group-hover:text-amber-700 transition-colors">
                         {disease.alt_text || 'Ayurvedic Treatment'}

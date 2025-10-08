@@ -1,5 +1,36 @@
 @import "tailwindcss";
 
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+@import "./Component/Animation/animation.css";
+
+.text-green-800:hover{
+  color: rgb(33, 238, 30);
+  /* cursor: pointer; */
+}
+
+.underline {
+  position: relative;
+  text-decoration: none;
+}
+
+.underline::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0;
+  height: 2px;
+  background: rgb(46, 229, 83);
+  transition: width 0.5s ease;
+}
+
+.underline:hover::after {
+  width: 100%;
+}
 
 @layer utilities {
     .animate-fade-in {
