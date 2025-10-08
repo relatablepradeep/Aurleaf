@@ -8,8 +8,9 @@ function Nav() {
   const navigate = useNavigate();
 
   return (
-    <nav className="bg-white bg-gradient-to-b from-amber-100 via-amber-50 to-white transition-all shadow sticky w-full top-0 start-0 border-b border-amber-200 z-100">
-      <div className="max-w-screen-xl flex items-center justify-between mx-auto p-4">
+    <nav className="bg-white bg-gradient-to-b  from-amber-100 via-amber-50 to-white transition-all shadow sticky w-full z-20 top-0 start-0 border-b border-amber-200">
+      <div className="max-w-screen-xl flex items-center justify-between  p-6">
+        {/* Logo and Title */}
         <div className="flex items-center">
           <Link to="/" className="flex items-center space-x-3">
             <img src={logo} className="h-12 w-auto sm:h-16 md:h-20" alt="Logo" />

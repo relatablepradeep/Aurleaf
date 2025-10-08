@@ -115,7 +115,6 @@ const Infinite = () => {
 };
 
 const AyurvedicHealthSection = () => {
-  // const navigate = (path) => console.log(`Navigating to: ${path}`);
 
   const navigate = useNavigate(); 
 
