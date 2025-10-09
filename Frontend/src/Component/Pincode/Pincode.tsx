@@ -4,7 +4,7 @@ import axios from "axios";
 const Pincode = () => {
   const [location, setLocation] = useState({ lat: null, lon: null });
   const [hospitals, setHospitals] = useState([]);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(false); 
   const [speciality, setSpeciality] = useState("");
   const [pincode, setPincode] = useState("");
   const [isSearched, setIsSearched] = useState(false);
@@ -22,7 +22,7 @@ const Pincode = () => {
       },
       (err) => {
         console.error("Geolocation error:", err);
-        alert("Please allow location access.");
+        confirm("Please allow location access.");
         setShowLocationAnimation(false);
       }
     );
