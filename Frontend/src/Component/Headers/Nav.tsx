@@ -10,7 +10,7 @@ function Nav() {
   const navigate = useNavigate();
 
   return (
-    <nav className="bg-white bg-gradient-to-b  from-amber-100 via-amber-50 to-white transition-all shadow sticky w-full z-20 top-0 start-0 border-b border-amber-200">
+    <nav className="bg-white bg-gradient-to-b  from-amber-100 via-amber-50 to-white transition-all shadow sticky w-full z-50 top-0 start-0 border-b border-amber-200">
       <div className="max-w-screen-xl flex items-center justify-between  p-6">
         {/* Logo and Title */}
         <div className="flex items-center">

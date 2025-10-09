@@ -14,6 +14,7 @@
     "@fontsource/inter": "^5.2.5",
     "@fontsource/poppins": "^5.2.5",
     "@tailwindcss/vite": "^4.0.14",
+    "@types/react-router-dom": "^5.3.3",
     "axios": "^1.8.4",
     "dotenv": "^16.5.0",
     "framer-motion": "^12.6.3",
