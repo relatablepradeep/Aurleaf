@@ -11,7 +11,7 @@ export default function StepProcess() {
     const sliced = disease_data.slice(0, 12);
     setDiseases(sliced);
 
-    // Start from center of the sliced array
+    // Start from the center
     setCurrent(Math.floor(sliced.length / 2));
 
     // Auto-slide every 3 seconds
@@ -31,7 +31,7 @@ export default function StepProcess() {
   };
 
   return (
-    <section className="w-full py-16 bg-gradient-to-b from-amber-50 via-yellow-50 to-amber-100 flex flex-col items-center justify-center relative overflow-hidden">
+    <section className="relative w-full py-16 bg-gradient-to-b from-amber-50 via-yellow-50 to-amber-100 flex flex-col items-center justify-center overflow-hidden z-0">
       {/* Heading */}
       <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-10">
         Explore Ayurvedic{" "}
@@ -41,79 +41,107 @@ export default function StepProcess() {
       </h2>
 
       {/* Carousel Container */}
-      <div className="relative w-full max-w-7xl mx-auto flex items-center justify-center">
-        <div className="relative w-full h-[320px] md:h-[340px] flex items-center justify-center overflow-hidden">
-          {diseases.map((disease, index) => {
-            const position = (index - current + diseases.length) % diseases.length;
+      <div className="relative w-full min-h-[380px] flex items-center justify-center overflow-hidden perspective-1000">
+        {diseases.map((disease, index) => {
+          const position = (index - current + diseases.length) % diseases.length;
 
-            let transform = "";
-            let opacity = 0;
-            let scale = 0.9;
+          let transform = "";
+          let opacity = 0;
+          let scale = 0.9;
+          let filter = "none";
 
-            if (position === 0) {
-              transform = "translateX(0)";
-              opacity = 1;
-              scale = 1;
-            } else if (position === 1) {
-              transform = "translateX(300px)";
-              opacity = 0.6;
-              scale = 0.9;
-            } else if (position === diseases.length - 1) {
-              transform = "translateX(-300px)";
-              opacity = 0.6;
-              scale = 0.9;
-            } else {
-              transform = `translateX(${position > 1 ? "600px" : "-600px"})`;
-              opacity = 0;
-            }
+          // Center Card
+          if (position === 0) {
+            transform = "translateX(0)";
+            opacity = 1;
+            scale = 1;
+            filter = "none";
+          }
+          // Immediate Right
+          else if (position === 1) {
+            transform = "translateX(300px)";
+            opacity = 0.7;
+            scale = 0.9;
+            filter = "blur(1px)";
+          }
+          // Immediate Left
+          else if (position === diseases.length - 1) {
+            transform = "translateX(-300px)";
+            opacity = 0.7;
+            scale = 0.9;
+            filter = "blur(1px)";
+          }
+          // Far Right (+2)
+          else if (position === 2) {
+            transform = "translateX(550px)";
+            opacity = 0.4;
+            scale = 0.8;
+            filter = "blur(3px)";
+          }
+          // Far Left (-2)
+          else if (position === diseases.length - 2) {
+            transform = "translateX(-550px)";
+            opacity = 0.4;
+            scale = 0.8;
+            filter = "blur(3px)";
+          }
+          // Hidden cards
+          else {
+            transform = "translateX(0)";
+            opacity = 0;
+            scale = 0.7;
+            filter = "blur(5px)";
+          }
 
-            return (
+          return (
+            <div
+              key={index}
+              className="absolute top-1/2 -translate-y-1/2 transition-all duration-700 ease-in-out"
+              style={{
+                transform: `${transform} scale(${scale})`,
+                opacity,
+                filter,
+                zIndex: position === 0 ? 5 : position === 1 || position === diseases.length - 1 ? 4 : 1,
+              }}
+            >
               <div
-                key={index}
-                className="absolute transition-all duration-500 ease-in-out"
-                style={{
-                  transform: `${transform} scale(${scale})`,
-                  opacity,
-                  zIndex: position === 0 ? 20 : 10,
-                }}
+                onClick={() => handleCardClick(disease)}
+                className="bg-white rounded-2xl shadow-lg hover:shadow-2xl cursor-pointer w-[460px] md:w-[500px] h-[300px] md:h-[320px] overflow-hidden flex flex-col border border-amber-100 transition-all"
               >
-                <div
-                  onClick={() => handleCardClick(disease)}
-                  className="bg-white rounded-2xl shadow-lg hover:shadow-2xl cursor-pointer w-[460px] md:w-[500px] h-[280px] md:h-[320px] overflow-hidden flex flex-col border border-amber-100 transition-all"
-                >
-                  <div className="relative w-full h-[150px] md:h-[160px] overflow-hidden">
-                    <img
-                      src={disease.image_url || "/api/placeholder/400/300"}
-                      alt={disease.alt_text || "Ayurvedic Remedy"}
-                      className="w-full h-full object-cover object-center rounded-t-2xl transition-transform duration-500 hover:scale-105"
-                      loading="lazy"
-                    />
-                    <div className="absolute top-3 left-3">
-                      <span className="bg-amber-600 text-white text-xs font-medium px-3 py-1 rounded-full">
-                        Natural Remedy
-                      </span>
-                    </div>
-                  </div>
-
-                  <div className="flex flex-col justify-between items-center p-4 text-center flex-1">
-                    <div>
-                      <h3 className="text-lg md:text-xl font-semibold text-gray-800 mb-2">
-                        {disease.alt_text || "Ayurvedic Treatment"}
-                      </h3>
-                      <p className="text-gray-600 text-sm md:text-base mb-3 line-clamp-3">
-                        {disease.disease_name ||
-                          "Discover holistic healing with natural Ayurvedic treatments for a balanced lifestyle."}
-                      </p>
-                    </div>
-                    <button className="bg-amber-600 hover:bg-amber-700 text-white text-xs md:text-sm font-medium rounded-full px-5 py-2 transition-all">
-                      Learn More
-                    </button>
+                {/* Image Section */}
+                <div className="relative w-full h-[150px] md:h-[160px] overflow-hidden">
+                  <img
+                    src={disease.image_url || "/api/placeholder/400/300"}
+                    alt={disease.alt_text || "Ayurvedic Remedy"}
+                    className="w-full h-full object-cover object-center rounded-t-2xl transition-transform duration-500 hover:scale-105"
+                    loading="lazy"
+                  />
+                  <div className="absolute top-3 left-3">
+                    <span className="bg-amber-600 text-white text-xs font-medium px-3 py-1 rounded-full">
+                      Natural Remedy
+                    </span>
                   </div>
                 </div>
+
+                {/* Text Section */}
+                <div className="flex flex-col justify-between items-center p-4 text-center flex-1">
+                  <div>
+                    <h3 className="text-lg md:text-xl font-semibold text-gray-800 mb-2">
+                      {disease.alt_text || "Ayurvedic Treatment"}
+                    </h3>
+                    <p className="text-gray-600 text-sm md:text-base mb-3 line-clamp-3">
+                      {disease.disease_name ||
+                        "Discover holistic healing with natural Ayurvedic treatments for a balanced lifestyle."}
+                    </p>
+                  </div>
+                  <button className="bg-amber-600 hover:bg-amber-700 text-white text-xs md:text-sm font-medium rounded-full px-5 py-2 transition-all">
+                    Learn More
+                  </button>
+                </div>
               </div>
-            );
-          })}
-        </div>
+            </div>
+          );
+        })}
       </div>
 
       {/* Dots */}
