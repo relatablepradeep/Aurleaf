@@ -169,7 +169,8 @@ const Chatbot = () => {
             <div className="bg-gradient-to-r from-green-500 to-emerald-600 text-white p-4 flex justify-between items-center">
               <div className="flex items-center">
                 <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center mr-2">
-                  <img src="Frontend\src\Assets\logo.png" alt="Ayuleaf" className="w-6 h-6" />
+                  {/* <img src="Frontend\src\Assets\logo.png" alt="Ayuleaf" className="w-6 h-6" /> */}
+                  🤖
                 </div>
                 <h2 className="text-lg font-semibold">Ayuleaf Assistant</h2>
               </div>
@@ -198,8 +199,8 @@ const Chatbot = () => {
                   >
                     {message.sender === "bot" && (
                       <div className="w-8 h-8 rounded-full bg-green-100 mr-2 flex-shrink-0 flex items-center justify-center">
-                        <img src="/api/placeholder/32/32" alt="Bot" className="w-6 h-6" />
-                      </div>
+                        {/* <img src="Frontend\src\Assets\logo.png" alt="Bot" className="w-6 h-6" /> */}
+                     🤖 </div>
                     )}
                     <div
                       className={`p-3 rounded-lg max-w-3/4 shadow-sm ${
@@ -225,8 +226,8 @@ const Chatbot = () => {
                   animate={{ opacity: 1 }}
                 >
                   <div className="w-8 h-8 rounded-full bg-green-100 mr-2 flex-shrink-0 flex items-center justify-center">
-                    <img src="/api/placeholder/32/32" alt="Bot" className="w-6 h-6" />
-                  </div>
+                    {/* <img src="Frontend\src\Assets\logo.png" alt="Bot" className="w-6 h-6" /> */}
+🤖</div>
                   <div className="bg-white p-3 rounded-lg shadow-sm">
                     <div className="flex space-x-1">
                       <motion.div 
