@@ -6,6 +6,7 @@ export default function Disease() {
   const { diseaseId } = useParams();
   const [disease, setDisease] = useState(null);
   const [activeSection, setActiveSection] = useState('overview');
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const navigate = useNavigate();
   
   // Refs for scrolling to sections
