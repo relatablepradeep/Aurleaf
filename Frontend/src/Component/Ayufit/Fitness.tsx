@@ -167,14 +167,14 @@ export default function Fitness() {
 
         {/* Disease Cards (hidden while suggestions are open) */}
         {!showSuggestions && (
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-4 md:gap-6 lg:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-4 md:gap-6 lg:gap-8 relative isolate">
             {filteredDiseases.map((disease, index) => (
               <div
                 key={index}
                 onClick={() => handleCardClick(disease)}
-                className={`group flex flex-col border-2 rounded-xl p-4 md:p-5 lg:p-6 cursor-pointer bg-gradient-to-br from-amber-100 to-amber-50 shadow-lg 
-                  hover:shadow-2xl transform hover:-translate-y-3 hover:scale-105 transition-all duration-700 ease-in-out border-amber-400
-                  animate-slideIn`}
+                className={`group relative z-0 flex flex-col border-2 rounded-xl p-4 md:p-5 lg:p-6 cursor-pointer bg-gradient-to-br from-amber-100 to-amber-50 shadow-lg 
+                  hover:shadow-2xl transform hover:-translate-y-3 transition-transform duration-500 ease-in-out border-amber-400
+                  hover:z-10`}
                 style={{ animationDelay: `${100 + index * 75}ms`, animationDuration: '800ms', animationFillMode: 'forwards' }}
               >
                 <div className="flex items-center mb-4">
