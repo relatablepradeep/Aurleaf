@@ -11,17 +11,15 @@ function Nav() {
 
   return (
     <nav className="bg-white bg-gradient-to-b  from-amber-100 via-amber-50 to-white transition-all shadow sticky w-full z-50 top-0 start-0 border-b border-amber-200">
-      <div className="max-w-screen-xl flex items-center justify-between  p-6">
+      <div className=" max-w-screen-xl mx-auto flex items-center justify-between p-4 md:p-6">
         {/* Logo and Title */}
-        <div className="flex items-center">
           <Link to="/" className="flex items-center space-x-5">
             <img src={logo} className="h-20 w-auto" alt="Logo" />
             <span className="text-4xl font-semibold text-amber-900 hover:text-amber-600">Ayurleaf</span>
           </Link>
-        </div>
 
         {/* Desktop Nav Links */}
-        <div className="hidden md:flex md:space-x-32 absolute left-1/2 transform -translate-x-1/2">
+        <div className="hidden md:flex flex-wrap items-center space-x-3 lg:space-x-12">
           <NavLink
             to="/fitness"
             className={({ isActive }) =>
@@ -40,9 +38,6 @@ function Nav() {
             AyuHospitals
           </NavLink>
         </div>
-
-        
-       
 
         {/* Hamburger Button */}
         <button
