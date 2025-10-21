@@ -12,8 +12,8 @@ import logo from "../../Assets/logo.png";
 export default function Foot() {
   return (
     <footer className="w-full bg-gradient-to-b from-amber-100 via-amber-50 to-white text-amber-900 px-8 md:px-16 lg:px-24 py-20 font-[Inter] border-t border-amber-200 shadow-inner relative z-10">
-      <div className="max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 text-center md:text-left relative">
-        
+      <div className="max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 text-center md:text-left relative">
+
         {/* BRAND / ABOUT SECTION */}
         <div className="relative md:pr-8">
           <Link
@@ -28,8 +28,7 @@ export default function Foot() {
             Ayurleaf
           </Link>
           <p className="text-amber-800 text-base leading-relaxed">
-            Ayurleaf is your all-in-one Ayurvedic medical platform, merging ancient healing with AI innovation. 
-            Discover trusted doctors, natural remedies, and personalized health insights — all in one place.
+            Ayurleaf is your all-in-one Ayurvedic medical platform, merging ancient healing with AI innovation. Discover trusted doctors, natural remedies, and personalized health insights — all in one place.
           </p>
 
           {/* Vertical Divider */}
@@ -45,7 +44,7 @@ export default function Foot() {
             <li>
               <NavLink
                 to="/fitness"
-                className="hover:text-amber-600 transition-colors"
+                className="hover:text-amber-600 transition-colors duration-300"
               >
                 AyuFit — AI Fitness
               </NavLink>
@@ -53,7 +52,7 @@ export default function Foot() {
             <li>
               <NavLink
                 to="/products"
-                className="hover:text-amber-600 transition-colors"
+                className="hover:text-amber-600 transition-colors duration-300"
               >
                 AyuMed — Medical Store
               </NavLink>
@@ -61,7 +60,7 @@ export default function Foot() {
             <li>
               <NavLink
                 to="/doctors"
-                className="hover:text-amber-600 transition-colors"
+                className="hover:text-amber-600 transition-colors duration-300"
               >
                 AyuDoctor — Book Doctors
               </NavLink>
@@ -69,12 +68,11 @@ export default function Foot() {
             <li>
               <NavLink
                 to="/hospitals"
-                className="hover:text-amber-600 transition-colors"
+                className="hover:text-amber-600 transition-colors duration-300"
               >
                 AyuHospitals — Find Clinics
               </NavLink>
             </li>
-           
           </ul>
 
           {/* Vertical Divider */}
@@ -104,35 +102,70 @@ export default function Foot() {
               </span>
             </li>
           </ul>
+          
 
           {/* Social Media Links */}
           <div className="flex justify-center md:justify-start space-x-6 mt-8 text-amber-700">
-            <a
-              href="https://x.com/rascal_rookiee"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-amber-600 transition-transform transform hover:scale-110"
-            >
-              <FaTwitter size={26} />
-            </a>
-            <a
-              href="https://www.linkedin.com/in/relatablepradeep/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-amber-600 transition-transform transform hover:scale-110"
-            >
-              <FaLinkedin size={26} />
-            </a>
-            <a
-              href="https://github.com/relatablepradeep/Aurleaf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-amber-600 transition-transform transform hover:scale-110"
-            >
-              <FaGithub size={26} />
-            </a>
+            {[{
+              icon: FaTwitter,
+              link: "https://x.com/rascal_rookiee",
+              label: "Twitter"
+            },{
+              icon: FaLinkedin,
+              link: "https://www.linkedin.com/in/relatablepradeep/",
+              label: "LinkedIn"
+            },{
+              icon: FaGithub,
+              link: "https://github.com/relatablepradeep/Aurleaf",
+              label: "GitHub"
+            }].map((social, i) => (
+              <a
+                key={i}
+                href={social.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={social.label}
+                className="hover:text-amber-600 transition-transform transform hover:scale-110"
+              >
+                <social.icon size={26} />
+              </a>
+            ))}
           </div>
         </div>
+
+        {/* USER QUERY / ASK US SECTION */}
+        <div className="md:pl-8">
+          <h3 className="text-2xl font-bold text-amber-800 mb-6 border-b-2 border-amber-400 inline-block pb-1">
+            ❓ Ask Us
+          </h3>
+          <p className="text-amber-700 mb-4 text-sm">
+            Have a question or need assistance? Send us your query and our team will respond promptly.
+          </p>
+          <form className="flex flex-col space-y-3">
+            <input
+              type="text"
+              placeholder="Your Name"
+              className="px-4 py-2 rounded-md border border-amber-300 focus:outline-none focus:ring-2 focus:ring-amber-400"
+            />
+            <input
+              type="email"
+              placeholder="Your Email"
+              className="px-4 py-2 rounded-md border border-amber-300 focus:outline-none focus:ring-2 focus:ring-amber-400"
+            />
+            <textarea
+              placeholder="Your Query"
+              className="px-4 py-2 rounded-md border border-amber-300 focus:outline-none focus:ring-2 focus:ring-amber-400 resize-none"
+              rows={3}
+            ></textarea>
+            <button
+              type="submit"
+              className="bg-amber-600 text-white px-4 py-2 rounded-md hover:bg-amber-500 transition-colors"
+            >
+              Submit
+            </button>
+          </form>
+        </div>
+
       </div>
 
       {/* Divider */}
@@ -143,8 +176,7 @@ export default function Foot() {
         <p className="text-base text-amber-800">
           <strong>Acknowledgments:</strong> Thanks to{" "}
           <span className="font-semibold">mg1</span> for medical remedies info,
-          and <span className="font-semibold">AppoDoctor</span> for
-          doctor-related data and support.
+          and <span className="font-semibold">AppoDoctor</span> for doctor-related data and support.
         </p>
         <p className="text-base text-amber-700">
           © 2025{" "}
